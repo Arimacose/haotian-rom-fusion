@@ -144,13 +144,14 @@ fingerprint、53 个 haptics、199 个 touch 和 589 个 kernel module 条目。
 
 ### 6.2 boot 容器
 
-官方、EvolutionX、LineageOS 的 `boot/init_boot/vendor_boot/dtbo/recovery/vbmeta` 完整文件哈希均不同。Kernel 相同并不代表 boot-chain 可互换；后续仍需逐项比较：
+官方、EvolutionX、LineageOS 的 `boot/init_boot/vendor_boot/dtbo/recovery/vbmeta` 完整文件哈希均不同。Kernel 相同并不代表 boot-chain 可互换；本轮已逐项比较：
 
 - boot header、签名与 AVB footer；
 - init_boot ramdisk；
 - vendor_boot ramdisk fragments、bootconfig、DTB；
 - dtbo overlay 数量、ID 与内容；
-- vendor_ramdisk/system_dlkm/vendor_dlkm 模块集合、vermagic、CRC 和加载顺序。
+- vendor_ramdisk 模块集合、内容哈希和加载顺序；
+- system_dlkm/vendor_dlkm 的完整模块 KMI、CRC 与依赖图仍列为编译前门禁。
 
 已完成的下一层静态结果：
 
@@ -167,6 +168,45 @@ fingerprint、53 个 haptics、199 个 touch 和 589 个 kernel module 条目。
 设为 `0`，与 EvolutionX 0603 一致；LineageOS 0704 成品则与官方一样设为 `true`，
 说明 0704 成品在这部分也领先或偏离当前公开提交。第一版将以官方 bootconfig/DTB/DTBO
 为权威，再逐项移植类原生必需的 ramdisk 变更。
+
+### 6.3 vendor ramdisk 模块三方比较
+
+三份 `vendor_ramdisk00` 已分别展开，并对 `lib/modules` 中每个文件做相对路径与
+SHA-256 比较：
+
+| 项目 | 官方 3.0.304 | EvolutionX 0603 | LineageOS 0704 |
+|---|---:|---:|---:|
+| `.ko` 数量 | 434 | 434 | 434 |
+| `lib/modules` 文件总数 | 440 | 441 | 440 |
+| `modules.load` 条目 | 143 | 143 | 143 |
+| `modules.load.recovery` 条目 | 432 | 432 | 432 |
+
+模块路径集合共 435 种：433 个三方共有，官方单独含
+`mi_wq_dynamic_priority.ko`，两份类原生则共同以 `miloadtrace.ko` 取代它。
+普通启动与 recovery 加载清单也精确反映同一替换，EvolutionX 与 LineageOS 的
+两份加载顺序逐行相同。EvolutionX 还多带一份 `modules.load.charger`，其内容与
+自身 `modules.load.recovery` 相同。
+
+对 433 个共有模块的内容分组结果：
+
+| 内容关系 | 模块数 | 含义 |
+|---|---:|---|
+| EvolutionX = LineageOS，官方不同 | 404 | 两份类原生成品共用同一主模块基线 |
+| 三方各不相同 | 20 | 主要集中在充电、无线充、DRM/HW fence 和 `smcinvoke` |
+| 三方逐字节相同 | 9 | `debug_ext`、`ipclite`、`msm-mmrm`、`tz_log_dlkm` 等 |
+
+三个 CS40L26 模块以及 `speed_touch.ko` 都属于“EvolutionX = LineageOS、官方不同”。
+这进一步说明 LineageOS 振动修复不来自它独有的 CS40L26 模块，而是已有补丁定位到的
+校准 loader、init 权限和 persist 数据路径。三套 boot kernel 虽逐字节相同，官方
+3.0.304 的模块集合与两份类原生成品仍属于不同代次；首版融合必须成组选择 kernel、
+DTB/DTBO、vendor ramdisk 模块、system/vendor DLKM 与加载元数据，避免跨基线拼接。
+
+完整 434 模块逐文件证据保存在：
+
+```text
+D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\vendor-ramdisk-module-three-way.json
+SHA-256: a1f6cb09a5083bbff2511269cd95382c8ab4248a81cd3a4c0ba1e7bba3f99831
+```
 
 ## 7. AVB 实测
 
@@ -251,6 +291,8 @@ evidence/boot-chain-crosscheck.json
 evidence/official-avb-comparison.json
 evidence/kernel-three-way-comparison.json
 evidence/kernel-three-way-comparison.md
+evidence/official-filesystem-summary.json
+evidence/proprietary-coverage-summary.json
 ```
 
 D 盘完整证据与大型文件：
@@ -260,16 +302,18 @@ D:\Codex\haotian-evox-0603-audit\downloads\stock-3.0.304-fastboot
 D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\extracted
 D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\super-partitions
 D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\filesystems
+D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\official-filesystem-file-manifest.json
+D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\vendor-ramdisk-module-three-way.json
 ```
 
 大型 TGZ、IMG、EROFS 展开树、proprietary blobs 与签名私钥继续留在 D 盘，不进入 Git 历史。
 
 ## 10. 下一步执行顺序
 
-1. 对官方/EvolutionX/LineageOS 的 vendor_boot ramdisk 与模块做三方差异；
-2. 用官方文件树运行两份 proprietary 列表，生成缺失/命中/版本差异报告；
-3. 收敛 `pvmfw/mi_ext/system_dlkm` 的 AVB 和 OTA 描述符策略；
-4. 将官方 camera/display/Goodix 配置与两份类原生成品逐路径对照；
-5. 准备 6.6.77 prebuilt kernel tree 和 3.0.304 proprietary tree；
-6. 在 EvolutionX `bka` 完整源树上执行首个 `userdebug` 编译；
-7. 编译通过后再进入 production `user`、项目签名、完整 AVB 与 A/B 验收。
+1. 收敛 `pvmfw/mi_ext/system_dlkm` 的 AVB 和 OTA 描述符策略；
+2. 将官方 camera/display/Goodix 配置与两份类原生成品逐路径对照；
+3. 生成 3.0.304 proprietary tree，并完成 ELF 依赖、符号版本和服务注册检查；
+4. 准备官方一致的 6.6.77 prebuilt kernel、DTB/DTBO 与模块组合；
+5. 在 EvolutionX `bka` 完整源树上执行首个 `userdebug` 编译；
+6. 编译通过后进入 production `user`、项目签名、完整 AVB 与 A/B 验收；
+7. 收到用户的 6.6.143 完整 artifact 后，在独立分支执行 KMI 与运行时对照。

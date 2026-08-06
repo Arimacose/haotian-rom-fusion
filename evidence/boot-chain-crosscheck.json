@@ -240,6 +240,209 @@
     "All three boot kernels are byte-identical.",
     "All three vendor_boot DTBs and DTBO entries differ.",
     "Official and Lineage enable protected VM; EvolutionX disables it.",
-    "Only LineageOS 0704 adds androidboot.selinux=permissive."
-  ]
+    "Only LineageOS 0704 adds androidboot.selinux=permissive.",
+    "Each vendor ramdisk has 434 modules; official uses mi_wq_dynamic_priority.ko where both custom ROMs use miloadtrace.ko.",
+    "The custom ROMs share 404 byte-identical modules that differ from official 3.0.304, so kernel and vendor modules must be kept as a coherent set."
+  ],
+  "vendor_ramdisk_modules": {
+    "full_evidence": {
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\vendor-ramdisk-module-three-way.json",
+      "bytes": 32422,
+      "sha256": "a1f6cb09a5083bbff2511269cd95382c8ab4248a81cd3a4c0ba1e7bba3f99831"
+    },
+    "counts": {
+      "official": {
+        "ko": 434,
+        "all_files": 440
+      },
+      "evolutionx": {
+        "ko": 434,
+        "all_files": 441
+      },
+      "lineageos": {
+        "ko": 434,
+        "all_files": 440
+      }
+    },
+    "module_set_patterns": {
+      "official+evolutionx+lineageos": {
+        "count": 433
+      },
+      "official": {
+        "count": 1,
+        "paths": [
+          "mi_wq_dynamic_priority.ko"
+        ]
+      },
+      "evolutionx+lineageos": {
+        "count": 1,
+        "paths": [
+          "miloadtrace.ko"
+        ]
+      }
+    },
+    "common_module_content_patterns": {
+      "evolutionx=lineageos": {
+        "count": 404
+      },
+      "all_different": {
+        "count": 20,
+        "paths": [
+          "bq27z561.ko",
+          "charger_partition.ko",
+          "mca_basic_wireless.ko",
+          "mca_bmd.ko",
+          "mca_buckchg_jeita.ko",
+          "mca_business_charger_comp.ko",
+          "mca_charger_thermal.ko",
+          "mca_qcom_subpmic_proxy.ko",
+          "mca_qcom_sysfs.ko",
+          "mca_quick_wireless.ko",
+          "mca_smart_charge.ko",
+          "mca_strategy_buckchg.ko",
+          "mca_strategy_class.ko",
+          "mca_strategy_fg_comp.ko",
+          "mca_strategy_quickchg.ko",
+          "mca_wireless_revchg.ko",
+          "msm_drm.ko",
+          "msm_hw_fence.ko",
+          "nuvolta_1652.ko",
+          "smcinvoke_dlkm.ko"
+        ]
+      },
+      "all_identical": {
+        "count": 9,
+        "paths": [
+          "debug_ext.ko",
+          "hdcp_qseecom_dlkm.ko",
+          "ipclite.ko",
+          "msm-mmrm.ko",
+          "msm_ext_display.ko",
+          "smmu_proxy_dlkm.ko",
+          "sync_fence.ko",
+          "synx-driver.ko",
+          "tz_log_dlkm.ko"
+        ]
+      }
+    },
+    "load_lists": {
+      "modules.load": {
+        "line_counts": {
+          "official": 143,
+          "evolutionx": 143,
+          "lineageos": 143
+        },
+        "evolutionx_equals_lineageos": true,
+        "official_removed_for_custom": [
+          "mi_wq_dynamic_priority.ko"
+        ],
+        "custom_added_vs_official": [
+          "miloadtrace.ko"
+        ]
+      },
+      "modules.load.recovery": {
+        "line_counts": {
+          "official": 432,
+          "evolutionx": 432,
+          "lineageos": 432
+        },
+        "evolutionx_equals_lineageos": true,
+        "official_removed_for_custom": [
+          "mi_wq_dynamic_priority.ko"
+        ],
+        "custom_added_vs_official": [
+          "miloadtrace.ko"
+        ]
+      }
+    },
+    "metadata_hash_relationships": {
+      "all_three_identical": [
+        "modules.alias",
+        "modules.blocklist",
+        "modules.softdep"
+      ],
+      "evolutionx_equals_lineageos": [
+        "modules.dep",
+        "modules.load",
+        "modules.load.recovery"
+      ],
+      "evolutionx_only_extra_file": {
+        "name": "modules.load.charger",
+        "equals_evolutionx_modules.load.recovery": true
+      }
+    },
+    "focus_modules": {
+      "cs40l26": [
+        {
+          "path": "cs40l26-core.ko",
+          "official": {
+            "bytes": 266160,
+            "sha256": "450f170fb803b535923c0d890cb6704aba3f597e2432bad3820c3e9f280fb50b"
+          },
+          "evolutionx": {
+            "bytes": 266160,
+            "sha256": "5962e3c6b376763eedd6cbfcf6b5f8c46ae647802dc968c5cbc5533ad9404761"
+          },
+          "lineageos": {
+            "bytes": 266160,
+            "sha256": "5962e3c6b376763eedd6cbfcf6b5f8c46ae647802dc968c5cbc5533ad9404761"
+          }
+        },
+        {
+          "path": "cs40l26-i2c.ko",
+          "official": {
+            "bytes": 19416,
+            "sha256": "ef6a181ef1b9fa72d44ff0725e2d831f08e53c5d8f588fe15781f1f90a99a43d"
+          },
+          "evolutionx": {
+            "bytes": 19416,
+            "sha256": "e97106db9d0a01becb0149c8935bbe9ecf01a5db149e8179a53cc433286c9bba"
+          },
+          "lineageos": {
+            "bytes": 19416,
+            "sha256": "e97106db9d0a01becb0149c8935bbe9ecf01a5db149e8179a53cc433286c9bba"
+          }
+        },
+        {
+          "path": "snd-soc-cs40l26.ko",
+          "official": {
+            "bytes": 70448,
+            "sha256": "aca99622951c4d6b9d5881be51fdb808ec0be5630c694303370920b9c3ff92b9"
+          },
+          "evolutionx": {
+            "bytes": 70448,
+            "sha256": "3653ef66cb471d379f52dc7a6e9272a6140d3a2c05e9690413eac54d76d301c9"
+          },
+          "lineageos": {
+            "bytes": 70448,
+            "sha256": "3653ef66cb471d379f52dc7a6e9272a6140d3a2c05e9690413eac54d76d301c9"
+          }
+        }
+      ],
+      "speed_touch": [
+        {
+          "path": "speed_touch.ko",
+          "official": {
+            "bytes": 18704,
+            "sha256": "22d73fcd3312c6245739ef266015f25a824c05ad04f20ab0e90eaeacc0b8ccf3"
+          },
+          "evolutionx": {
+            "bytes": 18704,
+            "sha256": "24c6e6872e2530692d406a258fb243def14a1f0da5589d3582e5e96576ee4f5a"
+          },
+          "lineageos": {
+            "bytes": 18704,
+            "sha256": "24c6e6872e2530692d406a258fb243def14a1f0da5589d3582e5e96576ee4f5a"
+          }
+        }
+      ]
+    },
+    "findings": [
+      "Each vendor ramdisk carries 434 kernel modules, but the official set replaces miloadtrace.ko with mi_wq_dynamic_priority.ko.",
+      "EvolutionX and LineageOS have identical normal and recovery module load lists.",
+      "Among 433 common modules, 404 are byte-identical between EvolutionX and LineageOS while differing from official 3.0.304; 20 differ across all three; 9 are identical across all three.",
+      "CS40L26 and speed_touch modules are byte-identical between EvolutionX and LineageOS but differ from official 3.0.304.",
+      "The shared boot kernel does not make vendor ramdisk module sets interchangeable; keep kernel, DTB/DTBO, modules and load metadata as one coherent baseline."
+    ]
+  }
 }

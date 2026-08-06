@@ -16,6 +16,7 @@
 4. LineageOS 0704 成品采用私有 release keys 并收敛调试属性，但 bootconfig 仍是全局 SELinux permissive。
 5. 第一版融合构建继续以官方 HyperOS `OS3.0.304.0.WOBCNXM` 为底层，不混入 LineageOS 携带的第三固件集合。
 6. 0603 成品的系统 Build ID 为 `BP4A.251205.006`，因此首个可复现源码构建固定 EvolutionX `bka`，而不是已经转向 `CP2A` 的 `cnb`。
+7. 三份 `vendor_boot` 都带 434 个模块；EvolutionX 与 LineageOS 的 404 个模块逐字节相同但与官方 3.0.304 不同，首版必须保持 kernel、DTB/DTBO、模块与加载元数据成组一致。
 
 ## 仓库边界
 
@@ -49,9 +50,10 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [x] 提取官方 boot、init_boot、vendor_boot、dtbo、vbmeta、super 和 8 个有效逻辑分区
 - [x] 只读展开 8 个官方 EROFS，生成 16,071 个文件、768 个符号链接的全量哈希清单
 - [x] 官方/Lineage/Evolution boot kernel 三方比较：三者逐字节相同
-- [ ] 官方/Lineage/Evolution DTBO、bootconfig、模块和 AVB 描述符的完整差异收敛
-- [x] CS40L26 校准 loader、ADB 收敛和 production AVB 补丁生成并通过静态应用检查
-- [ ] 三个补丁在 EvolutionX `bka` 完整源树中编译验证
+- [x] 官方/Lineage/Evolution DTBO、bootconfig 与 vendor ramdisk 模块的完整静态差异
+- [ ] `pvmfw/mi_ext/system_dlkm` 的 AVB 与 OTA 描述符策略收敛
+- [x] CS40L26 校准 loader、ADB 收敛、production AVB 与 3.0.304 Soter 路径补丁生成并通过静态应用检查
+- [ ] 四个补丁在 EvolutionX `bka` 完整源树中编译验证
 - [x] 两份 proprietary 列表对 3.0.304 文件树达到 4,786/4,786 路径覆盖
 - [ ] 生成 3.0.304 proprietary tree 并完成 ELF 依赖、版本与构建检查
 - [ ] 相机、Goodix、触控、显示和 enforcing 融合
