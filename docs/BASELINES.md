@@ -112,6 +112,7 @@ The five inspected haptic modules and `Hapticsconfig.xml` are also identical. Th
 
 | Repository | Branch | Commit |
 |---|---|---|
+| `Evolution-X/manifest` | `bka` | `0035c57e03e828999cd0c2be02ff64607c3ba649` |
 | `rep1ace/device_xiaomi_haotian` | `lineage-23.2` | `483ace84ff3f8ef9cf0438626ce221022d23f433` |
 | `rep1ace/device_xiaomi_sm8750-common` | `lineage-23.2` | `6f633ec0919fdfe3f8d307e8ab7770c1c1a90696` |
 

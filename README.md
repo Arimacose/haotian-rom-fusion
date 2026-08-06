@@ -5,8 +5,8 @@
 本项目不把某一份成品 ROM 当作唯一真值，而是按层选择三套基线中的优势：
 
 - **HyperOS 3.0.304**：官方 firmware、boot chain、DTB/DTBO、vendor/odm proprietary 组件和每机校准数据的权威基线；
-- **LineageOS 23.2 20260704**：CS40L26 振动校准恢复、较清晰的设备服务分层、标准 LineageOS 构建框架；
-- **EvolutionX 16.0 20260603**：HyperOSCamera 集成、细化显示曲线、HDR/HBM 调校素材和额外功能实现的对照样本。
+- **LineageOS 23.2 20260704**：CS40L26 振动校准恢复、较清晰的设备服务分层，以及 haotian/sm8750 公共设备树；
+- **EvolutionX 16.0 20260603**：`bka/BP4A` 平台与 Evolution 功能基座、HyperOSCamera 集成、细化显示曲线和 HDR/HBM 调校素材。
 
 ## 当前结论
 
@@ -15,6 +15,7 @@
 3. EvolutionX 的相机版本较新，显示曲线更细，但其 0603 成品为 `userdebug/test-keys`，且调试与 ADB 属性偏宽松。
 4. LineageOS 0704 成品采用私有 release keys 并收敛调试属性，但 bootconfig 仍是全局 SELinux permissive。
 5. 第一版融合构建继续以官方 HyperOS `OS3.0.304.0.WOBCNXM` 为底层，不混入 LineageOS 携带的第三固件集合。
+6. 0603 成品的系统 Build ID 为 `BP4A.251205.006`，因此首个可复现源码构建固定 EvolutionX `bka`，而不是已经转向 `CP2A` 的 `cnb`。
 
 ## 仓库边界
 
@@ -47,7 +48,8 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [ ] HyperOS 3.0.304 官方 12.2 GB fastboot 包完成下载与归档校验
 - [ ] 提取官方 boot、init_boot、vendor_boot、dtbo、vbmeta 和 super
 - [ ] 官方/Lineage/Evolution 内核、DTB、bootconfig 三方比较
-- [ ] CS40L26 校准 loader 补丁编译验证
+- [x] CS40L26 校准 loader、ADB 收敛和 production AVB 补丁生成并通过静态应用检查
+- [ ] 三个补丁在 EvolutionX `bka` 完整源树中编译验证
 - [ ] 3.0.304 proprietary blobs 清单和提取脚本
 - [ ] 相机、Goodix、触控、显示和 enforcing 融合
 - [ ] production user、AVB、签名、OTA 与 A/B 回滚门禁
@@ -78,7 +80,8 @@ python .\scripts\Compare-KernelBaselines.py --config .\configs\baselines.json
 - [`docs/SECURITY_AND_RELEASE_GATES.md`](docs/SECURITY_AND_RELEASE_GATES.md)：安全和发布门禁；
 - [`docs/DEVICE_TEST_MATRIX.md`](docs/DEVICE_TEST_MATRIX.md)：后续受控 A/B 真机验收矩阵；
 - [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)：本地工具来源、固定提交和 SHA-256；
-- [`patches/0001-haotian-cs40l26-calibration-loader.patch`](patches/0001-haotian-cs40l26-calibration-loader.patch)：第一批可回移补丁。
+- [`docs/BUILD_BOOTSTRAP.md`](docs/BUILD_BOOTSTRAP.md)：EvolutionX `bka` 初始化、固定清单、补丁和首编译门禁；
+- [`patches/README.md`](patches/README.md)：当前可回移补丁栈及目标提交。
 
 ## 远端
 

@@ -9,14 +9,14 @@ The project optimizes for reproducibility, hardware correctness, enforceable sec
 ## Architecture
 
 ```text
-LineageOS 23.2 framework and build system
+EvolutionX bka / BP4A platform and feature layer
                  |
-                 +-- haotian device tree
+                 +-- pinned LineageOS 23.2 haotian device tree
                  |     +-- reconstructed CS40L26 calibration loader
                  |     +-- stock-backed display configuration
                  |     +-- Goodix-first fingerprint integration
                  |
-                 +-- sm8750-common
+                 +-- pinned LineageOS 23.2 sm8750-common
                  |     +-- common AIDL services
                  |     +-- audio/radio/power/thermal integration
                  |
@@ -25,11 +25,23 @@ LineageOS 23.2 framework and build system
                  |     +-- vendor / odm
                  |     +-- official boot chain and DTB/DTBO
                  |
-                 +-- selected EvolutionX reference material
+                 +-- reviewed EvolutionX integration material
+                       +-- platform customization and user-facing features
                        +-- camera integration deltas
                        +-- display/HDR curve deltas
-                       +-- optional user-facing features after hardware gates
 ```
+
+## Decision 0: reproduce 0603 on EvolutionX `bka`
+
+The EvolutionX 0603 system reports `BP4A.251205.006` and EvolutionX `16.0`.
+EvolutionX's `bka` manifest uses the `bp4a` product family; the current `cnb`
+branch has moved to `cp2a`. The first source build therefore pins `bka` instead
+of silently mixing a newer platform with device behavior measured on BP4A.
+
+LineageOS remains the device-source and hardware-fix authority. EvolutionX is
+the platform/feature base so the result retains the user-facing advantages that
+would disappear in a plain Lineage framework build. A `cnb` migration begins
+only after the `bka` hardware and release gates pass.
 
 ## Decision 1: keep the official 3.0.304 firmware stack coherent
 

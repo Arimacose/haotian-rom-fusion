@@ -20,6 +20,10 @@ jobs:
           python -m json.tool configs/baselines.json >/dev/null
           python -m json.tool evidence/known-artifacts.json >/dev/null
           python -m py_compile scripts/*.py
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse('manifests/haotian-bka.xml')
+          PY
           python scripts/Build-BaselineManifest.py \
             --config configs/baselines.json \
             --config-only
@@ -32,13 +36,22 @@ jobs:
           if large:
               raise SystemExit('Large tracked files: ' + ', '.join(large))
           PY
-      - name: Validate CS40L26 patch against pinned source
+      - name: Validate haotian patches against pinned source
         run: |
           git clone --depth 50 --branch lineage-23.2 \
             https://github.com/rep1ace/device_xiaomi_haotian.git /tmp/device_xiaomi_haotian
           git -C /tmp/device_xiaomi_haotian checkout 483ace84ff3f8ef9cf0438626ce221022d23f433
           git -C /tmp/device_xiaomi_haotian apply --check \
             "$GITHUB_WORKSPACE/patches/0001-haotian-cs40l26-calibration-loader.patch"
+          git -C /tmp/device_xiaomi_haotian apply --check \
+            "$GITHUB_WORKSPACE/patches/0002-haotian-disable-adb-insecure.patch"
+      - name: Validate sm8750-common patch against pinned source
+        run: |
+          git clone --depth 50 --branch lineage-23.2 \
+            https://github.com/rep1ace/device_xiaomi_sm8750-common.git /tmp/device_xiaomi_sm8750-common
+          git -C /tmp/device_xiaomi_sm8750-common checkout 6f633ec0919fdfe3f8d307e8ab7770c1c1a90696
+          git -C /tmp/device_xiaomi_sm8750-common apply --check \
+            "$GITHUB_WORKSPACE/patches/0003-sm8750-production-avb-profile.patch"
 
   powershell:
     runs-on: windows-latest

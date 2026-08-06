@@ -45,6 +45,11 @@
     "aria2c": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aria2\\aria2-1.37.0\\aria2-1.37.0-win-64bit-build1\\aria2c.exe"
   },
   "source": {
+    "evolutionx_manifest": {
+      "url": "https://github.com/Evolution-X/manifest.git",
+      "branch": "bka",
+      "commit": "0035c57e03e828999cd0c2be02ff64607c3ba649"
+    },
     "device_xiaomi_haotian": {
       "url": "https://github.com/rep1ace/device_xiaomi_haotian.git",
       "branch": "lineage-23.2",
