@@ -1,1 +1,10 @@
-﻿# Scripts placeholder
+# Scripts
+
+| Script | Purpose |
+|---|---|
+| `Invoke-OfficialFastbootDownload.ps1` | Resume the official 3.0.304 TGZ, enforce expected length, compute SHA-256 and atomically write status |
+| `Extract-OfficialFastboot.ps1` | Validate and extract the TGZ, locate the images directory and hash selected boot/firmware images |
+| `Build-BaselineManifest.py` | Verify pinned local inputs and generate a compact baseline manifest |
+| `Compare-KernelBaselines.py` | Extract the official kernel and compare it with LineageOS and EvolutionX kernels |
+
+Scripts default to paths in `configs/baselines.json`. Large outputs remain under `D:\Codex\haotian-evox-0603-audit` and are excluded from Git.

@@ -1,1 +1,85 @@
-﻿# haotian ROM fusion workspace baseline
+# haotian ROM Fusion
+
+为 Xiaomi 15 Pro（设备代号 `haotian`）建立可持续维护的类原生 ROM 适配仓库。
+
+本项目不把某一份成品 ROM 当作唯一真值，而是按层选择三套基线中的优势：
+
+- **HyperOS 3.0.304**：官方 firmware、boot chain、DTB/DTBO、vendor/odm proprietary 组件和每机校准数据的权威基线；
+- **LineageOS 23.2 20260704**：CS40L26 振动校准恢复、较清晰的设备服务分层、标准 LineageOS 构建框架；
+- **EvolutionX 16.0 20260603**：HyperOSCamera 集成、细化显示曲线、HDR/HBM 调校素材和额外功能实现的对照样本。
+
+## 当前结论
+
+1. LineageOS 与 EvolutionX 的 boot kernel 逐字节相同，均为 Linux `6.6.77 android15-8`。
+2. LineageOS 的振动修复位于用户空间 HAL：读取 `persist/haptics` 中每机校准值并写入 CS40L26 sysfs，同时处理节点所有权。
+3. EvolutionX 的相机版本较新，显示曲线更细，但其 0603 成品为 `userdebug/test-keys`，且调试与 ADB 属性偏宽松。
+4. LineageOS 0704 成品采用私有 release keys 并收敛调试属性，但 bootconfig 仍是全局 SELinux permissive。
+5. 第一版融合构建继续以官方 HyperOS `OS3.0.304.0.WOBCNXM` 为底层，不混入 LineageOS 携带的第三固件集合。
+
+## 仓库边界
+
+GitHub 只保存源码补丁、构建配置、哈希与比较结果、自动化脚本、测试矩阵、发布门禁和回滚说明。
+
+以下内容只保留在 D 盘本地工作区：
+
+- OTA、TGZ、ZIP、IMG、BIN、APK、APEX、KO；
+- proprietary blobs；
+- 解包目录和构建输出；
+- AVB、APK、OTA 和平台签名私钥；
+- 每台设备独有的 persist、校准值和用户数据。
+
+## 本地目录
+
+```text
+D:\Codex\haotian-rom-fusion
+D:\Codex\haotian-evox-0603-audit\downloads
+D:\Codex\haotian-evox-0603-audit\work
+D:\Codex\haotian-evox-0603-audit\reports
+```
+
+## 项目状态
+
+- [x] EvolutionX 0603 OTA 完整静态拆包
+- [x] LineageOS 23.2 0704 OTA 完整静态拆包
+- [x] HyperOS 3.0.302/3.0.304 的 31 个 firmware 分区比较
+- [x] LineageOS 振动修复机制定位
+- [x] 私有 GitHub 仓库和可审阅 Git 基线
+- [ ] HyperOS 3.0.304 官方 12.2 GB fastboot 包完成下载与归档校验
+- [ ] 提取官方 boot、init_boot、vendor_boot、dtbo、vbmeta 和 super
+- [ ] 官方/Lineage/Evolution 内核、DTB、bootconfig 三方比较
+- [ ] CS40L26 校准 loader 补丁编译验证
+- [ ] 3.0.304 proprietary blobs 清单和提取脚本
+- [ ] 相机、Goodix、触控、显示和 enforcing 融合
+- [ ] production user、AVB、签名、OTA 与 A/B 回滚门禁
+
+## 快速开始
+
+```powershell
+# 续传并校验官方 fastboot 包
+pwsh -File .\scripts\Invoke-OfficialFastbootDownload.ps1
+
+# 提取 fastboot 包并生成关键镜像清单
+pwsh -File .\scripts\Extract-OfficialFastboot.ps1
+
+# 重建三方基线清单
+python .\scripts\Build-BaselineManifest.py --config .\configs\baselines.json
+
+# 官方 boot 到位后运行内核比较
+python .\scripts\Compare-KernelBaselines.py --config .\configs\baselines.json
+```
+
+## 文档
+
+- [`docs/BASELINES.md`](docs/BASELINES.md)：已固定制品、哈希、来源和证据等级；
+- [`docs/FUSION_PLAN.md`](docs/FUSION_PLAN.md)：分层融合方案与实施顺序；
+- [`docs/SECURITY_AND_RELEASE_GATES.md`](docs/SECURITY_AND_RELEASE_GATES.md)：安全和发布门禁；
+- [`docs/DEVICE_TEST_MATRIX.md`](docs/DEVICE_TEST_MATRIX.md)：后续受控 A/B 真机验收矩阵；
+- [`patches/0001-haotian-cs40l26-calibration-loader.patch`](patches/0001-haotian-cs40l26-calibration-loader.patch)：第一批可回移补丁。
+
+## 远端
+
+私有仓库：`https://github.com/Arimacose/haotian-rom-fusion`
+
+里程碑：`Fusion v0.1 bring-up`
+
+工作流已拆分为 GitHub Issues `#1` 至 `#7`：官方包、内核/KMI、振动、相机/显示、Goodix/硬件、安全加固、签名 A/B 验收。
