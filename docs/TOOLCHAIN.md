@@ -33,6 +33,17 @@ source: AOSP platform/external/avb
 local: D:\Codex\haotian-evox-0603-audit\tools\avb\avbtool.py
 ```
 
+## DTBO container inspection
+
+```text
+repository: https://android.googlesource.com/platform/system/libufdt
+commit: 131ee2db53ad7d9d4756555567894b01107cb26e
+tool: utils/src/mkdtboimg.py
+bytes: 43360
+SHA-256: 82ca0c5151d5c438b505d38cce828758a25ddf8f26fe957f0ac87cc8d2418949
+local: D:\Codex\haotian-evox-0603-audit\tools\platform_system_libufdt\utils\src\mkdtboimg.py
+```
+
 ## Payload extraction
 
 ```text

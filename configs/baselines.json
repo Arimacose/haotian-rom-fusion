@@ -43,6 +43,7 @@
     "lpunpack": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\lpunpack.exe",
     "lpdumps": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\lpdumps.exe",
     "simg2img": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\simg2img.exe",
+    "mkdtboimg": "D:\\Codex\\haotian-evox-0603-audit\\tools\\platform_system_libufdt\\utils\\src\\mkdtboimg.py",
     "aria2c": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aria2\\aria2-1.37.0\\aria2-1.37.0-win-64bit-build1\\aria2c.exe"
   },
   "source": {

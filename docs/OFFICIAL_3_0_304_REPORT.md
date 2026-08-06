@@ -134,6 +134,22 @@ D:\Codex\haotian-evox-0603-audit\downloads\stock-3.0.304-fastboot\haotian_images
 - dtbo overlay 数量、ID 与内容；
 - vendor_ramdisk/system_dlkm/vendor_dlkm 模块集合、vermagic、CRC 和加载顺序。
 
+已完成的下一层静态结果：
+
+| 项目 | 官方 3.0.304 | EvolutionX 0603 | LineageOS 0704 |
+|---|---|---|---|
+| vendor_boot bootconfig 字节 | 204 | 201 | 263 |
+| protected VM | `true` | `0` | `true` |
+| SELinux bootconfig | 未写入 permissive | 未写入 permissive | `androidboot.selinux=permissive` |
+| vendor_boot DTB 字节 | 4109344 | 4109544 | 4109248 |
+| DTBO entry 数量 | 1 | 1 | 1 |
+| DTBO entry 字节 | 546163 | 546065 | 546159 |
+
+三套 vendor_boot DTB 与 DTBO entry 哈希均不同。公开 common 树当前把 protected VM
+设为 `0`，与 EvolutionX 0603 一致；LineageOS 0704 成品则与官方一样设为 `true`，
+说明 0704 成品在这部分也领先或偏离当前公开提交。第一版将以官方 bootconfig/DTB/DTBO
+为权威，再逐项移植类原生必需的 ramdisk 变更。
+
 ## 7. AVB 实测
 
 | 项目 | 官方 3.0.304 | EvolutionX 0603 | LineageOS 0704 |
