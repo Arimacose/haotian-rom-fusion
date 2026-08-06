@@ -1,0 +1,1 @@
+﻿# Kernel comparison placeholder
