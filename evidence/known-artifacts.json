@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "device": "haotian",
+  "captured_at": "2026-08-06T12:00:00+08:00",
+  "device_operations": false,
+  "artifacts": [
+    {
+      "name": "official-hyperos-3.0.304-fastboot",
+      "state": "verified",
+      "expected_bytes": 12202675840,
+      "bytes": 12202675840,
+      "sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
+      "etag": "A3388C0571D61A1BE119D49E30D24F47-400",
+      "oss_crc64_ecma": "13677892784823728727",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",
+      "state_file": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\download-status.json"
+    },
+    {
+      "name": "official-hyperos-3.0.304-firmware",
+      "state": "verified",
+      "bytes": 225962906,
+      "sha256": "4032667c4b846cd5fb630e6bb29b21b6eaf37810c62a972e1fea35d1fca210ab",
+      "md5": "00896864d04b81c8749c056b27b9aa92",
+      "zip_crc": true,
+      "firmware_images": 31
+    },
+    {
+      "name": "evolutionx-0603-ota",
+      "state": "verified",
+      "bytes": 5715602972,
+      "sha256": "7a3a739607251c7cafe5aee2c2e4590ffbb7c6366fb7fae01124a41ce0bb8894",
+      "payload_sha256": "59b57e7cce7ed2e640e8fef2e6ab6252048305e903c6c3212461275ff3580bce"
+    },
+    {
+      "name": "lineageos-0704-ota",
+      "state": "verified",
+      "bytes": 4538160145,
+      "sha256": "3f2308e8df0a82b7a5feef2dab5b40c75897242a9c3d98d87387e8cc2d3e5191",
+      "payload_sha256": "7c243beba7b082c97921164259d26b36f265da7b35288b58ef8d8559be9c376c",
+      "ota_signature_valid": true
+    },
+    {
+      "name": "shared-lineage-evolution-kernel",
+      "state": "verified",
+      "bytes": 36456960,
+      "sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "version": "Linux 6.6.77 android15-8",
+      "byte_identical": true
+    }
+  ],
+  "source_heads": {
+    "device_xiaomi_haotian": "483ace84ff3f8ef9cf0438626ce221022d23f433",
+    "device_xiaomi_sm8750_common": "6f633ec0919fdfe3f8d307e8ab7770c1c1a90696"
+  }
+}

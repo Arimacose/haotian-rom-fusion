@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-06T13:11:28+08:00",
+  "device": "haotian",
+  "records": [
+    {
+      "name": "official-fastboot-3.0.304",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",
+      "exists": true,
+      "expected_bytes": 12202675840,
+      "expected_sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
+      "bytes": 12202675840,
+      "size_match": true,
+      "sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
+      "sha256_match": true
+    },
+    {
+      "name": "official-firmware-3.0.304",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-firmware\\fw_haotian_haotian-ota_full-OS3.0.304.0.WOBCNXM-user-16.0-8a448bc623.zip",
+      "exists": true,
+      "expected_bytes": 225962906,
+      "expected_sha256": "4032667c4b846cd5fb630e6bb29b21b6eaf37810c62a972e1fea35d1fca210ab",
+      "bytes": 225962906,
+      "size_match": true,
+      "sha256": "4032667c4b846cd5fb630e6bb29b21b6eaf37810c62a972e1fea35d1fca210ab",
+      "sha256_match": true
+    },
+    {
+      "name": "evolutionx-0603-ota",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\EvolutionX-16.0-20260603-haotian-11.7-Unofficial.zip",
+      "exists": true,
+      "expected_bytes": 5715602972,
+      "expected_sha256": "7a3a739607251c7cafe5aee2c2e4590ffbb7c6366fb7fae01124a41ce0bb8894",
+      "bytes": 5715602972,
+      "size_match": true,
+      "sha256": "7a3a739607251c7cafe5aee2c2e4590ffbb7c6366fb7fae01124a41ce0bb8894",
+      "sha256_match": true
+    },
+    {
+      "name": "lineageos-0704-ota",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\lineageos-23.2-20260704\\lineage-23.2-20260704-UNOFFICIAL-haotian.zip",
+      "exists": true,
+      "expected_bytes": 4538160145,
+      "expected_sha256": "3f2308e8df0a82b7a5feef2dab5b40c75897242a9c3d98d87387e8cc2d3e5191",
+      "bytes": 4538160145,
+      "size_match": true,
+      "sha256": "3f2308e8df0a82b7a5feef2dab5b40c75897242a9c3d98d87387e8cc2d3e5191",
+      "sha256_match": true
+    },
+    {
+      "name": "evolutionx-kernel",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\work\\boot-unpacked\\boot\\kernel",
+      "exists": true,
+      "expected_bytes": 36456960,
+      "expected_sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "bytes": 36456960,
+      "size_match": true,
+      "sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "sha256_match": true
+    },
+    {
+      "name": "lineageos-kernel",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\work\\lineageos-23.2-20260704\\boot-unpacked\\boot\\kernel",
+      "exists": true,
+      "expected_bytes": 36456960,
+      "expected_sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "bytes": 36456960,
+      "size_match": true,
+      "sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "sha256_match": true
+    }
+  ],
+  "mismatches": [],
+  "absent": [],
+  "valid": true
+}

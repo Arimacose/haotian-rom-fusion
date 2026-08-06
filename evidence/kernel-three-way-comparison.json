@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-06T12:59:41+08:00",
+  "device": "haotian",
+  "official_pending": false,
+  "kernels": [
+    {
+      "name": "official-3.0.304",
+      "path": "D:\\Codex\\haotian-rom-fusion\\evidence\\kernel-unpack\\official-3.0.304\\kernel",
+      "bytes": 36456960,
+      "sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "linux_banner": "Linux version 6.6.77-android15-8-gca30f3b4bef6-abogki440974771-4k (kleaf@build-host) (Android (11368308, +pgo, +bolt, +lto, +mlgo, based on r510928) clang version 18.0.0 (https://android.googlesource.com/toolchain/llvm-project 477610d4d0d988e69dbc3fae4fe86bff3f07f2b5), LLD 18.0.0) #1 SMP PREEMPT Mon Sep  1 06:06:55 UTC 2025"
+    },
+    {
+      "name": "evolutionx-0603",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\work\\boot-unpacked\\boot\\kernel",
+      "bytes": 36456960,
+      "sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "linux_banner": "Linux version 6.6.77-android15-8-gca30f3b4bef6-abogki440974771-4k (kleaf@build-host) (Android (11368308, +pgo, +bolt, +lto, +mlgo, based on r510928) clang version 18.0.0 (https://android.googlesource.com/toolchain/llvm-project 477610d4d0d988e69dbc3fae4fe86bff3f07f2b5), LLD 18.0.0) #1 SMP PREEMPT Mon Sep  1 06:06:55 UTC 2025"
+    },
+    {
+      "name": "lineageos-0704",
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\work\\lineageos-23.2-20260704\\boot-unpacked\\boot\\kernel",
+      "bytes": 36456960,
+      "sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "linux_banner": "Linux version 6.6.77-android15-8-gca30f3b4bef6-abogki440974771-4k (kleaf@build-host) (Android (11368308, +pgo, +bolt, +lto, +mlgo, based on r510928) clang version 18.0.0 (https://android.googlesource.com/toolchain/llvm-project 477610d4d0d988e69dbc3fae4fe86bff3f07f2b5), LLD 18.0.0) #1 SMP PREEMPT Mon Sep  1 06:06:55 UTC 2025"
+    }
+  ],
+  "identical_sha256_groups": [
+    {
+      "sha256": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "members": [
+        "official-3.0.304",
+        "evolutionx-0603",
+        "lineageos-0704"
+      ]
+    }
+  ],
+  "unpack_notes": {
+    "official-3.0.304": "boot magic: ANDROID!\nkernel_size: 36456960\nramdisk size: 0\nos version: None\nos patch level: None\nboot image header version: 4\ncommand line args: \nboot.img signature size: 0\n"
+  },
+  "public_prebuilt_candidates": {
+    "analyzed_at": "2026-08-06",
+    "full_evidence": {
+      "path": "D:\\Codex\\haotian-rom-fusion-build\\kernel-candidates\\official-coherence-summary.json",
+      "bytes": 10265,
+      "sha256": "a3232389047f226b4c94845d55440096027075b2056c0254c9e4e1bc4119c5b0"
+    },
+    "selected": {
+      "repository": "https://github.com/Crisp-los/device_xiaomi_haotian-kernel.git",
+      "branch": "main",
+      "commit": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "reason": "Every compared boot-chain and module artifact is byte-identical to official HyperOS 3.0.304 after text line-ending normalization.",
+      "exact_matches": {
+        "kernel": 1,
+        "dtbo": 1,
+        "dtb_files": 8,
+        "dtb_concatenation": 1,
+        "vendor_ramdisk_ko": 434,
+        "vendor_dlkm_ko": 397,
+        "system_dlkm_versioned_ko": 96,
+        "system_dlkm_flatten_ko": 96,
+        "module_load_and_blocklist_files": 6
+      },
+      "generated_header_archive_test": {
+        "case_sensitive_checkout": "D:\\Codex\\haotian-rom-fusion-build\\kernel-selected-cs",
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\kernel-selected-cs\\prebuilt_kernel_headers.tar.gz",
+        "bytes": 1826624,
+        "sha256": "43315426829f37bb0665349a7574d46e896ece8e11d184aada3d3a3a7ff0bc43",
+        "deterministic_second_run": true,
+        "validation": [
+          "pinned commit",
+          "uppercase/lowercase header pair present",
+          "gzip integrity",
+          "archive entries present"
+        ]
+      }
+    },
+    "rejected_for_first_build": [
+      {
+        "repository": "https://github.com/lolipuru/device_xiaomi_haotian-kernel.git",
+        "commit": "e7a7f3183dd5bcf3ca43e228cf205d798e9e1f41",
+        "reason": "Kernel matches, but DTB/DTBO and most vendor modules differ from official 3.0.304; extra module paths are present."
+      },
+      {
+        "repository": "https://github.com/xiaomi-sun/device_xiaomi_haotian-kernel.git",
+        "branch": "bp4a",
+        "commit": "6b4c27c171c01845684d71fbb88618dc9623e1e7",
+        "reason": "Kernel matches, but DTB follows the Lineage baseline, DTBO differs, and vendor module contents follow the custom-ROM baseline."
+      }
+    ],
+    "checkout_note": "Clone the selected repository inside a case-sensitive Linux filesystem; Windows checkout reports case-colliding kernel headers."
+  }
+}

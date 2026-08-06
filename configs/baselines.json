@@ -1,1 +1,72 @@
-﻿{}
+{
+  "schema_version": "1.0",
+  "device": "haotian",
+  "generated_at": "2026-08-06T12:00:00+08:00",
+  "audit_root": "D:\\Codex\\haotian-evox-0603-audit",
+  "official_3_0_304": {
+    "version": "OS3.0.304.0.WOBCNXM",
+    "url": "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS3.0.304.0.WOBCNXM/haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",
+    "expected_bytes": 12202675840,
+    "sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
+    "etag": "A3388C0571D61A1BE119D49E30D24F47-400",
+    "oss_crc64_ecma": "13677892784823728727",
+    "archive": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",
+    "extract_root": "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot",
+    "firmware_zip": {
+      "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-firmware\\fw_haotian_haotian-ota_full-OS3.0.304.0.WOBCNXM-user-16.0-8a448bc623.zip",
+      "bytes": 225962906,
+      "sha256": "4032667c4b846cd5fb630e6bb29b21b6eaf37810c62a972e1fea35d1fca210ab",
+      "md5": "00896864d04b81c8749c056b27b9aa92"
+    }
+  },
+  "evolutionx": {
+    "version": "EvolutionX-16.0-20260603-haotian-11.7-Unofficial",
+    "archive": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\EvolutionX-16.0-20260603-haotian-11.7-Unofficial.zip",
+    "bytes": 5715602972,
+    "sha256": "7a3a739607251c7cafe5aee2c2e4590ffbb7c6366fb7fae01124a41ce0bb8894",
+    "payload_sha256": "59b57e7cce7ed2e640e8fef2e6ab6252048305e903c6c3212461275ff3580bce",
+    "partition_root": "D:\\Codex\\haotian-evox-0603-audit\\work\\partitions",
+    "kernel": "D:\\Codex\\haotian-evox-0603-audit\\work\\boot-unpacked\\boot\\kernel"
+  },
+  "lineageos": {
+    "version": "23.2-20260704-UNOFFICIAL-haotian",
+    "archive": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\lineageos-23.2-20260704\\lineage-23.2-20260704-UNOFFICIAL-haotian.zip",
+    "bytes": 4538160145,
+    "sha256": "3f2308e8df0a82b7a5feef2dab5b40c75897242a9c3d98d87387e8cc2d3e5191",
+    "payload_sha256": "7c243beba7b082c97921164259d26b36f265da7b35288b58ef8d8559be9c376c",
+    "partition_root": "D:\\Codex\\haotian-evox-0603-audit\\work\\lineageos-23.2-20260704\\partitions",
+    "kernel": "D:\\Codex\\haotian-evox-0603-audit\\work\\lineageos-23.2-20260704\\boot-unpacked\\boot\\kernel"
+  },
+  "tools": {
+    "unpack_bootimg": "D:\\Codex\\haotian-evox-0603-audit\\tools\\mkbootimg\\unpack_bootimg.py",
+    "avbtool": "D:\\Codex\\haotian-evox-0603-audit\\tools\\avb\\avbtool.py",
+    "lpunpack": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\lpunpack.exe",
+    "lpdumps": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\lpdumps.exe",
+    "simg2img": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\simg2img.exe",
+    "mkdtboimg": "D:\\Codex\\haotian-evox-0603-audit\\tools\\platform_system_libufdt\\utils\\src\\mkdtboimg.py",
+    "aria2c": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aria2\\aria2-1.37.0\\aria2-1.37.0-win-64bit-build1\\aria2c.exe"
+  },
+  "source": {
+    "evolutionx_manifest": {
+      "url": "https://github.com/Evolution-X/manifest.git",
+      "branch": "bka",
+      "commit": "0035c57e03e828999cd0c2be02ff64607c3ba649"
+    },
+    "device_xiaomi_haotian": {
+      "url": "https://github.com/rep1ace/device_xiaomi_haotian.git",
+      "branch": "lineage-23.2",
+      "commit": "483ace84ff3f8ef9cf0438626ce221022d23f433"
+    },
+    "device_xiaomi_sm8750_common": {
+      "url": "https://github.com/rep1ace/device_xiaomi_sm8750-common.git",
+      "branch": "lineage-23.2",
+      "commit": "6f633ec0919fdfe3f8d307e8ab7770c1c1a90696"
+    },
+    "device_xiaomi_haotian_kernel": {
+      "url": "https://github.com/Crisp-los/device_xiaomi_haotian-kernel.git",
+      "branch": "main",
+      "commit": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "selection": "byte-identical official 3.0.304 kernel, DTB/DTBO, vendor_ramdisk, vendor_dlkm and system_dlkm set"
+    }
+  }
+}

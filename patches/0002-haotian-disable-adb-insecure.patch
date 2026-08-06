@@ -1,0 +1,26 @@
+From 813e22a5b07f0b7fda7e358d3b96e35ac35cfd29 Mon Sep 17 00:00:00 2001
+From: Codex <codex@localhost>
+Date: Thu, 6 Aug 2026 12:47:17 +0800
+Subject: [PATCH] haotian: drop insecure ADB bring-up override
+
+---
+ lineage_haotian.mk | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/lineage_haotian.mk b/lineage_haotian.mk
+index 43279a7..e5bf429 100644
+--- a/lineage_haotian.mk
++++ b/lineage_haotian.mk
+@@ -8,9 +8,6 @@
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+ 
+-# Bringup debug: keep adbd available before the framework is healthy.
+-WITH_ADB_INSECURE := true
+-
+ # Inherit some common Lineage stuff.
+ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+ 
+-- 
+2.45.1.windows.1
+

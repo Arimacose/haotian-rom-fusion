@@ -1,0 +1,47 @@
+From f45ffb59640dd9f387bd41e5c7dfd13802c5c658 Mon Sep 17 00:00:00 2001
+From: Codex <codex@localhost>
+Date: Thu, 6 Aug 2026 12:47:50 +0800
+Subject: [PATCH] sm8750-common: use production AVB profile
+
+---
+ BoardConfigCommon.mk | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+diff --git a/BoardConfigCommon.mk b/BoardConfigCommon.mk
+index 1238184..5894669 100644
+--- a/BoardConfigCommon.mk
++++ b/BoardConfigCommon.mk
+@@ -135,22 +135,26 @@ VENDOR_SECURITY_PATCH := $(XIAOMI_SM8750_SECURITY_PATCH)
+ 
+ # Verified Boot
+ BOARD_AVB_ENABLE := true
+-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
++# Release artifacts use a project-owned signing identity and verification-enabled vbmeta.
++HAOTIAN_AVB_KEY_PATH ?= vendor/haotian/security/avb.pem
++BOARD_AVB_ALGORITHM := SHA256_RSA4096
++BOARD_AVB_KEY_PATH := $(HAOTIAN_AVB_KEY_PATH)
++BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS := --flags 0
+ BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+ 
+-BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
++BOARD_AVB_BOOT_KEY_PATH := $(HAOTIAN_AVB_KEY_PATH)
+ BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA4096
+ BOARD_AVB_BOOT_ROLLBACK_INDEX := $(XIAOMI_SM8750_SECURITY_PATCH_TIMESTAMP)
+ BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 3
+ 
+-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
++BOARD_AVB_RECOVERY_KEY_PATH := $(HAOTIAN_AVB_KEY_PATH)
+ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(XIAOMI_SM8750_SECURITY_PATCH_TIMESTAMP)
+ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+ 
+ BOARD_AVB_VBMETA_SYSTEM := system system_dlkm system_ext product
+ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
+-BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
++BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := $(HAOTIAN_AVB_KEY_PATH)
+ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(XIAOMI_SM8750_SECURITY_PATCH_TIMESTAMP)
+ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
+ 
+-- 
+2.45.1.windows.1
+

@@ -1,0 +1,1180 @@
+{
+    "schema_version":  "1.0",
+    "generated_at":  "2026-08-06T12:59:22.7456371+08:00",
+    "source_archive":  "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",
+    "source_bytes":  12202675840,
+    "source_sha256":  "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
+    "images_directory":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images",
+    "file_count":  100,
+    "all_files":  [
+                      {
+                          "name":  "abl.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\abl.elf",
+                          "bytes":  335672,
+                          "sha256":  "11472b718202d5a32c8d3c9f9c86a70a7319b443a53b02c77f02ecec7af0ed66"
+                      },
+                      {
+                          "name":  "about.html",
+                          "extension":  ".html",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\about.html",
+                          "bytes":  12548,
+                          "sha256":  "b33389137ea940054f0559895a2f09b9d06b3c0eb7030f658986347aace91444"
+                      },
+                      {
+                          "name":  "anti_version.txt",
+                          "extension":  ".txt",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\anti_version.txt",
+                          "bytes":  2,
+                          "sha256":  "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+                      },
+                      {
+                          "name":  "aop.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\aop.mbn",
+                          "bytes":  372424,
+                          "sha256":  "60850b5e0070a979933c128b64916f4813f3bff038675bacb155312414cc8d22"
+                      },
+                      {
+                          "name":  "aop_devcfg.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\aop_devcfg.mbn",
+                          "bytes":  29224,
+                          "sha256":  "85192764eb09f8fff3fd965d796144304d2aa32d54ea02fcc617e20b64725fb1"
+                      },
+                      {
+                          "name":  "apdp.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\apdp.mbn",
+                          "bytes":  262144,
+                          "sha256":  "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+                      },
+                      {
+                          "name":  "boot.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\boot.img",
+                          "bytes":  100663296,
+                          "sha256":  "ad8c9b89c96ff5473e17cfd0fa18b3f45d8dbeafa23f4846fe45469a9b6b4d09"
+                      },
+                      {
+                          "name":  "BTFM.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\BTFM.bin",
+                          "bytes":  3993600,
+                          "sha256":  "dbed6c12becc45131e878f3b548fe8ffc4dc4e6781d24656643827ee621d384b"
+                      },
+                      {
+                          "name":  "countrycode.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\countrycode.img",
+                          "bytes":  1048576,
+                          "sha256":  "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+                      },
+                      {
+                          "name":  "cpucp.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\cpucp.elf",
+                          "bytes":  319116,
+                          "sha256":  "b7d0786134b221d027fb02df7b04fe10f36f5479cc1fc49105971f120be63766"
+                      },
+                      {
+                          "name":  "cpucp_dtbs.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\cpucp_dtbs.elf",
+                          "bytes":  13440,
+                          "sha256":  "454b376787b6afeba4596d1473c9e40909944a9c9001c712bb7abbbbe8205c44"
+                      },
+                      {
+                          "name":  "crclist.txt",
+                          "extension":  ".txt",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\crclist.txt",
+                          "bytes":  859,
+                          "sha256":  "7c4c1f339c6c7828e01ed391c47297adca41b405a9641a8ab02506b13fb9a369"
+                      },
+                      {
+                          "name":  "dcd.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dcd.mbn",
+                          "bytes":  16908,
+                          "sha256":  "7294355144ae689ebed9e9488c5bec7a73cefba66384864f0bdc3044b6e419a9"
+                      },
+                      {
+                          "name":  "devcfg.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\devcfg.mbn",
+                          "bytes":  57896,
+                          "sha256":  "ac1b5102ea48bcfbbf95098a946af37413a4160f1957c89a782d7b6715bb1d12"
+                      },
+                      {
+                          "name":  "dspso.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dspso.bin",
+                          "bytes":  67108864,
+                          "sha256":  "baff353322d7a658353e17749ca407e1ddee14c8ab50163f243ab79416c32890"
+                      },
+                      {
+                          "name":  "dtbo.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dtbo.img",
+                          "bytes":  18874368,
+                          "sha256":  "602f91eb634ad49d70c59d45a071358f37e02ded68db563efb9b25b4d7dfa804"
+                      },
+                      {
+                          "name":  "dummy.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dummy.img",
+                          "bytes":  8192,
+                          "sha256":  "9f1dcbc35c350d6027f98be0f5c8b43b42ca52b7604459c0c42be3aa88913d47"
+                      },
+                      {
+                          "name":  "featenabler.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\featenabler.mbn",
+                          "bytes":  105440,
+                          "sha256":  "6adc75d8937932c24a0e10676680a81657e3ab6d456d3731fa5be3b6b98f5420"
+                      },
+                      {
+                          "name":  "frp_erase.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\frp_erase.mbn",
+                          "bytes":  524288,
+                          "sha256":  "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541"
+                      },
+                      {
+                          "name":  "gpt_backup0.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_backup0.bin",
+                          "bytes":  20480,
+                          "sha256":  "9156da8adea35bc70d16e476501e56404ef507a032e8bdc76ef7b33eb312c230"
+                      },
+                      {
+                          "name":  "gpt_backup1.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_backup1.bin",
+                          "bytes":  20480,
+                          "sha256":  "497e973bcb54a9fea4e18a5dba33d83231ebe9c11c9b47b9d20345a3fc527a69"
+                      },
+                      {
+                          "name":  "gpt_backup2.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_backup2.bin",
+                          "bytes":  20480,
+                          "sha256":  "58e764f6cb37db4049a7d900da425d249db899df4f5fa9c64927239a92155d27"
+                      },
+                      {
+                          "name":  "gpt_backup3.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_backup3.bin",
+                          "bytes":  20480,
+                          "sha256":  "acb1c3b61f69adc8253bb0330db1e7b5711534a1f93ba5c9184a7664ebd9e589"
+                      },
+                      {
+                          "name":  "gpt_backup4.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_backup4.bin",
+                          "bytes":  20480,
+                          "sha256":  "bf523ef67f5827d7545b2d78829e9506e94ff7b2a8672e67bd4ede82a367c7c5"
+                      },
+                      {
+                          "name":  "gpt_backup5.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_backup5.bin",
+                          "bytes":  20480,
+                          "sha256":  "b353a4af459823e51d54b4cb300befeae22fc7aceaa9a18b3b12771b4b5a5320"
+                      },
+                      {
+                          "name":  "gpt_both0.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_both0.bin",
+                          "bytes":  45056,
+                          "sha256":  "f1b89b83efa50068c627c16d022dc436d426dafae625451e376deaff0930065c"
+                      },
+                      {
+                          "name":  "gpt_both1.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_both1.bin",
+                          "bytes":  45056,
+                          "sha256":  "ffafe380c08977b3b31ebf8f185475288d38c06425f6b74c0e704fb1603f5f80"
+                      },
+                      {
+                          "name":  "gpt_both2.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_both2.bin",
+                          "bytes":  45056,
+                          "sha256":  "9bdc7428f1dc119235c8380801469c0f01e252e7e1d8140e12ac76af24733b97"
+                      },
+                      {
+                          "name":  "gpt_both3.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_both3.bin",
+                          "bytes":  45056,
+                          "sha256":  "b1838d16cc34c0690d38216f6de46cd0e7bf83723815055cf462d6c03fcf6430"
+                      },
+                      {
+                          "name":  "gpt_both4.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_both4.bin",
+                          "bytes":  45056,
+                          "sha256":  "d02ce2385b6ed74b61a5308db8886dad31bef3f3b4c3962bb107f531a61e017c"
+                      },
+                      {
+                          "name":  "gpt_both5.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_both5.bin",
+                          "bytes":  45056,
+                          "sha256":  "c913548e9b01f93fc613edd9c2af98b51e0d73e356e42bcd72f8d0956f7a93c2"
+                      },
+                      {
+                          "name":  "gpt_empty0.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_empty0.bin",
+                          "bytes":  24576,
+                          "sha256":  "296ad8f9dac8ae490e27fc296e68de9183a83efd638e4f05404c3de700e4cc05"
+                      },
+                      {
+                          "name":  "gpt_empty1.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_empty1.bin",
+                          "bytes":  24576,
+                          "sha256":  "296ad8f9dac8ae490e27fc296e68de9183a83efd638e4f05404c3de700e4cc05"
+                      },
+                      {
+                          "name":  "gpt_empty2.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_empty2.bin",
+                          "bytes":  24576,
+                          "sha256":  "296ad8f9dac8ae490e27fc296e68de9183a83efd638e4f05404c3de700e4cc05"
+                      },
+                      {
+                          "name":  "gpt_empty3.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_empty3.bin",
+                          "bytes":  24576,
+                          "sha256":  "296ad8f9dac8ae490e27fc296e68de9183a83efd638e4f05404c3de700e4cc05"
+                      },
+                      {
+                          "name":  "gpt_empty4.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_empty4.bin",
+                          "bytes":  24576,
+                          "sha256":  "296ad8f9dac8ae490e27fc296e68de9183a83efd638e4f05404c3de700e4cc05"
+                      },
+                      {
+                          "name":  "gpt_empty5.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_empty5.bin",
+                          "bytes":  24576,
+                          "sha256":  "296ad8f9dac8ae490e27fc296e68de9183a83efd638e4f05404c3de700e4cc05"
+                      },
+                      {
+                          "name":  "gpt_main0.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_main0.bin",
+                          "bytes":  24576,
+                          "sha256":  "1c7eb7bd701c143187117cee145249a6f64654b67ec25025e6a833d3663a2fc0"
+                      },
+                      {
+                          "name":  "gpt_main1.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_main1.bin",
+                          "bytes":  24576,
+                          "sha256":  "84174ba4be998e033df6da0ef79311cae2a68a2413e9eff63882f4d16303326d"
+                      },
+                      {
+                          "name":  "gpt_main2.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_main2.bin",
+                          "bytes":  24576,
+                          "sha256":  "d41db9067b914440d68707d1b084d4eeaa85a6be5b066775de7c2b6f7d557da6"
+                      },
+                      {
+                          "name":  "gpt_main3.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_main3.bin",
+                          "bytes":  24576,
+                          "sha256":  "2185f9ec0863670523eb040205c859f66b08a3542835ce5248c78de5194592d4"
+                      },
+                      {
+                          "name":  "gpt_main4.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_main4.bin",
+                          "bytes":  24576,
+                          "sha256":  "6fe9a250d195dfe50a7ee634be69ff07589b61e17495c81b1512486843dae1de"
+                      },
+                      {
+                          "name":  "gpt_main5.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\gpt_main5.bin",
+                          "bytes":  24576,
+                          "sha256":  "ec4f0adc078b7ea7446c3684cea10585892cfe9f0ce248ab1b25cd6afe8afd87"
+                      },
+                      {
+                          "name":  "hypvm.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\hypvm.mbn",
+                          "bytes":  1744404,
+                          "sha256":  "e5b2e5bebf1b83b0765f7c86bf24ed1af1dd943f8123201ef13275d2c6f61ff9"
+                      },
+                      {
+                          "name":  "hypvmperformance.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\hypvmperformance.mbn",
+                          "bytes":  1613332,
+                          "sha256":  "d20622b31783e757eddad899b41fe00222bb1305d88057acdddaf9f3d50b97b3"
+                      },
+                      {
+                          "name":  "idmanager.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\idmanager.mbn",
+                          "bytes":  65624,
+                          "sha256":  "53f08baadd24b3f4e6f88d23a78ad123658b2ee1149918147095c174d8a03ace"
+                      },
+                      {
+                          "name":  "imagefv.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\imagefv.elf",
+                          "bytes":  6299448,
+                          "sha256":  "4f29072dbebb11fcd963869e375971cf2957ebd9b9b50709147cba08cc25456a"
+                      },
+                      {
+                          "name":  "init_boot.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\init_boot.img",
+                          "bytes":  8388608,
+                          "sha256":  "249e133a7c12e6bb269a642529a4484d729c53103475361ab8db24b08a9c2c36"
+                      },
+                      {
+                          "name":  "keymint.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\keymint.mbn",
+                          "bytes":  450648,
+                          "sha256":  "7863bc64825c5fb2bdea46f2b2ad6272c2296c272425097204548bd0fe8a04db"
+                      },
+                      {
+                          "name":  "logfs_ufs_8mb.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\logfs_ufs_8mb.bin",
+                          "bytes":  16384,
+                          "sha256":  "cadf6d7179d79ad39cbead824e2aa5394dd6447058d7990a2e37a94bb22e9e55"
+                      },
+                      {
+                          "name":  "metadata.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\metadata.img",
+                          "bytes":  2236644,
+                          "sha256":  "c0b620d02c57f556aab7e2895d9ab06f112c3027a43265b68b551ebdcdc1e22b"
+                      },
+                      {
+                          "name":  "misc.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\misc.img",
+                          "bytes":  8192,
+                          "sha256":  "9f1dcbc35c350d6027f98be0f5c8b43b42ca52b7604459c0c42be3aa88913d47"
+                      },
+                      {
+                          "name":  "MODEM-FW.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\MODEM-FW.bin",
+                          "bytes":  135254016,
+                          "sha256":  "f0e423cb0604c80756da6b0fe846089c301cc7b81932e09d9f41bc77ce36ea5a"
+                      },
+                      {
+                          "name":  "multi_image.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\multi_image.mbn",
+                          "bytes":  32768,
+                          "sha256":  "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+                      },
+                      {
+                          "name":  "multi_image_qti.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\multi_image_qti.mbn",
+                          "bytes":  12088,
+                          "sha256":  "1f6091796e046113f23b9dfdc3b8af881b4569ba06f613d630931613f5528336"
+                      },
+                      {
+                          "name":  "NON-HLOS.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\NON-HLOS.bin",
+                          "bytes":  198062080,
+                          "sha256":  "8293196c2fa894072ebe64ae5ffa88e74438c0a44103efdd13c469bdb3306521"
+                      },
+                      {
+                          "name":  "partition_ext_o2o3.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\partition_ext_o2o3.xml",
+                          "bytes":  23846,
+                          "sha256":  "7b3d5f767441203f3b756d7646cccedd0961ec2823f4d6d912531228e8da5274"
+                      },
+                      {
+                          "name":  "patch0.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\patch0.xml",
+                          "bytes":  6259,
+                          "sha256":  "8fe469881e7a175e583dd2e46c3efbb9462e8c4c88e0845066e1c7dc1488dbfd"
+                      },
+                      {
+                          "name":  "patch1.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\patch1.xml",
+                          "bytes":  6263,
+                          "sha256":  "e0fc75d2121a7bed8541946c0e1a5a3c96a28a34305486486d3d248275696b9d"
+                      },
+                      {
+                          "name":  "patch2.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\patch2.xml",
+                          "bytes":  6263,
+                          "sha256":  "22cbb44b4acdca256d7bc4a789431c388536201200b612e17d51b2794f41c63a"
+                      },
+                      {
+                          "name":  "patch3.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\patch3.xml",
+                          "bytes":  6263,
+                          "sha256":  "b5987d9616d44d4af421ffe00ee485afa98ddf402596f944f602cacb1db9022a"
+                      },
+                      {
+                          "name":  "patch4.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\patch4.xml",
+                          "bytes":  6275,
+                          "sha256":  "dd90f8d043b6eaefbd1052cda7005b28ee969aa70d34b6ebc6e2a0dcb312c327"
+                      },
+                      {
+                          "name":  "patch5.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\patch5.xml",
+                          "bytes":  6263,
+                          "sha256":  "3f5bd9724b8a5cfe85cb2f934637871fc5d5f0e17e7f8cdbaa3e75021ebc14a4"
+                      },
+                      {
+                          "name":  "pdp.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\pdp.elf",
+                          "bytes":  212476,
+                          "sha256":  "cdd7248012b8dc16f7a0a4804ca33c2cff29ae8d29fc5c53e20c9547a8262092"
+                      },
+                      {
+                          "name":  "pdp_cdb.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\pdp_cdb.elf",
+                          "bytes":  13440,
+                          "sha256":  "0bd0a691967065b9e1a018035fee292543e0ade780ca6a5f81bdaf37b8ad477d"
+                      },
+                      {
+                          "name":  "persist.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\persist.img",
+                          "bytes":  33554432,
+                          "sha256":  "4cacdb3c6b9e0a389caf4b91cd07b96580d8714e1803cb33b5efbc32d4d02018"
+                      },
+                      {
+                          "name":  "platform_security_patch.txt",
+                          "extension":  ".txt",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\platform_security_patch.txt",
+                          "bytes":  11,
+                          "sha256":  "db092354b5c080d7de4b6a88f8f35cac3b902a37f600fe86060abdfe40a4b575"
+                      },
+                      {
+                          "name":  "pvmfw.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\pvmfw.img",
+                          "bytes":  1048576,
+                          "sha256":  "1cd5c1e394d98777e7a4e9247a14c6ab1962c0b5fd7524e10f69129b4e5bf449"
+                      },
+                      {
+                          "name":  "qupv3fw.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\qupv3fw.elf",
+                          "bytes":  64720,
+                          "sha256":  "012fc2c5fe1186f5ad226035619df651323819a112617ad736e5c5a0c225294a"
+                      },
+                      {
+                          "name":  "rawprogram0.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rawprogram0.xml",
+                          "bytes":  10408,
+                          "sha256":  "bb8d672bb1ba3613b79e195745bec3491ca948327787dd7d1811a50e7b127eaf"
+                      },
+                      {
+                          "name":  "rawprogram1.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rawprogram1.xml",
+                          "bytes":  2472,
+                          "sha256":  "1715ed34476ba824e059978c1354df863367a7ac52017950792b0671c664d6e5"
+                      },
+                      {
+                          "name":  "rawprogram2.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rawprogram2.xml",
+                          "bytes":  2415,
+                          "sha256":  "a80b9eab39be0fe69dc72e3b520b501e8f9da1dc4735ad18976f5e173637e658"
+                      },
+                      {
+                          "name":  "rawprogram3.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rawprogram3.xml",
+                          "bytes":  1859,
+                          "sha256":  "05e90d8c89e46b4f58b9e11e7a93b193dedca372843864ec61b5dad94847641b"
+                      },
+                      {
+                          "name":  "rawprogram4.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rawprogram4.xml",
+                          "bytes":  24522,
+                          "sha256":  "3132e117e02b3cb6bb3760444909cbb829def0af9bb5a2b08477e5e37c22a52c"
+                      },
+                      {
+                          "name":  "rawprogram5.xml",
+                          "extension":  ".xml",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rawprogram5.xml",
+                          "bytes":  2974,
+                          "sha256":  "89b60bc5279684e3be3da593870b3008d4e54eda551794f06742352793fb17d0"
+                      },
+                      {
+                          "name":  "recovery.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\recovery.img",
+                          "bytes":  104857600,
+                          "sha256":  "89a0193ce6f6708102b969581e044fa26dea38c20f723d224887c3c2ba301c38"
+                      },
+                      {
+                          "name":  "rescue.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rescue.img",
+                          "bytes":  41036,
+                          "sha256":  "b4458d0362ce811e0b518d098031d46a1077a551ea3df6c013f31178aab1ab16"
+                      },
+                      {
+                          "name":  "sdi.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\sdi.mbn",
+                          "bytes":  146840,
+                          "sha256":  "a69757523f97c2a820e3d20a4ba6bf7818cd532b947db70c424fecba6c9e2b11"
+                      },
+                      {
+                          "name":  "shrm.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\shrm.elf",
+                          "bytes":  150960,
+                          "sha256":  "92ad2ede26aa0b7e225b7b614b72c3dbe94a4da60ff113d7c0367c78c4249adb"
+                      },
+                      {
+                          "name":  "sparsecrclist.txt",
+                          "extension":  ".txt",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\sparsecrclist.txt",
+                          "bytes":  299,
+                          "sha256":  "8be75ac9aeda2e24f653784af8bdd0501450c9b7d974f35ac062097a020750b1"
+                      },
+                      {
+                          "name":  "spu_service.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\spu_service.mbn",
+                          "bytes":  90200,
+                          "sha256":  "7e8c4c77e85075b3592c18250fd8a394ce8626a28040233e43058562394ed877"
+                      },
+                      {
+                          "name":  "storsec.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\storsec.mbn",
+                          "bytes":  32856,
+                          "sha256":  "443f533caf94cd35daae2f1d55491257528d5762f49a5f885b95e16b78c16543"
+                      },
+                      {
+                          "name":  "super.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\super.img",
+                          "bytes":  10550233492,
+                          "sha256":  "17c49682f8373ef1743a9ba6dfde8c26fbae5e8f31e1f9b783d9a246d89a8dc5"
+                      },
+                      {
+                          "name":  "tools.fv",
+                          "extension":  ".fv",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\tools.fv",
+                          "bytes":  393216,
+                          "sha256":  "d95c7e8291d08e393d8cfd143eba3cfe8cf4ed3a125978ee97258817faedaab5"
+                      },
+                      {
+                          "name":  "tz.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\tz.mbn",
+                          "bytes":  4171720,
+                          "sha256":  "7ee294814d7ce27daf4e7ec960cda0c0faa761f8fbb43fef550a4328976e96ee"
+                      },
+                      {
+                          "name":  "uefi.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\uefi.elf",
+                          "bytes":  2839004,
+                          "sha256":  "1f2ef3ca0322ecdef9ef3bb31a91206b773520b7e413966392c2774e445d647c"
+                      },
+                      {
+                          "name":  "uefi_sec.mbn",
+                          "extension":  ".mbn",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\uefi_sec.mbn",
+                          "bytes":  200792,
+                          "sha256":  "279ef4320c6964f248937dceb68c6d7fbe8e8dd0eddfe90f164da23b4574604b"
+                      },
+                      {
+                          "name":  "userdata.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\userdata.img",
+                          "bytes":  3013866408,
+                          "sha256":  "7d3ab1ff170699a81674f995288999df3dab9755065d72939539730f050bd14e"
+                      },
+                      {
+                          "name":  "vbmeta.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vbmeta.img",
+                          "bytes":  12288,
+                          "sha256":  "c73f8e19d1677a4a200de5a06cfb6c08dcb06a31d3853bad48c5a709f89e8363"
+                      },
+                      {
+                          "name":  "vbmeta_system.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vbmeta_system.img",
+                          "bytes":  4096,
+                          "sha256":  "84fb6279e41424b2c48efedba7bfdc99bfa6e0206b03885ffe35225f60448bae"
+                      },
+                      {
+                          "name":  "vendor_boot.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vendor_boot.img",
+                          "bytes":  100663296,
+                          "sha256":  "45c61737b372b4ce300ef70d0228760995010509cf874243ddd6b62af186cad7"
+                      },
+                      {
+                          "name":  "vm-bootsys.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vm-bootsys.img",
+                          "bytes":  18948352,
+                          "sha256":  "b12cc7b6e5b2e7552c594cb113b5a00951afe5b96dae4470cbfc172e72ec032e"
+                      },
+                      {
+                          "name":  "vm-persist.img",
+                          "extension":  ".img",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vm-persist.img",
+                          "bytes":  102346924,
+                          "sha256":  "8d1f7fac2a6c2d8821ff2a8750c936717bfa2d66969e0a221a20e1956cf20bfc"
+                      },
+                      {
+                          "name":  "xbl_config.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_config.elf",
+                          "bytes":  345376,
+                          "sha256":  "a1e0e368f381ceb51ccfa3f3399ff9b0ef3c77c685f97994af58da6880ba9047"
+                      },
+                      {
+                          "name":  "xbl_s.melf",
+                          "extension":  ".melf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_s.melf",
+                          "bytes":  1188180,
+                          "sha256":  "9947deb09010b23399fd309383dc09ea0e4c9bac9c3cc3121dd22688f16337cf"
+                      },
+                      {
+                          "name":  "xbl_s_devprg_ns.melf",
+                          "extension":  ".melf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_s_devprg_ns.melf",
+                          "bytes":  1714124,
+                          "sha256":  "86776a9f22083eecc672b9a25f914682a1eb2f961bb9b0111f46c0087bfd499b"
+                      },
+                      {
+                          "name":  "xbl_sc_test_mode.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_sc_test_mode.bin",
+                          "bytes":  65536,
+                          "sha256":  "f28e157b99098d300b47743888da372f0a7f7e1fe01f148162648bd0d1e4fd69"
+                      },
+                      {
+                          "name":  "XblRamdump.elf",
+                          "extension":  ".elf",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\XblRamdump.elf",
+                          "bytes":  938612,
+                          "sha256":  "9256857a97a89f85e6977aa76beff914b0679b4246ac5ea611d6afe77cf82fd3"
+                      },
+                      {
+                          "name":  "zeros_1sector.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\zeros_1sector.bin",
+                          "bytes":  4096,
+                          "sha256":  "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+                      },
+                      {
+                          "name":  "zeros_5sectors.bin",
+                          "extension":  ".bin",
+                          "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\zeros_5sectors.bin",
+                          "bytes":  20480,
+                          "sha256":  "cc61635da46b2c9974335ea37e0b5fd660a5c8a42a89b271fa7ec2ac4b8b26f6"
+                      }
+                  ],
+    "image_count":  18,
+    "all_images":  [
+                       {
+                           "name":  "boot.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\boot.img",
+                           "bytes":  100663296,
+                           "sha256":  "ad8c9b89c96ff5473e17cfd0fa18b3f45d8dbeafa23f4846fe45469a9b6b4d09"
+                       },
+                       {
+                           "name":  "countrycode.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\countrycode.img",
+                           "bytes":  1048576,
+                           "sha256":  "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+                       },
+                       {
+                           "name":  "dtbo.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dtbo.img",
+                           "bytes":  18874368,
+                           "sha256":  "602f91eb634ad49d70c59d45a071358f37e02ded68db563efb9b25b4d7dfa804"
+                       },
+                       {
+                           "name":  "dummy.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dummy.img",
+                           "bytes":  8192,
+                           "sha256":  "9f1dcbc35c350d6027f98be0f5c8b43b42ca52b7604459c0c42be3aa88913d47"
+                       },
+                       {
+                           "name":  "init_boot.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\init_boot.img",
+                           "bytes":  8388608,
+                           "sha256":  "249e133a7c12e6bb269a642529a4484d729c53103475361ab8db24b08a9c2c36"
+                       },
+                       {
+                           "name":  "metadata.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\metadata.img",
+                           "bytes":  2236644,
+                           "sha256":  "c0b620d02c57f556aab7e2895d9ab06f112c3027a43265b68b551ebdcdc1e22b"
+                       },
+                       {
+                           "name":  "misc.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\misc.img",
+                           "bytes":  8192,
+                           "sha256":  "9f1dcbc35c350d6027f98be0f5c8b43b42ca52b7604459c0c42be3aa88913d47"
+                       },
+                       {
+                           "name":  "persist.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\persist.img",
+                           "bytes":  33554432,
+                           "sha256":  "4cacdb3c6b9e0a389caf4b91cd07b96580d8714e1803cb33b5efbc32d4d02018"
+                       },
+                       {
+                           "name":  "pvmfw.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\pvmfw.img",
+                           "bytes":  1048576,
+                           "sha256":  "1cd5c1e394d98777e7a4e9247a14c6ab1962c0b5fd7524e10f69129b4e5bf449"
+                       },
+                       {
+                           "name":  "recovery.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\recovery.img",
+                           "bytes":  104857600,
+                           "sha256":  "89a0193ce6f6708102b969581e044fa26dea38c20f723d224887c3c2ba301c38"
+                       },
+                       {
+                           "name":  "rescue.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\rescue.img",
+                           "bytes":  41036,
+                           "sha256":  "b4458d0362ce811e0b518d098031d46a1077a551ea3df6c013f31178aab1ab16"
+                       },
+                       {
+                           "name":  "super.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\super.img",
+                           "bytes":  10550233492,
+                           "sha256":  "17c49682f8373ef1743a9ba6dfde8c26fbae5e8f31e1f9b783d9a246d89a8dc5"
+                       },
+                       {
+                           "name":  "userdata.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\userdata.img",
+                           "bytes":  3013866408,
+                           "sha256":  "7d3ab1ff170699a81674f995288999df3dab9755065d72939539730f050bd14e"
+                       },
+                       {
+                           "name":  "vbmeta.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vbmeta.img",
+                           "bytes":  12288,
+                           "sha256":  "c73f8e19d1677a4a200de5a06cfb6c08dcb06a31d3853bad48c5a709f89e8363"
+                       },
+                       {
+                           "name":  "vbmeta_system.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vbmeta_system.img",
+                           "bytes":  4096,
+                           "sha256":  "84fb6279e41424b2c48efedba7bfdc99bfa6e0206b03885ffe35225f60448bae"
+                       },
+                       {
+                           "name":  "vendor_boot.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vendor_boot.img",
+                           "bytes":  100663296,
+                           "sha256":  "45c61737b372b4ce300ef70d0228760995010509cf874243ddd6b62af186cad7"
+                       },
+                       {
+                           "name":  "vm-bootsys.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vm-bootsys.img",
+                           "bytes":  18948352,
+                           "sha256":  "b12cc7b6e5b2e7552c594cb113b5a00951afe5b96dae4470cbfc172e72ec032e"
+                       },
+                       {
+                           "name":  "vm-persist.img",
+                           "extension":  ".img",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vm-persist.img",
+                           "bytes":  102346924,
+                           "sha256":  "8d1f7fac2a6c2d8821ff2a8750c936717bfa2d66969e0a221a20e1956cf20bfc"
+                       }
+                   ],
+    "selected_images":  [
+                            {
+                                "name":  "boot.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\boot.img",
+                                "bytes":  100663296,
+                                "sha256":  "ad8c9b89c96ff5473e17cfd0fa18b3f45d8dbeafa23f4846fe45469a9b6b4d09"
+                            },
+                            {
+                                "name":  "dtbo.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dtbo.img",
+                                "bytes":  18874368,
+                                "sha256":  "602f91eb634ad49d70c59d45a071358f37e02ded68db563efb9b25b4d7dfa804"
+                            },
+                            {
+                                "name":  "init_boot.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\init_boot.img",
+                                "bytes":  8388608,
+                                "sha256":  "249e133a7c12e6bb269a642529a4484d729c53103475361ab8db24b08a9c2c36"
+                            },
+                            {
+                                "name":  "recovery.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\recovery.img",
+                                "bytes":  104857600,
+                                "sha256":  "89a0193ce6f6708102b969581e044fa26dea38c20f723d224887c3c2ba301c38"
+                            },
+                            {
+                                "name":  "super.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\super.img",
+                                "bytes":  10550233492,
+                                "sha256":  "17c49682f8373ef1743a9ba6dfde8c26fbae5e8f31e1f9b783d9a246d89a8dc5"
+                            },
+                            {
+                                "name":  "vbmeta.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vbmeta.img",
+                                "bytes":  12288,
+                                "sha256":  "c73f8e19d1677a4a200de5a06cfb6c08dcb06a31d3853bad48c5a709f89e8363"
+                            },
+                            {
+                                "name":  "vbmeta_system.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vbmeta_system.img",
+                                "bytes":  4096,
+                                "sha256":  "84fb6279e41424b2c48efedba7bfdc99bfa6e0206b03885ffe35225f60448bae"
+                            },
+                            {
+                                "name":  "vendor_boot.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vendor_boot.img",
+                                "bytes":  100663296,
+                                "sha256":  "45c61737b372b4ce300ef70d0228760995010509cf874243ddd6b62af186cad7"
+                            }
+                        ],
+    "firmware_images":  [
+                            {
+                                "name":  "abl.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\abl.elf",
+                                "bytes":  335672,
+                                "sha256":  "11472b718202d5a32c8d3c9f9c86a70a7319b443a53b02c77f02ecec7af0ed66"
+                            },
+                            {
+                                "name":  "aop.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\aop.mbn",
+                                "bytes":  372424,
+                                "sha256":  "60850b5e0070a979933c128b64916f4813f3bff038675bacb155312414cc8d22"
+                            },
+                            {
+                                "name":  "aop_devcfg.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\aop_devcfg.mbn",
+                                "bytes":  29224,
+                                "sha256":  "85192764eb09f8fff3fd965d796144304d2aa32d54ea02fcc617e20b64725fb1"
+                            },
+                            {
+                                "name":  "apdp.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\apdp.mbn",
+                                "bytes":  262144,
+                                "sha256":  "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+                            },
+                            {
+                                "name":  "BTFM.bin",
+                                "extension":  ".bin",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\BTFM.bin",
+                                "bytes":  3993600,
+                                "sha256":  "dbed6c12becc45131e878f3b548fe8ffc4dc4e6781d24656643827ee621d384b"
+                            },
+                            {
+                                "name":  "cpucp.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\cpucp.elf",
+                                "bytes":  319116,
+                                "sha256":  "b7d0786134b221d027fb02df7b04fe10f36f5479cc1fc49105971f120be63766"
+                            },
+                            {
+                                "name":  "cpucp_dtbs.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\cpucp_dtbs.elf",
+                                "bytes":  13440,
+                                "sha256":  "454b376787b6afeba4596d1473c9e40909944a9c9001c712bb7abbbbe8205c44"
+                            },
+                            {
+                                "name":  "dcd.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dcd.mbn",
+                                "bytes":  16908,
+                                "sha256":  "7294355144ae689ebed9e9488c5bec7a73cefba66384864f0bdc3044b6e419a9"
+                            },
+                            {
+                                "name":  "devcfg.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\devcfg.mbn",
+                                "bytes":  57896,
+                                "sha256":  "ac1b5102ea48bcfbbf95098a946af37413a4160f1957c89a782d7b6715bb1d12"
+                            },
+                            {
+                                "name":  "dspso.bin",
+                                "extension":  ".bin",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\dspso.bin",
+                                "bytes":  67108864,
+                                "sha256":  "baff353322d7a658353e17749ca407e1ddee14c8ab50163f243ab79416c32890"
+                            },
+                            {
+                                "name":  "featenabler.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\featenabler.mbn",
+                                "bytes":  105440,
+                                "sha256":  "6adc75d8937932c24a0e10676680a81657e3ab6d456d3731fa5be3b6b98f5420"
+                            },
+                            {
+                                "name":  "frp_erase.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\frp_erase.mbn",
+                                "bytes":  524288,
+                                "sha256":  "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541"
+                            },
+                            {
+                                "name":  "hypvm.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\hypvm.mbn",
+                                "bytes":  1744404,
+                                "sha256":  "e5b2e5bebf1b83b0765f7c86bf24ed1af1dd943f8123201ef13275d2c6f61ff9"
+                            },
+                            {
+                                "name":  "hypvmperformance.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\hypvmperformance.mbn",
+                                "bytes":  1613332,
+                                "sha256":  "d20622b31783e757eddad899b41fe00222bb1305d88057acdddaf9f3d50b97b3"
+                            },
+                            {
+                                "name":  "idmanager.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\idmanager.mbn",
+                                "bytes":  65624,
+                                "sha256":  "53f08baadd24b3f4e6f88d23a78ad123658b2ee1149918147095c174d8a03ace"
+                            },
+                            {
+                                "name":  "imagefv.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\imagefv.elf",
+                                "bytes":  6299448,
+                                "sha256":  "4f29072dbebb11fcd963869e375971cf2957ebd9b9b50709147cba08cc25456a"
+                            },
+                            {
+                                "name":  "keymint.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\keymint.mbn",
+                                "bytes":  450648,
+                                "sha256":  "7863bc64825c5fb2bdea46f2b2ad6272c2296c272425097204548bd0fe8a04db"
+                            },
+                            {
+                                "name":  "logfs_ufs_8mb.bin",
+                                "extension":  ".bin",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\logfs_ufs_8mb.bin",
+                                "bytes":  16384,
+                                "sha256":  "cadf6d7179d79ad39cbead824e2aa5394dd6447058d7990a2e37a94bb22e9e55"
+                            },
+                            {
+                                "name":  "MODEM-FW.bin",
+                                "extension":  ".bin",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\MODEM-FW.bin",
+                                "bytes":  135254016,
+                                "sha256":  "f0e423cb0604c80756da6b0fe846089c301cc7b81932e09d9f41bc77ce36ea5a"
+                            },
+                            {
+                                "name":  "multi_image.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\multi_image.mbn",
+                                "bytes":  32768,
+                                "sha256":  "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+                            },
+                            {
+                                "name":  "multi_image_qti.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\multi_image_qti.mbn",
+                                "bytes":  12088,
+                                "sha256":  "1f6091796e046113f23b9dfdc3b8af881b4569ba06f613d630931613f5528336"
+                            },
+                            {
+                                "name":  "NON-HLOS.bin",
+                                "extension":  ".bin",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\NON-HLOS.bin",
+                                "bytes":  198062080,
+                                "sha256":  "8293196c2fa894072ebe64ae5ffa88e74438c0a44103efdd13c469bdb3306521"
+                            },
+                            {
+                                "name":  "pdp.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\pdp.elf",
+                                "bytes":  212476,
+                                "sha256":  "cdd7248012b8dc16f7a0a4804ca33c2cff29ae8d29fc5c53e20c9547a8262092"
+                            },
+                            {
+                                "name":  "pdp_cdb.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\pdp_cdb.elf",
+                                "bytes":  13440,
+                                "sha256":  "0bd0a691967065b9e1a018035fee292543e0ade780ca6a5f81bdaf37b8ad477d"
+                            },
+                            {
+                                "name":  "pvmfw.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\pvmfw.img",
+                                "bytes":  1048576,
+                                "sha256":  "1cd5c1e394d98777e7a4e9247a14c6ab1962c0b5fd7524e10f69129b4e5bf449"
+                            },
+                            {
+                                "name":  "qupv3fw.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\qupv3fw.elf",
+                                "bytes":  64720,
+                                "sha256":  "012fc2c5fe1186f5ad226035619df651323819a112617ad736e5c5a0c225294a"
+                            },
+                            {
+                                "name":  "sdi.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\sdi.mbn",
+                                "bytes":  146840,
+                                "sha256":  "a69757523f97c2a820e3d20a4ba6bf7818cd532b947db70c424fecba6c9e2b11"
+                            },
+                            {
+                                "name":  "shrm.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\shrm.elf",
+                                "bytes":  150960,
+                                "sha256":  "92ad2ede26aa0b7e225b7b614b72c3dbe94a4da60ff113d7c0367c78c4249adb"
+                            },
+                            {
+                                "name":  "spu_service.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\spu_service.mbn",
+                                "bytes":  90200,
+                                "sha256":  "7e8c4c77e85075b3592c18250fd8a394ce8626a28040233e43058562394ed877"
+                            },
+                            {
+                                "name":  "storsec.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\storsec.mbn",
+                                "bytes":  32856,
+                                "sha256":  "443f533caf94cd35daae2f1d55491257528d5762f49a5f885b95e16b78c16543"
+                            },
+                            {
+                                "name":  "tools.fv",
+                                "extension":  ".fv",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\tools.fv",
+                                "bytes":  393216,
+                                "sha256":  "d95c7e8291d08e393d8cfd143eba3cfe8cf4ed3a125978ee97258817faedaab5"
+                            },
+                            {
+                                "name":  "tz.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\tz.mbn",
+                                "bytes":  4171720,
+                                "sha256":  "7ee294814d7ce27daf4e7ec960cda0c0faa761f8fbb43fef550a4328976e96ee"
+                            },
+                            {
+                                "name":  "uefi.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\uefi.elf",
+                                "bytes":  2839004,
+                                "sha256":  "1f2ef3ca0322ecdef9ef3bb31a91206b773520b7e413966392c2774e445d647c"
+                            },
+                            {
+                                "name":  "uefi_sec.mbn",
+                                "extension":  ".mbn",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\uefi_sec.mbn",
+                                "bytes":  200792,
+                                "sha256":  "279ef4320c6964f248937dceb68c6d7fbe8e8dd0eddfe90f164da23b4574604b"
+                            },
+                            {
+                                "name":  "vm-bootsys.img",
+                                "extension":  ".img",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\vm-bootsys.img",
+                                "bytes":  18948352,
+                                "sha256":  "b12cc7b6e5b2e7552c594cb113b5a00951afe5b96dae4470cbfc172e72ec032e"
+                            },
+                            {
+                                "name":  "xbl_config.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_config.elf",
+                                "bytes":  345376,
+                                "sha256":  "a1e0e368f381ceb51ccfa3f3399ff9b0ef3c77c685f97994af58da6880ba9047"
+                            },
+                            {
+                                "name":  "xbl_s.melf",
+                                "extension":  ".melf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_s.melf",
+                                "bytes":  1188180,
+                                "sha256":  "9947deb09010b23399fd309383dc09ea0e4c9bac9c3cc3121dd22688f16337cf"
+                            },
+                            {
+                                "name":  "xbl_s_devprg_ns.melf",
+                                "extension":  ".melf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_s_devprg_ns.melf",
+                                "bytes":  1714124,
+                                "sha256":  "86776a9f22083eecc672b9a25f914682a1eb2f961bb9b0111f46c0087bfd499b"
+                            },
+                            {
+                                "name":  "xbl_sc_test_mode.bin",
+                                "extension":  ".bin",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\xbl_sc_test_mode.bin",
+                                "bytes":  65536,
+                                "sha256":  "f28e157b99098d300b47743888da372f0a7f7e1fe01f148162648bd0d1e4fd69"
+                            },
+                            {
+                                "name":  "XblRamdump.elf",
+                                "extension":  ".elf",
+                                "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\XblRamdump.elf",
+                                "bytes":  938612,
+                                "sha256":  "9256857a97a89f85e6977aa76beff914b0679b4246ac5ea611d6afe77cf82fd3"
+                            }
+                        ]
+}

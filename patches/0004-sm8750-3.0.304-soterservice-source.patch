@@ -1,0 +1,25 @@
+From ba9f9d0040be0dff94d1bfc6edc896d3740a4e9e Mon Sep 17 00:00:00 2001
+From: Codex <codex@localhost>
+Date: Thu, 6 Aug 2026 13:49:12 +0800
+Subject: [PATCH] sm8750-common: source SoterService from 3.0.304 product
+
+---
+ proprietary-files.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/proprietary-files.txt b/proprietary-files.txt
+index c54febe..02b0169 100644
+--- a/proprietary-files.txt
++++ b/proprietary-files.txt
+@@ -1822,7 +1822,7 @@ vendor/etc/sla/slad.conf
+ vendor/lib64/vendor.qti.sla.service-V1-ndk.so
+ 
+ # Soter
+-mi_ext/product/app/SoterService/SoterService.apk:product/app/SoterService/SoterService.apk
++product/app/SoterService/SoterService.apk:product/app/SoterService/SoterService.apk
+ vendor/bin/vendor.qti.hardware.soter-provision
+ vendor/bin/hw/vendor.qti.hardware.soter-service
+ vendor/etc/init/vendor.qti.hardware.soter-service.rc
+-- 
+2.45.1.windows.1
+
