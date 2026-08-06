@@ -18,6 +18,7 @@
 6. 0603 成品的系统 Build ID 为 `BP4A.251205.006`，因此首个可复现源码构建固定 EvolutionX `bka`，而不是已经转向 `CP2A` 的 `cnb`。
 7. 三份 `vendor_boot` 都带 434 个模块；EvolutionX 与 LineageOS 的 404 个模块逐字节相同但与官方 3.0.304 不同，首版必须保持 kernel、DTB/DTBO、模块与加载元数据成组一致。
 8. 官方 3.0.304 proprietary tree 已实际生成：4,786 个分区路径与 31 个 firmware 输出全部命中，最终两棵 vendor tree 共 4,825 个文件、6,247,299,804 字节。
+9. 三个公开 kernel prebuilt 仓已实测；Crisp-los 提交 `802915c` 的 kernel、8 个 DTB、DTBO 和 434+397+96+96 个模块全部与官方 3.0.304 逐字节一致，现已固定进本地 manifest。
 
 ## 仓库边界
 
@@ -52,6 +53,7 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [x] 只读展开 8 个官方 EROFS，生成 16,071 个文件、768 个符号链接的全量哈希清单
 - [x] 官方/Lineage/Evolution boot kernel 三方比较：三者逐字节相同
 - [x] 官方/Lineage/Evolution DTBO、bootconfig 与 vendor ramdisk 模块的完整静态差异
+- [x] 选择并固定官方一致的 `device/xiaomi/haotian-kernel` prebuilt 提交
 - [ ] `pvmfw/mi_ext/system_dlkm` 的 AVB 与 OTA 描述符策略收敛
 - [x] CS40L26 校准 loader、ADB 收敛、production AVB 与 3.0.304 Soter 路径补丁生成并通过静态应用检查
 - [ ] 四个补丁在 EvolutionX `bka` 完整源树中编译验证

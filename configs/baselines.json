@@ -61,6 +61,12 @@
       "url": "https://github.com/rep1ace/device_xiaomi_sm8750-common.git",
       "branch": "lineage-23.2",
       "commit": "6f633ec0919fdfe3f8d307e8ab7770c1c1a90696"
+    },
+    "device_xiaomi_haotian_kernel": {
+      "url": "https://github.com/Crisp-los/device_xiaomi_haotian-kernel.git",
+      "branch": "main",
+      "commit": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "selection": "byte-identical official 3.0.304 kernel, DTB/DTBO, vendor_ramdisk, vendor_dlkm and system_dlkm set"
     }
   }
 }

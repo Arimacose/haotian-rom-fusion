@@ -38,5 +38,44 @@
   ],
   "unpack_notes": {
     "official-3.0.304": "boot magic: ANDROID!\nkernel_size: 36456960\nramdisk size: 0\nos version: None\nos patch level: None\nboot image header version: 4\ncommand line args: \nboot.img signature size: 0\n"
+  },
+  "public_prebuilt_candidates": {
+    "analyzed_at": "2026-08-06",
+    "full_evidence": {
+      "path": "D:\\Codex\\haotian-rom-fusion-build\\kernel-candidates\\official-coherence-summary.json",
+      "bytes": 10265,
+      "sha256": "a3232389047f226b4c94845d55440096027075b2056c0254c9e4e1bc4119c5b0"
+    },
+    "selected": {
+      "repository": "https://github.com/Crisp-los/device_xiaomi_haotian-kernel.git",
+      "branch": "main",
+      "commit": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "reason": "Every compared boot-chain and module artifact is byte-identical to official HyperOS 3.0.304 after text line-ending normalization.",
+      "exact_matches": {
+        "kernel": 1,
+        "dtbo": 1,
+        "dtb_files": 8,
+        "dtb_concatenation": 1,
+        "vendor_ramdisk_ko": 434,
+        "vendor_dlkm_ko": 397,
+        "system_dlkm_versioned_ko": 96,
+        "system_dlkm_flatten_ko": 96,
+        "module_load_and_blocklist_files": 6
+      }
+    },
+    "rejected_for_first_build": [
+      {
+        "repository": "https://github.com/lolipuru/device_xiaomi_haotian-kernel.git",
+        "commit": "e7a7f3183dd5bcf3ca43e228cf205d798e9e1f41",
+        "reason": "Kernel matches, but DTB/DTBO and most vendor modules differ from official 3.0.304; extra module paths are present."
+      },
+      {
+        "repository": "https://github.com/xiaomi-sun/device_xiaomi_haotian-kernel.git",
+        "branch": "bp4a",
+        "commit": "6b4c27c171c01845684d71fbb88618dc9623e1e7",
+        "reason": "Kernel matches, but DTB follows the Lineage baseline, DTBO differs, and vendor module contents follow the custom-ROM baseline."
+      }
+    ],
+    "checkout_note": "Clone the selected repository inside a case-sensitive Linux filesystem; Windows checkout reports case-colliding kernel headers."
   }
 }

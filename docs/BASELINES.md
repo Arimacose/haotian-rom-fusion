@@ -12,7 +12,7 @@ Generated for the `haotian` fusion project on 2026-08-06.
 | camera | Stock 3.0.304 first, EvolutionX as comparison | EvolutionX camera APK is newer, but stock compatibility remains authoritative |
 | display | Stock 3.0.304 curve, then EvolutionX deltas | Lineage three-point curve has low-brightness and HDR risks |
 | fingerprint | Stock Goodix blobs plus Lineage common AIDL structure | User device uses Goodix |
-| kernel reference | Official 3.0.304, shared 6.6.77, third-party 6.6.143 | Required three-way KMI decision |
+| kernel reference | Official 3.0.304 plus pinned Crisp-los prebuilt commit | Exact official-coherent 6.6.77 set selected; third-party 6.6.143 remains separate |
 | security | New production profile | Neither analyzed prebuilt meets the intended release gates |
 
 ## Official HyperOS 3.0.304 fastboot package
@@ -116,6 +116,21 @@ are the same 36,456,960-byte kernel with SHA-256
 The five inspected haptic modules and `Hapticsconfig.xml` are identical between
 the two custom ROMs. The Lineage vibration improvement therefore comes from the
 service and init integration rather than a kernel replacement.
+
+Three public `device_xiaomi_haotian-kernel` candidates were then compared. The
+selected repository is:
+
+```text
+repository: https://github.com/Crisp-los/device_xiaomi_haotian-kernel.git
+branch: main
+commit: 802915cc6b269c3bf577327c4c165c3117852ff5
+```
+
+This commit matches official 3.0.304 for the kernel, eight concatenated DTBs,
+DTBO, all 434 vendor-ramdisk modules, all 397 vendor-DLKM modules, both sets of
+96 system-DLKM modules, and the applicable load/blocklist files. The lolipuru
+and xiaomi-sun candidates keep the same kernel but diverge in DTB/DTBO and
+vendor-module content, so they are not used by the first fusion build.
 
 ## Pinned public source
 

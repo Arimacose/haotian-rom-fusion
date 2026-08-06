@@ -159,9 +159,13 @@ Development builds may retain diagnostic logging, but security gates are measure
 
 Current decision: official 3.0.304, EvolutionX 0603 and LineageOS 0704 carry an
 identical 6.6.77 kernel. The first build therefore uses the official-coherent
-6.6.77 kernel/module/DTB/DTBO set. The third-party 6.6.143 path remains a later
-experimental track after its full artifact is supplied and KMI/module checks
-pass; it is not a prerequisite for hardware fusion.
+6.6.77 kernel/module/DTB/DTBO set from pinned Crisp-los prebuilt commit
+`802915cc6b269c3bf577327c4c165c3117852ff5`. It has been compared against the
+official extraction: kernel, DTB concatenation, DTBO, 434 vendor-ramdisk
+modules, 397 vendor-DLKM modules and both 96-module system-DLKM layouts are
+exact. The third-party 6.6.143 path remains a later experimental track after
+its full artifact is supplied and KMI/module checks pass; it is not a
+prerequisite for hardware fusion.
 
 ### Phase 3 - minimal hardware bring-up
 

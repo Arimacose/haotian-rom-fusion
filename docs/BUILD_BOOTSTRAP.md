@@ -113,11 +113,15 @@ vendor/xiaomi/sm8750-common
 vendor/haotian/security/avb.pem
 ```
 
-The kernel tree must be a coherent kernel/modules/DTB/DTBO set chosen after the
-official 3.0.304 comparison. The proprietary tree generation stage is complete;
-the full Soong/ELF/VINTF checks run after it enters the platform source. The AVB
-private key is local-only; its public-key digest and signing policy are the
-reviewable evidence.
+The local manifest now pins Crisp-los kernel prebuilt commit
+`802915cc6b269c3bf577327c4c165c3117852ff5`. Its kernel, DTB concatenation,
+DTBO, vendor-ramdisk modules, vendor-DLKM modules, both system-DLKM layouts and
+load lists match official 3.0.304. Clone it only inside the case-sensitive
+Linux build filesystem because its generated kernel headers contain names that
+collide on a case-insensitive Windows checkout. The proprietary tree generation
+stage is complete; the full Soong/ELF/VINTF checks run after it enters the
+platform source. The AVB private key is local-only; its public-key digest and
+signing policy are the reviewable evidence.
 
 ## Configure and build
 
@@ -136,7 +140,7 @@ flags and descriptors, then run through the A/B test matrix.
 
 1. official 3.0.304 archive and every selected image have recorded hashes;
 2. vendor extraction has zero missing mandatory blobs: 4,817/4,817 list outputs;
-3. kernel, modules, DTB and DTBO come from one selected baseline;
+3. kernel, modules, DTB and DTBO resolve to pinned commit `802915c`;
 4. all four patches pass against their pinned commits;
 5. `WITH_ADB_INSECURE` is absent;
 6. main vbmeta uses flags `0` and no AOSP test-key path remains;

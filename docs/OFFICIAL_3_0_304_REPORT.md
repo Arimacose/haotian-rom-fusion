@@ -209,6 +209,31 @@ D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\vendor-ramdisk-modu
 SHA-256: a1f6cb09a5083bbff2511269cd95382c8ab4248a81cd3a4c0ba1e7bba3f99831
 ```
 
+### 6.4 公开 kernel prebuilt 候选收敛
+
+对三个公开 `device_xiaomi_haotian-kernel` 仓库执行了 kernel、DTB、DTBO、
+vendor ramdisk、vendor DLKM 与两种 system DLKM 布局的逐文件 SHA-256 对比：
+
+| 候选 | 固定提交 | kernel | DTB/DTBO | vendor ramdisk | vendor DLKM | 结论 |
+|---|---|---|---|---|---|---|
+| Crisp-los | `802915c` | 官方一致 | 官方一致 | 434/434 官方一致 | 397/397 官方一致 | 选择 |
+| lolipuru | `e7a7f31` | 官方一致 | 不同 | 433 个同名中仅 9 个内容一致，另有 4 个候选独有模块 | 397 个同名中 70 个一致，另有 9 个候选独有模块 | 排除首版 |
+| xiaomi-sun `bp4a` | `6b4c27c` | 官方一致 | DTB 跟随 Lineage，DTBO 不同 | 集合与两份类原生一致 | 397 个同名中 72 个一致 | 排除首版 |
+
+Crisp-los 提交还完整匹配官方两组 system DLKM：版本目录 96/96，flatten
+目录 96/96；普通/recovery/vendor-DLKM load list 与 blocklist 在归一化换行后
+也逐行一致。它已作为 `device/xiaomi/haotian-kernel` 固定进
+`manifests/haotian-bka.xml`。完整比较证据：
+
+```text
+D:\Codex\haotian-rom-fusion-build\kernel-candidates\official-coherence-summary.json
+SHA-256: a3232389047f226b4c94845d55440096027075b2056c0254c9e4e1bc4119c5b0
+```
+
+三个候选在 Windows NTFS 检出时均报告大小写同名 kernel header；这些 headers
+应在后续 D 盘上的 WSL2 大小写敏感文件系统中重新检出，Windows 候选目录只用于
+不受该冲突影响的镜像和模块哈希审计。
+
 ## 7. AVB 实测
 
 | 项目 | 官方 3.0.304 | EvolutionX 0603 | LineageOS 0704 |
