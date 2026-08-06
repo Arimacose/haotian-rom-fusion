@@ -87,6 +87,24 @@ D:\Codex\haotian-evox-0603-audit\downloads\stock-3.0.304-fastboot\haotian_images
 
 八个对应 `_b` 条目大小为 0，符合 fastboot 工厂包只在一侧填充逻辑分区的布局。本轮将它们记录为布局证据，不把零长度条目误判为缺包。
 
+### 4.3 EROFS 文件级清单
+
+八个有效分区已全部通过 `fsck.erofs --extract` 只读展开并逐文件计算 SHA-256：
+
+| 指标 | 结果 |
+|---|---:|
+| 普通文件 | 16071 |
+| 符号链接 | 768 |
+| 总条目 | 16839 |
+| 普通文件逻辑字节 | 14865416815 |
+| 全量 manifest 字节 | 4057735 |
+| 全量 manifest SHA-256 | `3be59c7e12d920c324eff94e4c3b41cf1533cbcd48d3c77f08d6ac0ea86fddeb` |
+
+按路径关键字生成的候选集合包括 2,584 个 camera、484 个 display、31 个
+fingerprint、53 个 haptics、199 个 touch 和 589 个 kernel module 条目。
+这些计数用于缩小比较范围，不等同于最终 proprietary 选取结果；最终清单仍以
+两份设备树 proprietary 列表、ELF 依赖和运行时注册关系为准。
+
 ## 5. 31 项官方 firmware 交叉验证
 
 对比对象：
@@ -179,6 +197,29 @@ pvmfw, mi_ext, system_dlkm
 
 ## 8. 对融合方案的直接影响
 
+### 8.0 proprietary 路径覆盖
+
+两份公共设备树清单合计 4,786 个条目：
+
+| 清单 | 条目 | 原始路径命中 | 项目补丁后命中 |
+|---|---:|---:|---:|
+| `device_xiaomi_haotian` | 3011 | 3011 | 3011 |
+| `device_xiaomi_sm8750-common` | 1775 | 1774 | 1775 |
+| 合计 | 4786 | 4785 | 4786 |
+
+唯一原始路径差异是：
+
+```text
+清单路径: mi_ext/product/app/SoterService/SoterService.apk
+3.0.304: product/app/SoterService/SoterService.apk
+```
+
+`0004-sm8750-3.0.304-soterservice-source.patch` 已把 common 清单指向官方
+3.0.304 的真实 product 路径。值得注意的是，两份清单头部说明来源为 OS3.0.5，
+但 haotian 3.0.304 仍提供全部 4,786 个项目所需路径；这为直接生成首版
+proprietary tree 提供了很强的完整性证据。路径命中仍不替代 ELF 依赖、符号、
+版本与服务注册检查。
+
 ### 8.1 平台与设备源
 
 - 平台固定 EvolutionX `bka`，对应 0603 成品的 `BP4A.251205.006`；
@@ -225,11 +266,10 @@ D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\filesystems
 
 ## 10. 下一步执行顺序
 
-1. 完成 8 个官方 EROFS 分区的只读展开与文件级清单；
-2. 对官方/EvolutionX/LineageOS 的 vendor_boot、bootconfig、DTBO 和模块做三方差异；
-3. 用官方文件树运行两份 proprietary 列表，生成缺失/命中/版本差异报告；
-4. 收敛 `pvmfw/mi_ext/system_dlkm` 的 AVB 和 OTA 描述符策略；
-5. 将官方 camera/display/Goodix 配置与两份类原生成品逐路径对照；
-6. 准备 6.6.77 prebuilt kernel tree 和 3.0.304 proprietary tree；
-7. 在 EvolutionX `bka` 完整源树上执行首个 `userdebug` 编译；
-8. 编译通过后再进入 production `user`、项目签名、完整 AVB 与 A/B 验收。
+1. 对官方/EvolutionX/LineageOS 的 vendor_boot ramdisk 与模块做三方差异；
+2. 用官方文件树运行两份 proprietary 列表，生成缺失/命中/版本差异报告；
+3. 收敛 `pvmfw/mi_ext/system_dlkm` 的 AVB 和 OTA 描述符策略；
+4. 将官方 camera/display/Goodix 配置与两份类原生成品逐路径对照；
+5. 准备 6.6.77 prebuilt kernel tree 和 3.0.304 proprietary tree；
+6. 在 EvolutionX `bka` 完整源树上执行首个 `userdebug` 编译；
+7. 编译通过后再进入 production `user`、项目签名、完整 AVB 与 A/B 验收。

@@ -1,1 +1,73 @@
-{"state":"baseline"}
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-06T13:50:22+08:00",
+  "official_version": "OS3.0.304.0.WOBCNXM",
+  "entry_count": 4786,
+  "present_count": 4786,
+  "missing_count": 0,
+  "relocation_candidate_count": 0,
+  "coverage_percent": 100.0,
+  "lists": [
+    {
+      "name": "haotian",
+      "source_path": "/mnt/d/Codex/haotian-evox-0603-audit/work/lineageos-23.2-20260704/public-source/device_xiaomi_haotian/proprietary-files.txt",
+      "source_sha256": "1c59c0894f28e47921b28a7b70b3a8636a9412d330c50ddfdf1073ea1905579f",
+      "source_header": [
+        "## All proprietary files from this list, unless pinned and noted otherwise,",
+        "## are from Xiaomi 15 pro (OS3.0.5.0.WOBCNXM). ",
+        "# ACDB"
+      ],
+      "entry_count": 3011,
+      "present_count": 3011,
+      "missing_count": 0,
+      "relocation_candidate_count": 0,
+      "coverage_percent": 100.0,
+      "entries_by_partition": {
+        "odm": 2953,
+        "vendor": 58
+      },
+      "hits_by_partition": {
+        "odm": 2953,
+        "vendor": 58
+      },
+      "missing_sample": [],
+      "relocation_candidates": []
+    },
+    {
+      "name": "sm8750-common",
+      "source_path": "/mnt/d/Codex/haotian-rom-fusion/tmp/common_patch4_20260806/proprietary-files.txt",
+      "source_sha256": "bbf2338cd4f9f6ddc102d78068388ee4444514f551143131776539ab37331600",
+      "source_header": [
+        "## All proprietary files from this list, unless pinned and noted otherwise,",
+        "## are from Xiaomi 15 (OS3.0.5.0.WOCCNXM). ",
+        "# ACDB"
+      ],
+      "entry_count": 1775,
+      "present_count": 1775,
+      "missing_count": 0,
+      "relocation_candidate_count": 0,
+      "coverage_percent": 100.0,
+      "entries_by_partition": {
+        "odm": 203,
+        "product": 9,
+        "system": 2,
+        "system_ext": 55,
+        "vendor": 1506
+      },
+      "hits_by_partition": {
+        "odm": 203,
+        "product": 9,
+        "system": 2,
+        "system_ext": 55,
+        "vendor": 1506
+      },
+      "missing_sample": [],
+      "relocation_candidates": []
+    }
+  ],
+  "full_result": {
+    "path": "/mnt/d/Codex/haotian-evox-0603-audit/work/stock-3.0.304-fastboot/proprietary-coverage-full.json",
+    "bytes": 1198671,
+    "sha256": "2e67beced419d0ab3011d35313b5af2786dc4ee3292965cc00fdb876a25d8963"
+  }
+}

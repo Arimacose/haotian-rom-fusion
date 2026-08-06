@@ -61,3 +61,19 @@ This patch establishes the signing and flags profile. The official extraction
 later confirmed that release vbmeta must also describe `pvmfw`, `mi_ext`, and
 `system_dlkm`; that partition/OTA integration remains in the security issue and
 is a separate completion gate.
+
+## 0004 - source SoterService from the 3.0.304 product partition
+
+Target:
+
+```text
+repository: rep1ace/device_xiaomi_sm8750-common
+branch: lineage-23.2
+base: 6f633ec0919fdfe3f8d307e8ab7770c1c1a90696
+```
+
+The pinned common list expects `SoterService.apk` under `mi_ext/product/app`,
+matching its OS3.0.5 source note. In the verified haotian 3.0.304 package the
+same named artifact is under `product/app`. This one-line source-path update
+raises the project proprietary coverage from 4,785/4,786 to 4,786/4,786 and
+removes the only `mi_ext` entry from the extraction list.

@@ -47,11 +47,13 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [x] 私有 GitHub 仓库和可审阅 Git 基线
 - [x] HyperOS 3.0.304 官方 12.2 GB fastboot 包完成下载、长度与 SHA-256 校验
 - [x] 提取官方 boot、init_boot、vendor_boot、dtbo、vbmeta、super 和 8 个有效逻辑分区
+- [x] 只读展开 8 个官方 EROFS，生成 16,071 个文件、768 个符号链接的全量哈希清单
 - [x] 官方/Lineage/Evolution boot kernel 三方比较：三者逐字节相同
 - [ ] 官方/Lineage/Evolution DTBO、bootconfig、模块和 AVB 描述符的完整差异收敛
 - [x] CS40L26 校准 loader、ADB 收敛和 production AVB 补丁生成并通过静态应用检查
 - [ ] 三个补丁在 EvolutionX `bka` 完整源树中编译验证
-- [ ] 3.0.304 proprietary blobs 清单和提取脚本
+- [x] 两份 proprietary 列表对 3.0.304 文件树达到 4,786/4,786 路径覆盖
+- [ ] 生成 3.0.304 proprietary tree 并完成 ELF 依赖、版本与构建检查
 - [ ] 相机、Goodix、触控、显示和 enforcing 融合
 - [ ] production user、AVB、签名、OTA 与 A/B 回滚门禁
 

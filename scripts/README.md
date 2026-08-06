@@ -7,6 +7,8 @@
 | `Extract-SuperPartitions.ps1` | Dump super metadata, convert sparse input when required, extract logical partitions and hash every image |
 | `Build-BaselineManifest.py` | Verify pinned local inputs and generate a compact baseline manifest |
 | `Compare-KernelBaselines.py` | Extract the official kernel and compare it with LineageOS and EvolutionX kernels |
+| `Build-OfficialFilesystemManifest.py` | Under WSL, hash every extracted EROFS file/link, keep the full manifest on D, and write a compact review summary |
+| `Check-ProprietaryCoverage.py` | Under WSL, measure device/common proprietary-list coverage against the official filesystems and record relocated candidates |
 
 Scripts default to paths in `configs/baselines.json`. Large outputs remain under `D:\Codex\haotian-evox-0603-audit` and are excluded from Git.
 

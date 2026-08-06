@@ -1,1 +1,132 @@
-{"state":"baseline"}
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-06T13:43:56+08:00",
+  "source_super_sha256": "17c49682f8373ef1743a9ba6dfde8c26fbae5e8f31e1f9b783d9a246d89a8dc5",
+  "filesystem_count": 8,
+  "file_count": 16071,
+  "symlink_count": 768,
+  "logical_file_bytes": 14865416815,
+  "category_counts": {
+    "camera": 2584,
+    "display": 484,
+    "fingerprint": 31,
+    "haptics": 53,
+    "kernel_module": 589,
+    "touch": 199
+  },
+  "partitions": [
+    {
+      "name": "mi_ext_a",
+      "image_bytes": 110481408,
+      "image_sha256": "cd53ba9131835cb4ed2786c2d0a16a2bc58d5990299aba6da8dad98f7fd40b3b",
+      "file_count": 66,
+      "symlink_count": 0,
+      "logical_file_bytes": 109032531,
+      "category_counts": {}
+    },
+    {
+      "name": "odm_a",
+      "image_bytes": 3873234944,
+      "image_sha256": "b66d57940c4f7084022c9b49efcb1a770eb8a226eda4af9248c051a8946489e3",
+      "file_count": 3591,
+      "symlink_count": 12,
+      "logical_file_bytes": 5203760191,
+      "category_counts": {
+        "camera": 2398,
+        "display": 55,
+        "fingerprint": 4,
+        "haptics": 16,
+        "touch": 170
+      }
+    },
+    {
+      "name": "product_a",
+      "image_bytes": 4089835520,
+      "image_sha256": "028104e6911e76c45137f68593ecf8e225c108deaecb436d0357baba1ada586d",
+      "file_count": 1894,
+      "symlink_count": 0,
+      "logical_file_bytes": 5562654505,
+      "category_counts": {
+        "camera": 13,
+        "display": 28,
+        "touch": 6
+      }
+    },
+    {
+      "name": "system_a",
+      "image_bytes": 912228352,
+      "image_sha256": "abdb77adfa054da804c85dcace84a25f640d51e7427a1df98d9252a70210e9e5",
+      "file_count": 3718,
+      "symlink_count": 414,
+      "logical_file_bytes": 1396211906,
+      "category_counts": {
+        "camera": 36,
+        "display": 21,
+        "fingerprint": 4,
+        "haptics": 9,
+        "touch": 1
+      }
+    },
+    {
+      "name": "system_dlkm_a",
+      "image_bytes": 15212544,
+      "image_sha256": "5665e9fc92f0ae4b3058cdbcf8d18cc0601076f44f789a905bd4c72813438b3a",
+      "file_count": 213,
+      "symlink_count": 0,
+      "logical_file_bytes": 24068391,
+      "category_counts": {
+        "kernel_module": 192
+      }
+    },
+    {
+      "name": "system_ext_a",
+      "image_bytes": 709976064,
+      "image_sha256": "a2f65950db86ae0e27a644596186cd1c85123f0da1ee6d5004aa343d6fcc35c3",
+      "file_count": 3250,
+      "symlink_count": 25,
+      "logical_file_bytes": 1143467457,
+      "category_counts": {
+        "camera": 69,
+        "display": 174,
+        "fingerprint": 16,
+        "haptics": 1,
+        "touch": 18
+      }
+    },
+    {
+      "name": "vendor_a",
+      "image_bytes": 794562560,
+      "image_sha256": "89e7b50a40d967aa9bd2ed84fb1431f7992119bef2d13476bc3f66865ef490ad",
+      "file_count": 2932,
+      "symlink_count": 317,
+      "logical_file_bytes": 1244968284,
+      "category_counts": {
+        "camera": 65,
+        "display": 201,
+        "fingerprint": 7,
+        "haptics": 22,
+        "touch": 3
+      }
+    },
+    {
+      "name": "vendor_dlkm_a",
+      "image_bytes": 78082048,
+      "image_sha256": "d81b8f909752a8925e07b0f0cc4e2518ac1d6f798e737b25ce4807ed4c2e1163",
+      "file_count": 407,
+      "symlink_count": 0,
+      "logical_file_bytes": 181253550,
+      "category_counts": {
+        "camera": 3,
+        "display": 5,
+        "haptics": 5,
+        "kernel_module": 397,
+        "touch": 1
+      }
+    }
+  ],
+  "full_manifest": {
+    "path": "/mnt/d/Codex/haotian-evox-0603-audit/work/stock-3.0.304-fastboot/official-filesystem-file-manifest.json",
+    "bytes": 4057735,
+    "sha256": "3be59c7e12d920c324eff94e4c3b41cf1533cbcd48d3c77f08d6ac0ea86fddeb"
+  }
+}

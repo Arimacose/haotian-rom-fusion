@@ -62,6 +62,8 @@ git -C device/xiaomi/haotian am \
   /mnt/d/Codex/haotian-rom-fusion/patches/0002-haotian-disable-adb-insecure.patch
 git -C device/xiaomi/sm8750-common am \
   /mnt/d/Codex/haotian-rom-fusion/patches/0003-sm8750-production-avb-profile.patch
+git -C device/xiaomi/sm8750-common am \
+  /mnt/d/Codex/haotian-rom-fusion/patches/0004-sm8750-3.0.304-soterservice-source.patch
 ```
 
 ## Inputs still staged locally
@@ -100,7 +102,7 @@ flags and descriptors, then run through the A/B test matrix.
 1. official 3.0.304 archive and every selected image have recorded hashes;
 2. vendor extraction has zero missing mandatory blobs;
 3. kernel, modules, DTB and DTBO come from one selected baseline;
-4. all three patches pass against their pinned commits;
+4. all four patches pass against their pinned commits;
 5. `WITH_ADB_INSECURE` is absent;
 6. main vbmeta uses flags `0` and no AOSP test-key path remains;
 7. main vbmeta describes `pvmfw`, `mi_ext`, and `system_dlkm` consistently with

@@ -53,6 +53,12 @@ Gate:
 - boot-chain images must come from the same fastboot package;
 - no 3.0.302 or OS3.1 firmware image may appear in the first build manifest.
 
+The two pinned proprietary lists contain 4,786 paths. Against the extracted
+3.0.304 filesystems, 4,785 exist at their original location; the only move is
+`SoterService.apk` from `mi_ext/product/app` to `product/app`. Patch 0004 makes
+the project list cover 4,786/4,786 paths. This is a path-completeness result;
+ELF dependency, symbol, version and runtime-service checks remain separate.
+
 ## Decision 2: port the Lineage vibrator behavior, not its full binary
 
 Verified behavior to reproduce:

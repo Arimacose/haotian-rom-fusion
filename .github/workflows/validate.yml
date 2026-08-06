@@ -53,6 +53,8 @@ jobs:
           git -C /tmp/device_xiaomi_sm8750-common checkout 6f633ec0919fdfe3f8d307e8ab7770c1c1a90696
           git -C /tmp/device_xiaomi_sm8750-common apply --check \
             "$GITHUB_WORKSPACE/patches/0003-sm8750-production-avb-profile.patch"
+          git -C /tmp/device_xiaomi_sm8750-common apply --check \
+            "$GITHUB_WORKSPACE/patches/0004-sm8750-3.0.304-soterservice-source.patch"
 
   powershell:
     runs-on: windows-latest
