@@ -1,0 +1,43 @@
+﻿# Large and generated Android artifacts
+/downloads/
+/work/
+/out/
+/tmp/
+/cache/
+/extracted/
+/proprietary/
+/vendor-blobs/
+/*.img
+/*.bin
+/*.tgz
+/*.tar
+/*.zip
+/*.7z
+/*.lz4
+/*.zst
+/*.ko
+/*.apk
+/*.apex
+
+# Secrets and signing material
+/keys/
+*.pem
+*.pk8
+*.x509.pem
+*.jks
+*.keystore
+*.key
+*.der
+*.p12
+*.pfx
+.env
+.env.*
+
+# Local state
+.local/
+*.log
+*.part
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
