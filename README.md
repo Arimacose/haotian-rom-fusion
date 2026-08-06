@@ -53,7 +53,7 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [x] 只读展开 8 个官方 EROFS，生成 16,071 个文件、768 个符号链接的全量哈希清单
 - [x] 官方/Lineage/Evolution boot kernel 三方比较：三者逐字节相同
 - [x] 官方/Lineage/Evolution DTBO、bootconfig 与 vendor ramdisk 模块的完整静态差异
-- [x] 选择并固定官方一致的 `device/xiaomi/haotian-kernel` prebuilt 提交
+- [x] 选择并固定官方一致的 `device/xiaomi/haotian-kernel` prebuilt 提交，确定性 kernel-header 归档复跑一致
 - [ ] `pvmfw/mi_ext/system_dlkm` 的 AVB 与 OTA 描述符策略收敛
 - [x] CS40L26 校准 loader、ADB 收敛、production AVB 与 3.0.304 Soter 路径补丁生成并通过静态应用检查
 - [ ] 四个补丁在 EvolutionX `bka` 完整源树中编译验证
@@ -83,6 +83,13 @@ python .\scripts\Compare-KernelBaselines.py --config .\configs\baselines.json
 
 # 从官方 EROFS 与 firmware 生成两棵 vendor tree；重复核验时加 -SkipExtraction
 powershell.exe -ExecutionPolicy Bypass -File .\scripts\Generate-ProprietaryTree.ps1
+```
+
+完整 Linux 源树同步后生成 Soong 所需的 kernel header 归档：
+
+```bash
+bash /mnt/d/Codex/haotian-rom-fusion/scripts/Prepare-KernelHeaders.sh \
+  device/xiaomi/haotian-kernel
 ```
 
 ## 文档

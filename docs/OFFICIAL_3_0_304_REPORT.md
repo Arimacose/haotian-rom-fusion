@@ -234,6 +234,12 @@ SHA-256: a3232389047f226b4c94845d55440096027075b2056c0254c9e4e1bc4119c5b0
 应在后续 D 盘上的 WSL2 大小写敏感文件系统中重新检出，Windows 候选目录只用于
 不受该冲突影响的镜像和模块哈希审计。
 
+在 D 盘新建空目录并启用 Windows per-directory case sensitivity 后，已由 WSL
+重新检出选定提交，大小写同名 header 同时存在。确定性生成器连续运行两次，
+`prebuilt_kernel_headers.tar.gz` 均为 1,826,624 字节，SHA-256 均为
+`43315426829f37bb0665349a7574d46e896ece8e11d184aada3d3a3a7ff0bc43`；
+`gzip -t` 与两个冲突 header 的 archive entry 检查通过。
+
 ## 7. AVB 实测
 
 | 项目 | 官方 3.0.304 | EvolutionX 0603 | LineageOS 0704 |

@@ -21,6 +21,7 @@ jobs:
             python -m json.tool "$document" >/dev/null
           done
           python -m py_compile scripts/*.py
+          bash -n scripts/*.sh
           python - <<'PY'
           import xml.etree.ElementTree as ET
           ET.parse('manifests/haotian-bka.xml')

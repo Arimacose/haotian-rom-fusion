@@ -61,6 +61,19 @@
         "system_dlkm_versioned_ko": 96,
         "system_dlkm_flatten_ko": 96,
         "module_load_and_blocklist_files": 6
+      },
+      "generated_header_archive_test": {
+        "case_sensitive_checkout": "D:\\Codex\\haotian-rom-fusion-build\\kernel-selected-cs",
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\kernel-selected-cs\\prebuilt_kernel_headers.tar.gz",
+        "bytes": 1826624,
+        "sha256": "43315426829f37bb0665349a7574d46e896ece8e11d184aada3d3a3a7ff0bc43",
+        "deterministic_second_run": true,
+        "validation": [
+          "pinned commit",
+          "uppercase/lowercase header pair present",
+          "gzip integrity",
+          "archive entries present"
+        ]
       }
     },
     "rejected_for_first_build": [

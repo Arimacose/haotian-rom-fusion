@@ -123,6 +123,29 @@ stage is complete; the full Soong/ELF/VINTF checks run after it enters the
 platform source. The AVB private key is local-only; its public-key digest and
 signing policy are the reviewable evidence.
 
+The selected public repository contains the generated `kernel-headers/` tree
+but not the archive referenced by `TARGET_PREBUILT_KERNEL_HEADERS`. Generate it
+deterministically after `repo sync`:
+
+```bash
+bash /mnt/d/Codex/haotian-rom-fusion/scripts/Prepare-KernelHeaders.sh \
+  device/xiaomi/haotian-kernel
+```
+
+The helper verifies the pinned commit and checks that both uppercase and
+lowercase netfilter header names survived checkout before writing
+`device/xiaomi/haotian-kernel/prebuilt_kernel_headers.tar.gz`. The archive uses
+sorted paths, fixed ownership and timestamps, and `gzip -n`, so identical input
+produces identical output.
+
+The helper was executed twice against a D-drive directory with Windows
+per-directory case sensitivity enabled. Both runs produced:
+
+```text
+bytes: 1826624
+SHA-256: 43315426829f37bb0665349a7574d46e896ece8e11d184aada3d3a3a7ff0bc43
+```
+
 ## Configure and build
 
 ```bash
@@ -140,7 +163,8 @@ flags and descriptors, then run through the A/B test matrix.
 
 1. official 3.0.304 archive and every selected image have recorded hashes;
 2. vendor extraction has zero missing mandatory blobs: 4,817/4,817 list outputs;
-3. kernel, modules, DTB and DTBO resolve to pinned commit `802915c`;
+3. kernel, modules, DTB and DTBO resolve to pinned commit `802915c`, and the
+   deterministic prebuilt-header archive passes `gzip -t`;
 4. all four patches pass against their pinned commits;
 5. `WITH_ADB_INSECURE` is absent;
 6. main vbmeta uses flags `0` and no AOSP test-key path remains;
