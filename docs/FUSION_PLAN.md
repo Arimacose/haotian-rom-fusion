@@ -147,6 +147,12 @@ Development builds may retain diagnostic logging, but security gates are measure
 - Compare banners, boot headers, config, KMI, exported symbols, module CRCs, DTB/DTBO and bootconfig.
 - Select a reference kernel/module combination before feature integration.
 
+Current decision: official 3.0.304, EvolutionX 0603 and LineageOS 0704 carry an
+identical 6.6.77 kernel. The first build therefore uses the official-coherent
+6.6.77 kernel/module/DTB/DTBO set. The third-party 6.6.143 path remains a later
+experimental track after its full artifact is supplied and KMI/module checks
+pass; it is not a prerequisite for hardware fusion.
+
 ### Phase 3 - minimal hardware bring-up
 
 - Boot framework and vendor services.

@@ -17,8 +17,9 @@ jobs:
           python-version: "3.12"
       - name: Validate JSON and Python
         run: |
-          python -m json.tool configs/baselines.json >/dev/null
-          python -m json.tool evidence/known-artifacts.json >/dev/null
+          for document in configs/*.json evidence/*.json; do
+            python -m json.tool "$document" >/dev/null
+          done
           python -m py_compile scripts/*.py
           python - <<'PY'
           import xml.etree.ElementTree as ET

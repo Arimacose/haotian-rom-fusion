@@ -1,1 +1,110 @@
-{"state":"baseline"}
+{
+  "schema_version": "1.0",
+  "artifacts": {
+    "official": {
+      "boot": {
+        "algorithm": "SHA256_RSA4096",
+        "public_key_sha1": "de5be2a57e0cfbb83ec5c9523806eb6b7a72f809",
+        "rollback_index": 1769904000,
+        "flags": 0,
+        "release_string": "avbtool 1.3.0",
+        "raw_report_sha256": "64382910cb71218fe6c34bcf4b9d565a8ed19be954c9a16f42baad818b5f852c"
+      },
+      "vbmeta": {
+        "algorithm": "SHA256_RSA4096",
+        "public_key_sha1": "de5be2a57e0cfbb83ec5c9523806eb6b7a72f809",
+        "rollback_index": 0,
+        "flags": 0,
+        "release_string": "avbtool 1.3.0",
+        "raw_report_sha256": "2bd5164d6fa4a6ba03e91a85c8e3c59db3ede26e5e6e58ca98d01fa6dd4355c8",
+        "chain_partitions": [
+          "boot",
+          "recovery",
+          "vbmeta_system"
+        ],
+        "described_partitions": [
+          "boot",
+          "dtbo",
+          "init_boot",
+          "mi_ext",
+          "odm",
+          "pvmfw",
+          "recovery",
+          "system_dlkm",
+          "vbmeta_system",
+          "vendor",
+          "vendor_boot",
+          "vendor_dlkm"
+        ]
+      }
+    },
+    "evolutionx": {
+      "boot": {
+        "algorithm": "SHA256_RSA4096",
+        "public_key_sha1": "2597c218aae470a130f61162feaae70afd97f011",
+        "rollback_index": 1769904000,
+        "flags": 0,
+        "release_string": "avbtool 1.3.0",
+        "raw_report_sha256": "46d12622f8839501eb0d2615a8e92fed102256ec909ac44dacc6b8385b55118a"
+      },
+      "vbmeta": {
+        "algorithm": "SHA256_RSA4096",
+        "public_key_sha1": "2597c218aae470a130f61162feaae70afd97f011",
+        "rollback_index": 0,
+        "flags": 3,
+        "release_string": "avbtool 1.3.0",
+        "raw_report_sha256": "66642e8010d4063874e2f5d1004f9dcffea2ae4088b9aba4562d0888cb1f9aaa",
+        "chain_partitions": [
+          "boot",
+          "recovery",
+          "vbmeta_system"
+        ],
+        "described_partitions": [
+          "boot",
+          "dtbo",
+          "init_boot",
+          "odm",
+          "recovery",
+          "vbmeta_system",
+          "vendor",
+          "vendor_boot",
+          "vendor_dlkm"
+        ]
+      }
+    },
+    "lineageos": {
+      "boot": {
+        "algorithm": "SHA256_RSA2048",
+        "public_key_sha1": "cdbb77177f731920bbe0a0f94f84d9038ae0617d",
+        "rollback_index": 1780272000,
+        "flags": 0,
+        "release_string": "avbtool 1.3.0",
+        "raw_report_sha256": "703979c8718798f5db50361b467d67fad5df896788d95a2fa5c1a8ed939b04ef"
+      },
+      "vbmeta": {
+        "algorithm": "SHA256_RSA2048",
+        "public_key_sha1": "cdbb77177f731920bbe0a0f94f84d9038ae0617d",
+        "rollback_index": 0,
+        "flags": 3,
+        "release_string": "avbtool 1.3.0",
+        "raw_report_sha256": "b663493af1f7577e360882a88933dba3b62a095ea7c55eb002ddf92c7af028da",
+        "chain_partitions": [
+          "boot",
+          "recovery",
+          "vbmeta_system"
+        ],
+        "described_partitions": [
+          "boot",
+          "dtbo",
+          "init_boot",
+          "odm",
+          "recovery",
+          "vbmeta_system",
+          "vendor",
+          "vendor_boot",
+          "vendor_dlkm"
+        ]
+      }
+    }
+  }
+}

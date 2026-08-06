@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-06T12:22:18+08:00",
+  "generated_at": "2026-08-06T13:11:28+08:00",
   "device": "haotian",
   "records": [
     {
       "name": "official-fastboot-3.0.304",
       "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",
-      "exists": false,
+      "exists": true,
       "expected_bytes": 12202675840,
-      "expected_sha256": null,
-      "bytes": null,
-      "size_match": null,
-      "sha256": null,
-      "sha256_match": null
+      "expected_sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
+      "bytes": 12202675840,
+      "size_match": true,
+      "sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
+      "sha256_match": true
     },
     {
       "name": "official-firmware-3.0.304",
@@ -33,8 +33,8 @@
       "expected_sha256": "7a3a739607251c7cafe5aee2c2e4590ffbb7c6366fb7fae01124a41ce0bb8894",
       "bytes": 5715602972,
       "size_match": true,
-      "sha256": null,
-      "sha256_match": null
+      "sha256": "7a3a739607251c7cafe5aee2c2e4590ffbb7c6366fb7fae01124a41ce0bb8894",
+      "sha256_match": true
     },
     {
       "name": "lineageos-0704-ota",
@@ -44,8 +44,8 @@
       "expected_sha256": "3f2308e8df0a82b7a5feef2dab5b40c75897242a9c3d98d87387e8cc2d3e5191",
       "bytes": 4538160145,
       "size_match": true,
-      "sha256": null,
-      "sha256_match": null
+      "sha256": "3f2308e8df0a82b7a5feef2dab5b40c75897242a9c3d98d87387e8cc2d3e5191",
+      "sha256_match": true
     },
     {
       "name": "evolutionx-kernel",
@@ -71,8 +71,6 @@
     }
   ],
   "mismatches": [],
-  "absent": [
-    "official-fastboot-3.0.304"
-  ],
+  "absent": [],
   "valid": true
 }

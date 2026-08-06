@@ -83,30 +83,26 @@ $selectedNames = @(
     'super.img'
 )
 
-$allImages = Get-ChildItem -LiteralPath $imagesDirectory.FullName -Filter '*.img' -File |
+$allFiles = Get-ChildItem -LiteralPath $imagesDirectory.FullName -File |
     Sort-Object Name |
     ForEach-Object {
         [ordered]@{
             name = $_.Name
+            extension = $_.Extension.ToLowerInvariant()
             path = $_.FullName
             bytes = $_.Length
             sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
         }
     }
 
+$allImages = @($allFiles | Where-Object { $_.extension -eq '.img' })
 $selected = @($allImages | Where-Object { $_.name -in $selectedNames })
 
-$firmwareNames = @(
-    'abl.img', 'aop.img', 'aop_config.img', 'bluetooth.img', 'cpucp.img',
-    'cpucp_dtb.img', 'devcfg.img', 'dsp.img', 'featenabler.img', 'hyp.img',
-    'idmanager.img', 'imagefv.img', 'keymaster.img', 'modem.img',
-    'modemfirmware.img', 'multiimgqti.img', 'pdp.img', 'pdp_cdb.img',
-    'pvmfw.img', 'qupfw.img', 'shrm.img', 'soccp_dcd.img', 'soccp_debug.img',
-    'spuservice.img', 'tz.img', 'uefi.img', 'uefisecapp.img', 'vm-bootsys.img',
-    'xbl.img', 'xbl_config.img', 'xbl_ramdump.img'
-)
-
-$firmware = @($allImages | Where-Object { $_.name -in $firmwareNames })
+$firmwareExtensions = @('.elf', '.mbn', '.bin', '.melf', '.fv')
+$firmware = @($allFiles | Where-Object {
+    ($_.extension -in $firmwareExtensions -and $_.name -notlike 'gpt_*' -and $_.name -notlike 'zeros_*') -or
+    $_.name -in @('pvmfw.img', 'vm-bootsys.img')
+})
 
 $manifest = [ordered]@{
     schema_version = '1.0'
@@ -115,6 +111,8 @@ $manifest = [ordered]@{
     source_bytes = $actualBytes
     source_sha256 = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
     images_directory = $imagesDirectory.FullName
+    file_count = @($allFiles).Count
+    all_files = @($allFiles)
     image_count = @($allImages).Count
     all_images = @($allImages)
     selected_images = @($selected)

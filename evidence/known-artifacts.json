@@ -6,9 +6,10 @@
   "artifacts": [
     {
       "name": "official-hyperos-3.0.304-fastboot",
-      "state": "downloading",
+      "state": "verified",
       "expected_bytes": 12202675840,
-      "sha256": null,
+      "bytes": 12202675840,
+      "sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
       "etag": "A3388C0571D61A1BE119D49E30D24F47-400",
       "oss_crc64_ecma": "13677892784823728727",
       "path": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",

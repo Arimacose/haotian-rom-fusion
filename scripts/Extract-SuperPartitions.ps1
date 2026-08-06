@@ -91,21 +91,26 @@ if ($Force -and (Test-Path -LiteralPath $outputRoot)) {
 New-Item -ItemType Directory -Path $outputRoot -Force | Out-Null
 
 $inputImage = $superImage.FullName
-$dumpSucceeded = $true
+$header = New-Object byte[] 4
+$stream = [IO.File]::OpenRead($superImage.FullName)
 try {
-    Invoke-NativeChecked -Executable $lpdumps -Arguments @('-j', $inputImage) -CapturePath $metadataPath
-} catch {
-    $dumpSucceeded = $false
+    if ($stream.Read($header, 0, $header.Length) -ne $header.Length) {
+        throw "super.img is too short to contain an Android image header"
+    }
+} finally {
+    $stream.Dispose()
 }
+$isAndroidSparse = [BitConverter]::ToUInt32($header, 0) -eq [uint32]3978755898
 
-if (-not $dumpSucceeded) {
+if ($isAndroidSparse) {
     $rawSuper = Join-Path $officialRoot 'super.raw.img'
     if (-not (Test-Path -LiteralPath $rawSuper -PathType Leaf)) {
         Invoke-NativeChecked -Executable $simg2img -Arguments @($superImage.FullName, $rawSuper)
     }
     $inputImage = $rawSuper
-    Invoke-NativeChecked -Executable $lpdumps -Arguments @('-j', $inputImage) -CapturePath $metadataPath
 }
+
+Invoke-NativeChecked -Executable $lpdumps -Arguments @('-j', $inputImage) -CapturePath $metadataPath
 
 if (-not (Get-ChildItem -LiteralPath $outputRoot -Filter '*.img' -File -ErrorAction SilentlyContinue)) {
     Invoke-NativeChecked -Executable $lpunpack -Arguments @($inputImage, $outputRoot)
@@ -132,6 +137,7 @@ $manifest = [ordered]@{
     source_super = $superImage.FullName
     source_super_bytes = $superImage.Length
     source_super_sha256 = (Get-FileHash -LiteralPath $superImage.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+    source_super_sparse = $isAndroidSparse
     extraction_input = $inputImage
     metadata = $metadataPath
     output_root = $outputRoot

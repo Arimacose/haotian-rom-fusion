@@ -103,4 +103,6 @@ flags and descriptors, then run through the A/B test matrix.
 4. all three patches pass against their pinned commits;
 5. `WITH_ADB_INSECURE` is absent;
 6. main vbmeta uses flags `0` and no AOSP test-key path remains;
-7. proprietary blobs, output files and private keys remain outside Git.
+7. main vbmeta describes `pvmfw`, `mi_ext`, and `system_dlkm` consistently with
+   the selected OTA and dynamic-partition layout;
+8. proprietary blobs, output files and private keys remain outside Git.

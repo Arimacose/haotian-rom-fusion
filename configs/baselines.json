@@ -7,6 +7,7 @@
     "version": "OS3.0.304.0.WOBCNXM",
     "url": "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS3.0.304.0.WOBCNXM/haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",
     "expected_bytes": 12202675840,
+    "sha256": "74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef",
     "etag": "A3388C0571D61A1BE119D49E30D24F47-400",
     "oss_crc64_ecma": "13677892784823728727",
     "archive": "D:\\Codex\\haotian-evox-0603-audit\\downloads\\stock-3.0.304-fastboot\\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz",

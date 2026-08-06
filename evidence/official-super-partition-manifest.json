@@ -1,1 +1,110 @@
-{"state":"baseline"}
+{
+    "schema_version":  "1.0",
+    "generated_at":  "2026-08-06T12:57:17.4102902+08:00",
+    "source_super":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\extracted\\haotian_images_OS3.0.304.0.WOBCNXM_16.0\\images\\super.img",
+    "source_super_bytes":  10550233492,
+    "source_super_sha256":  "17c49682f8373ef1743a9ba6dfde8c26fbae5e8f31e1f9b783d9a246d89a8dc5",
+    "source_super_sparse":  true,
+    "extraction_input":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super.raw.img",
+    "metadata":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\official-super-metadata.json",
+    "output_root":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions",
+    "partition_count":  16,
+    "partitions":  [
+                       {
+                           "name":  "mi_ext_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\mi_ext_a.img",
+                           "bytes":  110481408,
+                           "sha256":  "cd53ba9131835cb4ed2786c2d0a16a2bc58d5990299aba6da8dad98f7fd40b3b"
+                       },
+                       {
+                           "name":  "mi_ext_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\mi_ext_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       },
+                       {
+                           "name":  "odm_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\odm_a.img",
+                           "bytes":  3873234944,
+                           "sha256":  "b66d57940c4f7084022c9b49efcb1a770eb8a226eda4af9248c051a8946489e3"
+                       },
+                       {
+                           "name":  "odm_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\odm_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       },
+                       {
+                           "name":  "product_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\product_a.img",
+                           "bytes":  4089835520,
+                           "sha256":  "028104e6911e76c45137f68593ecf8e225c108deaecb436d0357baba1ada586d"
+                       },
+                       {
+                           "name":  "product_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\product_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       },
+                       {
+                           "name":  "system_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\system_a.img",
+                           "bytes":  912228352,
+                           "sha256":  "abdb77adfa054da804c85dcace84a25f640d51e7427a1df98d9252a70210e9e5"
+                       },
+                       {
+                           "name":  "system_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\system_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       },
+                       {
+                           "name":  "system_dlkm_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\system_dlkm_a.img",
+                           "bytes":  15212544,
+                           "sha256":  "5665e9fc92f0ae4b3058cdbcf8d18cc0601076f44f789a905bd4c72813438b3a"
+                       },
+                       {
+                           "name":  "system_dlkm_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\system_dlkm_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       },
+                       {
+                           "name":  "system_ext_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\system_ext_a.img",
+                           "bytes":  709976064,
+                           "sha256":  "a2f65950db86ae0e27a644596186cd1c85123f0da1ee6d5004aa343d6fcc35c3"
+                       },
+                       {
+                           "name":  "system_ext_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\system_ext_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       },
+                       {
+                           "name":  "vendor_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\vendor_a.img",
+                           "bytes":  794562560,
+                           "sha256":  "89e7b50a40d967aa9bd2ed84fb1431f7992119bef2d13476bc3f66865ef490ad"
+                       },
+                       {
+                           "name":  "vendor_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\vendor_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       },
+                       {
+                           "name":  "vendor_dlkm_a",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\vendor_dlkm_a.img",
+                           "bytes":  78082048,
+                           "sha256":  "d81b8f909752a8925e07b0f0cc4e2518ac1d6f798e737b25ce4807ed4c2e1163"
+                       },
+                       {
+                           "name":  "vendor_dlkm_b",
+                           "path":  "D:\\Codex\\haotian-evox-0603-audit\\work\\stock-3.0.304-fastboot\\super-partitions\\vendor_dlkm_b.img",
+                           "bytes":  0,
+                           "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                       }
+                   ]
+}

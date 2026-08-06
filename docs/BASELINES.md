@@ -20,6 +20,7 @@ Generated for the `haotian` fusion project on 2026-08-06.
 ```text
 URL: https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS3.0.304.0.WOBCNXM/haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz
 Expected bytes: 12202675840
+SHA-256: 74f6af63f67f6e09b3f997c8f4503ac4275fe1d11bc3771a9ddd6521c83a0eef
 Content-Type: application/x-gtar-compressed
 Accept-Ranges: bytes
 ETag: A3388C0571D61A1BE119D49E30D24F47-400
@@ -33,7 +34,10 @@ Expected local path:
 D:\Codex\haotian-evox-0603-audit\downloads\stock-3.0.304-fastboot\haotian_images_OS3.0.304.0.WOBCNXM_20260528.0000.00_16.0_cn_f685dbac4d.tgz
 ```
 
-The `.part` file is resumable. Final SHA-256 and archive-member verification are written after the expected byte count is reached.
+The archive reached the exact recorded byte count, its aria2 control map closed
+cleanly, the TGZ member listing passed, and extraction produced 100 files in the
+fastboot `images` directory. The sparse `super.img` was converted and expanded
+to eight populated `_a` logical partitions plus eight empty `_b` entries.
 
 ## HyperOS 3.0.304 firmware-only package
 
@@ -106,7 +110,12 @@ Banner: Linux 6.6.77 android15-8, 4K pages, Clang 18
 Relationship: byte-identical between the two prebuilts
 ```
 
-The five inspected haptic modules and `Hapticsconfig.xml` are also identical. The Lineage vibration improvement therefore comes from the service and init integration.
+The official 3.0.304 kernel is also byte-identical to both prebuilts. All three
+are the same 36,456,960-byte kernel with SHA-256
+`99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e`.
+The five inspected haptic modules and `Hapticsconfig.xml` are identical between
+the two custom ROMs. The Lineage vibration improvement therefore comes from the
+service and init integration rather than a kernel replacement.
 
 ## Pinned public source
 

@@ -15,6 +15,11 @@ The analyzed EvolutionX and LineageOS packages are development-oriented referenc
 | full GMS | present with spoof framework | absent | explicit build choice |
 | identity | Pixel/Evolution and Xiaomi mixed signals | Xiaomi fingerprint and Lineage AVB mixed signals | one coherent project identity |
 
+The official 3.0.304 main vbmeta uses RSA-4096, flags `0`, and describes
+`pvmfw`, `mi_ext`, and `system_dlkm` in addition to the partitions present in
+both custom-ROM main vbmeta images. Both analyzed custom main vbmeta images use
+flags `3` and omit those three official descriptors.
+
 ## Gate S1 - build identity
 
 - `TARGET_BUILD_VARIANT=user` for the release candidate.
@@ -34,6 +39,8 @@ The analyzed EvolutionX and LineageOS packages are development-oriented referenc
 
 - Main vbmeta and chained vbmeta images use flags `0`.
 - Every intended partition has a descriptor.
+- The release chain explicitly accounts for official `pvmfw`, `mi_ext` and
+  `system_dlkm`; setting flags `0` alone does not complete this gate.
 - Rollback indexes and locations are documented and internally consistent.
 - Public keys extracted from all vbmeta images match the project key manifest.
 - The signed release package is verified again after publication.

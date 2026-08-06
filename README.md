@@ -45,9 +45,10 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [x] HyperOS 3.0.302/3.0.304 的 31 个 firmware 分区比较
 - [x] LineageOS 振动修复机制定位
 - [x] 私有 GitHub 仓库和可审阅 Git 基线
-- [ ] HyperOS 3.0.304 官方 12.2 GB fastboot 包完成下载与归档校验
-- [ ] 提取官方 boot、init_boot、vendor_boot、dtbo、vbmeta 和 super
-- [ ] 官方/Lineage/Evolution 内核、DTB、bootconfig 三方比较
+- [x] HyperOS 3.0.304 官方 12.2 GB fastboot 包完成下载、长度与 SHA-256 校验
+- [x] 提取官方 boot、init_boot、vendor_boot、dtbo、vbmeta、super 和 8 个有效逻辑分区
+- [x] 官方/Lineage/Evolution boot kernel 三方比较：三者逐字节相同
+- [ ] 官方/Lineage/Evolution DTBO、bootconfig、模块和 AVB 描述符的完整差异收敛
 - [x] CS40L26 校准 loader、ADB 收敛和 production AVB 补丁生成并通过静态应用检查
 - [ ] 三个补丁在 EvolutionX `bka` 完整源树中编译验证
 - [ ] 3.0.304 proprietary blobs 清单和提取脚本
@@ -81,6 +82,7 @@ python .\scripts\Compare-KernelBaselines.py --config .\configs\baselines.json
 - [`docs/DEVICE_TEST_MATRIX.md`](docs/DEVICE_TEST_MATRIX.md)：后续受控 A/B 真机验收矩阵；
 - [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)：本地工具来源、固定提交和 SHA-256；
 - [`docs/BUILD_BOOTSTRAP.md`](docs/BUILD_BOOTSTRAP.md)：EvolutionX `bka` 初始化、固定清单、补丁和首编译门禁；
+- [`docs/OFFICIAL_3_0_304_REPORT.md`](docs/OFFICIAL_3_0_304_REPORT.md)：官方 fastboot、super、firmware、kernel 与 AVB 实测报告；
 - [`patches/README.md`](patches/README.md)：当前可回移补丁栈及目标提交。
 
 ## 远端

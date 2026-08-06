@@ -56,3 +56,8 @@ This patch:
 
 The referenced `vendor/haotian/security/avb.pem` is local build input and is
 excluded from this repository.
+
+This patch establishes the signing and flags profile. The official extraction
+later confirmed that release vbmeta must also describe `pvmfw`, `mi_ext`, and
+`system_dlkm`; that partition/OTA integration remains in the security issue and
+is a separate completion gate.

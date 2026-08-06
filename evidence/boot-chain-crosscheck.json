@@ -1,1 +1,152 @@
-{"state":"baseline"}
+{
+  "schema_version": "1.0",
+  "partitions": [
+    {
+      "name": "boot.img",
+      "artifacts": {
+        "official": {
+          "present": true,
+          "bytes": 100663296,
+          "sha256": "ad8c9b89c96ff5473e17cfd0fa18b3f45d8dbeafa23f4846fe45469a9b6b4d09"
+        },
+        "evolutionx": {
+          "present": true,
+          "bytes": 100663296,
+          "sha256": "488dce7d6d2e85df0058d52887737ed9f13e4986c6a4b4f190dec7ef3c8d7a25"
+        },
+        "lineageos": {
+          "present": true,
+          "bytes": 100663296,
+          "sha256": "aa899d455c9e4788abd5196d792ded2bce0549351cdb9472ed102507b313b28c"
+        }
+      },
+      "all_present_byte_identical": false
+    },
+    {
+      "name": "init_boot.img",
+      "artifacts": {
+        "official": {
+          "present": true,
+          "bytes": 8388608,
+          "sha256": "249e133a7c12e6bb269a642529a4484d729c53103475361ab8db24b08a9c2c36"
+        },
+        "evolutionx": {
+          "present": true,
+          "bytes": 8388608,
+          "sha256": "bc99b5ed2abb4f03567dcb0e97cf779501b06ccee93f1df6b13fc21fb1a61260"
+        },
+        "lineageos": {
+          "present": true,
+          "bytes": 8388608,
+          "sha256": "4b957ac67c56d56640709eb3c1940a082ee8dc58135c45560361adcf7591e162"
+        }
+      },
+      "all_present_byte_identical": false
+    },
+    {
+      "name": "vendor_boot.img",
+      "artifacts": {
+        "official": {
+          "present": true,
+          "bytes": 100663296,
+          "sha256": "45c61737b372b4ce300ef70d0228760995010509cf874243ddd6b62af186cad7"
+        },
+        "evolutionx": {
+          "present": true,
+          "bytes": 100663296,
+          "sha256": "9b84cc3e72156283a06240b908f3e2d2c90ee3000facc1bc787f7c22254382c7"
+        },
+        "lineageos": {
+          "present": true,
+          "bytes": 100663296,
+          "sha256": "bc53c10fe27d99bba2781141a4708bfb0b6dfbc7f02f26d9c10787e60ea7259f"
+        }
+      },
+      "all_present_byte_identical": false
+    },
+    {
+      "name": "dtbo.img",
+      "artifacts": {
+        "official": {
+          "present": true,
+          "bytes": 18874368,
+          "sha256": "602f91eb634ad49d70c59d45a071358f37e02ded68db563efb9b25b4d7dfa804"
+        },
+        "evolutionx": {
+          "present": true,
+          "bytes": 25165824,
+          "sha256": "132828338b011d376e3c6b739b3f3677f5d87c62576bcbf5864d59a70d0251ba"
+        },
+        "lineageos": {
+          "present": true,
+          "bytes": 25165824,
+          "sha256": "8a7b80fd4f54396c693022feb1e0470856fbf6d2f9518440cb4b88d07b99b94f"
+        }
+      },
+      "all_present_byte_identical": false
+    },
+    {
+      "name": "vbmeta.img",
+      "artifacts": {
+        "official": {
+          "present": true,
+          "bytes": 12288,
+          "sha256": "c73f8e19d1677a4a200de5a06cfb6c08dcb06a31d3853bad48c5a709f89e8363"
+        },
+        "evolutionx": {
+          "present": true,
+          "bytes": 8192,
+          "sha256": "fdbe00ec483e8e8e84e3fb33a6c1a6f50a2fb5d429273666fcb99a3a370dcba6"
+        },
+        "lineageos": {
+          "present": true,
+          "bytes": 8192,
+          "sha256": "935a49effaf88113d4b155b04a009db144ca6bf7973ecc7878d846900b01528a"
+        }
+      },
+      "all_present_byte_identical": false
+    },
+    {
+      "name": "vbmeta_system.img",
+      "artifacts": {
+        "official": {
+          "present": true,
+          "bytes": 4096,
+          "sha256": "84fb6279e41424b2c48efedba7bfdc99bfa6e0206b03885ffe35225f60448bae"
+        },
+        "evolutionx": {
+          "present": true,
+          "bytes": 4096,
+          "sha256": "7f4c4ed5c3d7cff668d04ddab7e90b7cdacbd93ccb70f7c174e68f9496a9f73d"
+        },
+        "lineageos": {
+          "present": true,
+          "bytes": 4096,
+          "sha256": "05ff04f922f5fdcea6e2fec053687127b1c6dd27adaf1e004c711be9be50236b"
+        }
+      },
+      "all_present_byte_identical": false
+    },
+    {
+      "name": "recovery.img",
+      "artifacts": {
+        "official": {
+          "present": true,
+          "bytes": 104857600,
+          "sha256": "89a0193ce6f6708102b969581e044fa26dea38c20f723d224887c3c2ba301c38"
+        },
+        "evolutionx": {
+          "present": true,
+          "bytes": 104857600,
+          "sha256": "550dd9442eeda1b7652a861aa59f2b6c9cf4614acc5cdb87a7028a97ea94248b"
+        },
+        "lineageos": {
+          "present": true,
+          "bytes": 104857600,
+          "sha256": "61b36287a927ca99ce0a28c6eeec2670fc895ffb112cf58b03d70be2ca36c890"
+        }
+      },
+      "all_present_byte_identical": false
+    }
+  ]
+}
