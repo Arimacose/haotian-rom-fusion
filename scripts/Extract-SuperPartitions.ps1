@@ -13,13 +13,44 @@ function Invoke-NativeChecked {
         [string]$CapturePath
     )
 
-    if ($CapturePath) {
-        & $Executable @Arguments 2>&1 | Set-Content -LiteralPath $CapturePath -Encoding UTF8
-    } else {
-        & $Executable @Arguments
+    $temporaryStderr = -not $CapturePath
+    $stderrPath = if ($CapturePath) { "$CapturePath.stderr.log" } else { [IO.Path]::GetTempFileName() }
+    $previousErrorAction = $ErrorActionPreference
+
+    try {
+        # These AOSP tools print their provenance banner to stderr even on success.
+        # Keep stderr separate so lpdumps JSON on stdout remains machine-readable.
+        $ErrorActionPreference = 'Continue'
+        if ($CapturePath) {
+            $stdout = & $Executable @Arguments 2> $stderrPath
+        } else {
+            & $Executable @Arguments 2> $stderrPath
+        }
+        $exitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $previousErrorAction
     }
-    if ($LASTEXITCODE -ne 0) {
-        throw "$Executable exited with code $LASTEXITCODE"
+
+    $stderrText = if (Test-Path -LiteralPath $stderrPath) {
+        Get-Content -LiteralPath $stderrPath -Raw -ErrorAction SilentlyContinue
+    } else {
+        ''
+    }
+
+    if ($CapturePath) {
+        $stdout | Set-Content -LiteralPath $CapturePath -Encoding UTF8
+    }
+
+    if ($exitCode -ne 0) {
+        $detail = if ($stderrText) { ": $($stderrText.Trim())" } else { '' }
+        throw "$Executable exited with code $exitCode$detail"
+    }
+
+    if ($temporaryStderr) {
+        if ($stderrText) {
+            Write-Verbose $stderrText.Trim()
+        }
+        Remove-Item -LiteralPath $stderrPath -Force -ErrorAction SilentlyContinue
     }
 }
 
