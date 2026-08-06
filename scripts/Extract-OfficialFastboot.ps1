@@ -32,9 +32,18 @@ if (-not $outputRoot.StartsWith($allowedWorkRoot + [IO.Path]::DirectorySeparator
 
 New-Item -ItemType Directory -Path $outputRoot -Force | Out-Null
 
-& tar.exe -tzf $archive | Set-Content -LiteralPath $listingPath -Encoding UTF8
+$archiveListing = @(& tar.exe -tzf $archive)
 if ($LASTEXITCODE -ne 0) {
     throw "tar archive listing failed with exit code $LASTEXITCODE"
+}
+$archiveListing | Set-Content -LiteralPath $listingPath -Encoding UTF8
+
+foreach ($entry in $archiveListing) {
+    $portableEntry = $entry.Replace('\', '/')
+    $segments = $portableEntry.Split('/', [StringSplitOptions]::RemoveEmptyEntries)
+    if ($portableEntry.StartsWith('/') -or $portableEntry -match '^[A-Za-z]:' -or $segments -contains '..') {
+        throw "Unsafe archive entry detected: $entry"
+    }
 }
 
 if ($Force -and (Test-Path -LiteralPath $extractPath)) {
@@ -65,25 +74,27 @@ $selectedNames = @(
     'boot.img',
     'init_boot.img',
     'vendor_boot.img',
+    'vendor_kernel_boot.img',
     'dtbo.img',
     'vbmeta.img',
     'vbmeta_system.img',
+    'vbmeta_vendor.img',
     'recovery.img',
     'super.img'
 )
 
-$selected = foreach ($name in $selectedNames) {
-    $path = Join-Path $imagesDirectory.FullName $name
-    if (Test-Path -LiteralPath $path -PathType Leaf) {
-        $file = Get-Item -LiteralPath $path
+$allImages = Get-ChildItem -LiteralPath $imagesDirectory.FullName -Filter '*.img' -File |
+    Sort-Object Name |
+    ForEach-Object {
         [ordered]@{
-            name = $name
-            path = $file.FullName
-            bytes = $file.Length
-            sha256 = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+            name = $_.Name
+            path = $_.FullName
+            bytes = $_.Length
+            sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
         }
     }
-}
+
+$selected = @($allImages | Where-Object { $_.name -in $selectedNames })
 
 $firmwareNames = @(
     'abl.img', 'aop.img', 'aop_config.img', 'bluetooth.img', 'cpucp.img',
@@ -95,18 +106,7 @@ $firmwareNames = @(
     'xbl.img', 'xbl_config.img', 'xbl_ramdump.img'
 )
 
-$firmware = foreach ($name in $firmwareNames) {
-    $path = Join-Path $imagesDirectory.FullName $name
-    if (Test-Path -LiteralPath $path -PathType Leaf) {
-        $file = Get-Item -LiteralPath $path
-        [ordered]@{
-            name = $name
-            path = $file.FullName
-            bytes = $file.Length
-            sha256 = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
-        }
-    }
-}
+$firmware = @($allImages | Where-Object { $_.name -in $firmwareNames })
 
 $manifest = [ordered]@{
     schema_version = '1.0'
@@ -115,6 +115,8 @@ $manifest = [ordered]@{
     source_bytes = $actualBytes
     source_sha256 = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
     images_directory = $imagesDirectory.FullName
+    image_count = @($allImages).Count
+    all_images = @($allImages)
     selected_images = @($selected)
     firmware_images = @($firmware)
 }
