@@ -69,5 +69,76 @@
     "path": "/mnt/d/Codex/haotian-evox-0603-audit/work/stock-3.0.304-fastboot/proprietary-coverage-full.json",
     "bytes": 1198671,
     "sha256": "2e67beced419d0ab3011d35313b5af2786dc4ee3292965cc00fdb876a25d8963"
+  },
+  "generated_tree": {
+    "generated_at": "2026-08-06T14:19:00+08:00",
+    "official_version": "OS3.0.304.0.WOBCNXM",
+    "source_root": "D:\\Codex\\haotian-rom-fusion-build\\source",
+    "output_root": "D:\\Codex\\haotian-rom-fusion-build\\source\\vendor\\xiaomi",
+    "source_dump": "D:\\Codex\\haotian-rom-fusion-build\\stock-3.0.304-dump",
+    "tool_commits": {
+      "extract_utils": "b80fc427c8719bfa34e3c0dbdf43289bd24831d2",
+      "extract_tools": "a8aabbbe42bdecba4c6d1a9e6e71fbc47de59f96"
+    },
+    "list_output_validation": {
+      "haotian": {
+        "entries": 3011,
+        "present": 3011,
+        "missing": 0
+      },
+      "sm8750-common": {
+        "entries": 1775,
+        "present": 1775,
+        "missing": 0
+      },
+      "firmware": {
+        "entries": 31,
+        "present": 31,
+        "missing": 0
+      },
+      "total_entries": 4817,
+      "missing": 0
+    },
+    "trees": {
+      "haotian": {
+        "files": 3046,
+        "bytes": 5465316231
+      },
+      "sm8750-common": {
+        "files": 1779,
+        "bytes": 781983573
+      },
+      "total": {
+        "files": 4825,
+        "bytes": 6247299804
+      }
+    },
+    "full_manifest": {
+      "path": "D:\\Codex\\haotian-rom-fusion-build\\proprietary-tree-manifest.json",
+      "bytes": 1140428,
+      "sha256": "a2ab13dff9be7d893378c111b8e7e5022ac428e828f512c6f4c1223b767a0f80"
+    },
+    "extraction_log": {
+      "path": "D:\\Codex\\haotian-rom-fusion-build\\extract-3.0.304.log",
+      "bytes": 9195,
+      "sha256": "350a46e0762b77df1a42f8efaa551b336936094fd6e13fadbc5fe20160e5dd9d"
+    },
+    "verified_fixups": {
+      "goodix_soname": "fingerprint.goodix_us.default.so",
+      "libcameraopt_added_needed": "libprocessgroup_shim.so",
+      "ultrahdr_needed": [
+        "libjpegencoder_haotian.so",
+        "libjpegdecoder_haotian.so"
+      ],
+      "qcom_fingerprint_needed": "android.hardware.biometrics.fingerprint-V4-ndk.so",
+      "soter_apk_sha256": "ff15c7e19e4c8eccce1e1fd171503bae4d835360aa131f45f8d4e05a1aed70dd",
+      "pinned_ims_sha1_match_count": 4
+    },
+    "remaining_gates": [
+      "Soong namespace and module graph",
+      "full ELF DT_NEEDED resolution against platform output",
+      "VINTF and service registration",
+      "runtime validation on a later signed build"
+    ]
   }
 }

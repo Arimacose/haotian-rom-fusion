@@ -17,6 +17,7 @@
 5. 第一版融合构建继续以官方 HyperOS `OS3.0.304.0.WOBCNXM` 为底层，不混入 LineageOS 携带的第三固件集合。
 6. 0603 成品的系统 Build ID 为 `BP4A.251205.006`，因此首个可复现源码构建固定 EvolutionX `bka`，而不是已经转向 `CP2A` 的 `cnb`。
 7. 三份 `vendor_boot` 都带 434 个模块；EvolutionX 与 LineageOS 的 404 个模块逐字节相同但与官方 3.0.304 不同，首版必须保持 kernel、DTB/DTBO、模块与加载元数据成组一致。
+8. 官方 3.0.304 proprietary tree 已实际生成：4,786 个分区路径与 31 个 firmware 输出全部命中，最终两棵 vendor tree 共 4,825 个文件、6,247,299,804 字节。
 
 ## 仓库边界
 
@@ -55,7 +56,8 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [x] CS40L26 校准 loader、ADB 收敛、production AVB 与 3.0.304 Soter 路径补丁生成并通过静态应用检查
 - [ ] 四个补丁在 EvolutionX `bka` 完整源树中编译验证
 - [x] 两份 proprietary 列表对 3.0.304 文件树达到 4,786/4,786 路径覆盖
-- [ ] 生成 3.0.304 proprietary tree 并完成 ELF 依赖、版本与构建检查
+- [x] 生成 3.0.304 proprietary tree，验证 4,817/4,817 列表输出及 Goodix/相机/Soter/IMS 关键 fixup
+- [ ] 在完整 EvolutionX 源树完成 Soong 模块图、全量 ELF 依赖、VINTF 与服务注册检查
 - [ ] 相机、Goodix、触控、显示和 enforcing 融合
 - [ ] production user、AVB、签名、OTA 与 A/B 回滚门禁
 
@@ -76,6 +78,9 @@ python .\scripts\Build-BaselineManifest.py --config .\configs\baselines.json
 
 # 官方 boot 到位后运行内核比较
 python .\scripts\Compare-KernelBaselines.py --config .\configs\baselines.json
+
+# 从官方 EROFS 与 firmware 生成两棵 vendor tree；重复核验时加 -SkipExtraction
+powershell.exe -ExecutionPolicy Bypass -File .\scripts\Generate-ProprietaryTree.ps1
 ```
 
 ## 文档

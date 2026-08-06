@@ -33,6 +33,14 @@ The Git project itself remains:
 D:\Codex\haotian-rom-fusion
 ```
 
+The reproducible proprietary staging root is already populated on D:
+
+```text
+D:\Codex\haotian-rom-fusion-build\source
+D:\Codex\haotian-rom-fusion-build\source\vendor\xiaomi\haotian
+D:\Codex\haotian-rom-fusion-build\source\vendor\xiaomi\sm8750-common
+```
+
 ## Initialize and sync
 
 ```bash
@@ -68,6 +76,33 @@ git -C device/xiaomi/sm8750-common am \
 
 ## Inputs still staged locally
 
+The two proprietary trees can be regenerated directly from the verified 3.0.304
+EROFS and firmware inputs:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File `
+  D:\Codex\haotian-rom-fusion\scripts\Generate-ProprietaryTree.ps1
+
+# Re-run source, patch, list-output and tree-size checks without recopying blobs
+powershell.exe -ExecutionPolicy Bypass -File `
+  D:\Codex\haotian-rom-fusion\scripts\Generate-ProprietaryTree.ps1 `
+  -SkipExtraction
+```
+
+The completed generation contains 3,046 files in `vendor/xiaomi/haotian` and
+1,779 files in `vendor/xiaomi/sm8750-common`, totaling 6,247,299,804 bytes.
+All 3,011 device entries, 1,775 common entries and 31 firmware entries have an
+output file. Copy these two generated directories into the case-sensitive full
+Android source tree before building:
+
+```bash
+mkdir -p vendor/xiaomi
+cp -a /mnt/d/Codex/haotian-rom-fusion-build/source/vendor/xiaomi/haotian \
+  vendor/xiaomi/
+cp -a /mnt/d/Codex/haotian-rom-fusion-build/source/vendor/xiaomi/sm8750-common \
+  vendor/xiaomi/
+```
+
 Before the first compile, place or generate these source-tree paths without
 committing their binary contents to this Git project:
 
@@ -79,10 +114,10 @@ vendor/haotian/security/avb.pem
 ```
 
 The kernel tree must be a coherent kernel/modules/DTB/DTBO set chosen after the
-official 3.0.304 comparison. The two proprietary trees are generated from the
-official 3.0.304 dynamic partitions according to the pinned proprietary lists.
-The AVB private key is local-only; its public-key digest and signing policy are
-the reviewable evidence.
+official 3.0.304 comparison. The proprietary tree generation stage is complete;
+the full Soong/ELF/VINTF checks run after it enters the platform source. The AVB
+private key is local-only; its public-key digest and signing policy are the
+reviewable evidence.
 
 ## Configure and build
 
@@ -100,7 +135,7 @@ flags and descriptors, then run through the A/B test matrix.
 ## Pre-build gates
 
 1. official 3.0.304 archive and every selected image have recorded hashes;
-2. vendor extraction has zero missing mandatory blobs;
+2. vendor extraction has zero missing mandatory blobs: 4,817/4,817 list outputs;
 3. kernel, modules, DTB and DTBO come from one selected baseline;
 4. all four patches pass against their pinned commits;
 5. `WITH_ADB_INSECURE` is absent;

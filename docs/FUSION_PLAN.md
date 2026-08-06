@@ -56,8 +56,12 @@ Gate:
 The two pinned proprietary lists contain 4,786 paths. Against the extracted
 3.0.304 filesystems, 4,785 exist at their original location; the only move is
 `SoterService.apk` from `mi_ext/product/app` to `product/app`. Patch 0004 makes
-the project list cover 4,786/4,786 paths. This is a path-completeness result;
-ELF dependency, symbol, version and runtime-service checks remain separate.
+the project list cover 4,786/4,786 paths. The patched trees were then used to
+generate all 4,786 blob outputs plus 31 firmware outputs. The resulting 4,825
+files occupy 6,247,299,804 bytes. Goodix SONAME, camera dependency rewrites,
+Soter identity and four pinned IMS SHA-1 values have been checked. Full Soong
+module resolution, ELF dependency closure, VINTF and runtime-service checks run
+at the complete-source and built-artifact gates.
 
 ## Decision 2: port the Lineage vibrator behavior, not its full binary
 

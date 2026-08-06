@@ -95,3 +95,29 @@ erofs-utils                  1.7.1-1build2
 | `/usr/bin/dump.erofs` | `9b4741d29779acb3a8e8eb938293b72755d9a5b413ed96d085678c7c0424ffba` |
 
 The environment also contains `e2fsck` and `debugfs` for ext4 inspection. All mount and extraction paths remain under the D-drive audit work directory.
+
+## Proprietary tree generation
+
+The vendor-tree generator uses the LineageOS 23.2 extraction stack at fixed
+commits rather than a moving branch head:
+
+```text
+extract-utils repository: https://github.com/LineageOS/android_tools_extract-utils.git
+extract-utils commit: b80fc427c8719bfa34e3c0dbdf43289bd24831d2
+extract-tools repository: https://github.com/LineageOS/android_prebuilts_extract-tools.git
+extract-tools commit: a8aabbbe42bdecba4c6d1a9e6e71fbc47de59f96
+local source root: D:\Codex\haotian-rom-fusion-build\source
+```
+
+The exact `patchelf` used for ELF fixups is:
+
+```text
+local: D:\Codex\haotian-rom-fusion-build\source\prebuilts\extract-tools\linux-x86\bin\patchelf-0_18
+bytes: 1202328
+SHA-256: b699cb82300dfd08ea6c895d8829b46bea970cfa737fa34188d8256ca89404e5
+```
+
+`scripts/Generate-ProprietaryTree.ps1` creates directory junctions to the eight
+read-only EROFS extraction roots and hardlinks the 31 already-verified firmware
+images. This avoids another multi-gigabyte source copy while keeping the
+generated `vendor/xiaomi` trees and logs in the separate D-drive build root.

@@ -17,6 +17,7 @@
 7. 三套完整 boot 容器并不相同，差异来自各自签名、AVB footer/描述符与启动配套内容，而不是 kernel 字节。
 8. 官方 main vbmeta 为 RSA-4096、flags `0`，并覆盖 `pvmfw`、`mi_ext`、`system_dlkm`；两个类原生成品的 main vbmeta 均为 flags `3`，且都缺少这三项官方描述符。融合版需同时修正 flags 与描述符覆盖，二者缺一都会令 production AVB 门禁停留在未完成状态。
 9. 第一版融合内核选择已收敛为官方一致的 6.6.77 kernel/module/DTB/DTBO 组合；第三方 6.6.143 放入后续实验轨道，在完整镜像、模块和 KMI 证据到位后再评估。
+10. 3.0.304 proprietary tree 已从官方 EROFS 与 31 项 firmware 实际生成：4,817/4,817 列表输出存在，两棵 vendor tree 共 4,825 个文件、6,247,299,804 字节；Goodix SONAME、相机依赖替换、Soter 与 pinned IMS 哈希已通过定点验证。
 
 ## 2. 官方制品身份与下载校验
 
@@ -260,6 +261,33 @@ pvmfw, mi_ext, system_dlkm
 proprietary tree 提供了很强的完整性证据。路径命中仍不替代 ELF 依赖、符号、
 版本与服务注册检查。
 
+生成阶段也已实际完成，而非停留在路径推演：
+
+| 输出 | 文件数 | 字节 |
+|---|---:|---:|
+| `vendor/xiaomi/haotian` | 3046 | 5465316231 |
+| `vendor/xiaomi/sm8750-common` | 1779 | 781983573 |
+| 合计 | 4825 | 6247299804 |
+
+提取器输入包含 3,011 个 haotian blob、1,775 个 common blob 和 31 个 firmware，
+合计 4,817 项；输出存在检查为 `4817/4817`，missing 为 0。另 8 个文件是两棵树
+各自生成的 `Android.bp`、`Android.mk`、`BoardConfigVendor.mk` 和 vendor makefile。
+
+定点二进制验证结果：
+
+- Goodix 输出 SONAME 为 `fingerprint.goodix_us.default.so`；
+- `libcameraopt.so` 已加入 `libprocessgroup_shim.so`；
+- Ultra HDR 已改接 `libjpegencoder_haotian.so` 与 `libjpegdecoder_haotian.so`；
+- Soter APK 与官方 product 源文件 SHA-256 同为 `ff15c7e19e4c8eccce1e1fd171503bae4d835360aa131f45f8d4e05a1aed70dd`；
+- 四个 pinned IMS 文件均命中清单声明的 SHA-1。
+
+完整 4,825 文件哈希清单：
+
+```text
+D:\Codex\haotian-rom-fusion-build\proprietary-tree-manifest.json
+SHA-256: a2ab13dff9be7d893378c111b8e7e5022ac428e828f512c6f4c1223b767a0f80
+```
+
 ### 8.1 平台与设备源
 
 - 平台固定 EvolutionX `bka`，对应 0603 成品的 `BP4A.251205.006`；
@@ -304,6 +332,8 @@ D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\super-partitions
 D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\filesystems
 D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\official-filesystem-file-manifest.json
 D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\vendor-ramdisk-module-three-way.json
+D:\Codex\haotian-rom-fusion-build\source\vendor\xiaomi
+D:\Codex\haotian-rom-fusion-build\proprietary-tree-manifest.json
 ```
 
 大型 TGZ、IMG、EROFS 展开树、proprietary blobs 与签名私钥继续留在 D 盘，不进入 Git 历史。
@@ -312,7 +342,7 @@ D:\Codex\haotian-evox-0603-audit\work\stock-3.0.304-fastboot\vendor-ramdisk-modu
 
 1. 收敛 `pvmfw/mi_ext/system_dlkm` 的 AVB 和 OTA 描述符策略；
 2. 将官方 camera/display/Goodix 配置与两份类原生成品逐路径对照；
-3. 生成 3.0.304 proprietary tree，并完成 ELF 依赖、符号版本和服务注册检查；
+3. 把已生成的 3.0.304 proprietary tree 放入完整平台源，执行 Soong、全量 ELF、VINTF 与服务注册检查；
 4. 准备官方一致的 6.6.77 prebuilt kernel、DTB/DTBO 与模块组合；
 5. 在 EvolutionX `bka` 完整源树上执行首个 `userdebug` 编译；
 6. 编译通过后进入 production `user`、项目签名、完整 AVB 与 A/B 验收；
