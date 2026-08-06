@@ -38,7 +38,10 @@
   },
   "tools": {
     "unpack_bootimg": "D:\\Codex\\haotian-evox-0603-audit\\tools\\mkbootimg\\unpack_bootimg.py",
-    "avbtool": "D:\\Codex\\haotian-evox-0603-audit\\tools\\avb\\avbtool.py"
+    "avbtool": "D:\\Codex\\haotian-evox-0603-audit\\tools\\avb\\avbtool.py",
+    "lpunpack": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\lpunpack.exe",
+    "lpdumps": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\lpdumps.exe",
+    "simg2img": "D:\\Codex\\haotian-evox-0603-audit\\tools\\aosp15_partition_tools-5e92a5d\\simg2img.exe"
   },
   "source": {
     "device_xiaomi_haotian": {

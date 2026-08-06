@@ -61,6 +61,9 @@ pwsh -File .\scripts\Invoke-OfficialFastbootDownload.ps1
 # 提取 fastboot 包并生成关键镜像清单
 pwsh -File .\scripts\Extract-OfficialFastboot.ps1
 
+# 提取 super 动态分区并生成逻辑分区哈希
+pwsh -File .\scripts\Extract-SuperPartitions.ps1
+
 # 重建三方基线清单
 python .\scripts\Build-BaselineManifest.py --config .\configs\baselines.json
 
@@ -74,6 +77,7 @@ python .\scripts\Compare-KernelBaselines.py --config .\configs\baselines.json
 - [`docs/FUSION_PLAN.md`](docs/FUSION_PLAN.md)：分层融合方案与实施顺序；
 - [`docs/SECURITY_AND_RELEASE_GATES.md`](docs/SECURITY_AND_RELEASE_GATES.md)：安全和发布门禁；
 - [`docs/DEVICE_TEST_MATRIX.md`](docs/DEVICE_TEST_MATRIX.md)：后续受控 A/B 真机验收矩阵；
+- [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)：本地工具来源、固定提交和 SHA-256；
 - [`patches/0001-haotian-cs40l26-calibration-loader.patch`](patches/0001-haotian-cs40l26-calibration-loader.patch)：第一批可回移补丁。
 
 ## 远端
