@@ -17,6 +17,7 @@ $config = Get-Content -LiteralPath $ConfigPath -Raw -Encoding UTF8 | ConvertFrom
 $artifact = $config.official_3_0_304
 $destination = [IO.Path]::GetFullPath($artifact.archive)
 $partial = "$destination.part"
+$aria2Control = "$partial.aria2"
 $directory = Split-Path -Parent $destination
 $statusPath = Join-Path $directory 'download-status.json'
 $expectedBytes = [int64]$artifact.expected_bytes
@@ -50,22 +51,53 @@ if (Test-Path -LiteralPath $destination) {
     }
     Write-JsonAtomic -Value $downloading -Path $statusPath
 
-    if ($beforeBytes -lt $expectedBytes) {
-        & curl.exe `
-            --location `
-            --fail `
-            --continue-at - `
-            --retry 20 `
-            --retry-delay 5 `
-            --retry-all-errors `
-            --connect-timeout 30 `
-            --speed-time 120 `
-            --speed-limit 10240 `
-            --progress-bar `
-            --output $partial `
-            $artifact.url
+    if (($beforeBytes -lt $expectedBytes) -or (Test-Path -LiteralPath $aria2Control)) {
+        $aria2 = if ($config.tools.PSObject.Properties.Name -contains 'aria2c') {
+            [IO.Path]::GetFullPath($config.tools.aria2c)
+        } else {
+            $null
+        }
 
-        if ($LASTEXITCODE -ne 0) {
+        if ($aria2 -and (Test-Path -LiteralPath $aria2 -PathType Leaf)) {
+            & $aria2 `
+                --continue=true `
+                --max-connection-per-server=16 `
+                --split=16 `
+                --min-split-size=4M `
+                --file-allocation=none `
+                --auto-file-renaming=false `
+                --allow-overwrite=true `
+                --retry-wait=3 `
+                --max-tries=0 `
+                --timeout=30 `
+                --connect-timeout=30 `
+                "--dir=$directory" `
+                "--out=$(Split-Path -Leaf $partial)" `
+                $artifact.url
+            $downloadExit = $LASTEXITCODE
+            $downloader = 'aria2c'
+        } else {
+            if (Test-Path -LiteralPath $aria2Control) {
+                throw "An aria2 control file exists, but the pinned aria2c executable is absent: $aria2"
+            }
+            & curl.exe `
+                --location `
+                --fail `
+                --continue-at - `
+                --retry 20 `
+                --retry-delay 5 `
+                --retry-all-errors `
+                --connect-timeout 30 `
+                --speed-time 120 `
+                --speed-limit 10240 `
+                --progress-bar `
+                --output $partial `
+                $artifact.url
+            $downloadExit = $LASTEXITCODE
+            $downloader = 'curl'
+        }
+
+        if (($downloadExit -ne 0) -or (Test-Path -LiteralPath $aria2Control)) {
             $currentBytes = if (Test-Path -LiteralPath $partial) {
                 (Get-Item -LiteralPath $partial).Length
             } else {
@@ -76,11 +108,13 @@ if (Test-Path -LiteralPath $destination) {
                 started_at = $started
                 checked_at = (Get-Date).ToString('o')
                 expected_bytes = $expectedBytes
-                actual_bytes = $currentBytes
-                curl_exit = $LASTEXITCODE
+                partial_length = $currentBytes
+                downloader = $downloader
+                downloader_exit = $downloadExit
+                aria2_control_present = (Test-Path -LiteralPath $aria2Control)
                 partial_path = $partial
             }) -Path $statusPath
-            throw "curl exited with code $LASTEXITCODE; the partial file remains available for resume"
+            throw "$downloader exited with code $downloadExit; the partial file remains available for resume"
         }
     }
 

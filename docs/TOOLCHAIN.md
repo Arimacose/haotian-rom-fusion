@@ -2,6 +2,21 @@
 
 Large and executable tooling remains under the D-drive audit root and is referenced by pinned path and SHA-256.
 
+## Resumable artifact download
+
+The official 12.20 GB fastboot archive is transferred with aria2 1.37.0 using
+16 HTTP range connections. Its `.aria2` control file is retained across an
+interruption; the completion gate requires that control file to disappear and
+the final archive length to equal the recorded `Content-Length`.
+
+```text
+package: aria2 1.37.0 Windows x64 portable build 1
+source: https://github.com/aria2/aria2/releases/tag/release-1.37.0
+local: D:\Codex\haotian-evox-0603-audit\tools\aria2\aria2-1.37.0\aria2-1.37.0-win-64bit-build1\aria2c.exe
+archive SHA-256: 67d015301eef0b612191212d564c5bb0a14b5b9c4796b76454276a4d28d9b288
+aria2c.exe SHA-256: be2099c214f63a3cb4954b09a0becd6e2e34660b886d4c898d260febfe9d70c2
+```
+
 ## Android boot image tools
 
 ```text
