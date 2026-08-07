@@ -1,12 +1,12 @@
-# haotian ROM Fusion
+# haotian EvolutionX Bring-up
 
-为 Xiaomi 15 Pro（设备代号 `haotian`）建立可持续维护的类原生 ROM 适配仓库。
+为 Xiaomi 15 Pro（设备代号 `haotian`）建立可持续维护的 EvolutionX 适配仓库。
 
-本项目不把某一份成品 ROM 当作唯一真值，而是按层选择三套基线中的优势：
+当前产品路线以 EvolutionX 为直接 Android 平台，并按层固定硬件基线：
 
-- **HyperOS 3.0.304**：官方 firmware、boot chain、DTB/DTBO、vendor/odm proprietary 组件和每机校准数据的权威基线；
-- **LineageOS 23.2 20260704**：CS40L26 振动校准恢复、较清晰的设备服务分层，以及 haotian/sm8750 公共设备树；
-- **EvolutionX 16.0 20260603**：`bka/BP4A` 平台与 Evolution 功能基座、HyperOSCamera 集成、细化显示曲线和 HDR/HBM 调校素材。
+- **EvolutionX 16.0 20260603**：直接提供 `bka/BP4A` Android 平台、Evolution 功能、SystemUI、HyperOSCamera 集成和上层设备配置；
+- **HyperOS 3.0.304**：提供官方 firmware、boot chain、DTB/DTBO、vendor/odm proprietary 组件和每机校准数据的权威硬件基线；
+- **LineageOS 23.2 20260704**：只保留为历史对照证据，不再作为 ROM 底包，也不进入首个 DSU 制品。
 
 ## 当前结论
 
@@ -14,11 +14,12 @@
 2. LineageOS 的振动修复位于用户空间 HAL：读取 `persist/haptics` 中每机校准值并写入 CS40L26 sysfs，同时处理节点所有权。
 3. EvolutionX 的相机版本较新，显示曲线更细，但其 0603 成品为 `userdebug/test-keys`，且调试与 ADB 属性偏宽松。
 4. LineageOS 0704 成品采用私有 release keys 并收敛调试属性，但 bootconfig 仍是全局 SELinux permissive。
-5. 第一版融合构建继续以官方 HyperOS `OS3.0.304.0.WOBCNXM` 为底层，不混入 LineageOS 携带的第三固件集合。
+5. 第一版 EvolutionX 构建继续以官方 HyperOS `OS3.0.304.0.WOBCNXM` 为硬件底层，不混入 LineageOS 携带的第三固件集合。
 6. 0603 成品的系统 Build ID 为 `BP4A.251205.006`，因此首个可复现源码构建固定 EvolutionX `bka`，而不是已经转向 `CP2A` 的 `cnb`。
 7. 三份 `vendor_boot` 都带 434 个模块；EvolutionX 与 LineageOS 的 404 个模块逐字节相同但与官方 3.0.304 不同，首版必须保持 kernel、DTB/DTBO、模块与加载元数据成组一致。
 8. 官方 3.0.304 proprietary tree 已实际生成：4,786 个分区路径与 31 个 firmware 输出全部命中，最终两棵 vendor tree 共 4,825 个文件、6,247,299,804 字节。
 9. 三个公开 kernel prebuilt 仓已实测；Crisp-los 提交 `802915c` 的 kernel、8 个 DTB、DTBO 和 434+397+96+96 个模块全部与官方 3.0.304 逐字节一致，现已固定进本地 manifest。
+10. 首个运行验证制品采用多分区 DSU：EvolutionX `system/system_ext/product` 覆盖上层，宿主继续提供 3.0.304 `vendor/odm/firmware` 与当前 6.6.143 kernel/DLKM，全程不写 boot 或 A/B 槽位。
 
 ## 仓库边界
 
@@ -59,6 +60,9 @@ D:\Codex\haotian-evox-0603-audit\reports
 - [ ] 四个补丁在 EvolutionX `bka` 完整源树中编译验证
 - [x] 两份 proprietary 列表对 3.0.304 文件树达到 4,786/4,786 路径覆盖
 - [x] 生成 3.0.304 proprietary tree，验证 4,817/4,817 列表输出及 Goodix/相机/Soter/IMS 关键 fixup
+- [x] 路线切换为 EvolutionX 直接 bring-up，LineageOS 降为只读对照
+- [x] 生成并离线验证 EvolutionX `upper3` 多分区 DSU ZIP；二次构建哈希一致
+- [ ] 在用户明确确认后执行首轮非 sticky DSU 真机验收
 - [ ] 在完整 EvolutionX 源树完成 Soong 模块图、全量 ELF 依赖、VINTF 与服务注册检查
 - [ ] 相机、Goodix、触控、显示和 enforcing 融合
 - [ ] production user、AVB、签名、OTA 与 A/B 回滚门禁
@@ -83,6 +87,13 @@ python .\scripts\Compare-KernelBaselines.py --config .\configs\baselines.json
 
 # 从官方 EROFS 与 firmware 生成两棵 vendor tree；重复核验时加 -SkipExtraction
 powershell.exe -ExecutionPolicy Bypass -File .\scripts\Generate-ProprietaryTree.ps1
+
+# 生成 EvolutionX upper3 多分区 DSU，并输出 ZIP、SHA-256 与完整 manifest
+python .\scripts\Build-MultiPartitionDsu.py `
+  --config .\configs\evolutionx-dsu-upper3.json `
+  --avbtool D:\Codex\haotian-evox-0603-audit\tools\avb\avbtool.py `
+  --output-dir D:\Codex\haotian-evox-0603-audit\dsu `
+  --clean
 ```
 
 完整 Linux 源树同步后生成 Soong 所需的 kernel header 归档：
@@ -100,6 +111,7 @@ bash /mnt/d/Codex/haotian-rom-fusion/scripts/Prepare-KernelHeaders.sh \
 - [`docs/DEVICE_TEST_MATRIX.md`](docs/DEVICE_TEST_MATRIX.md)：后续受控 A/B 真机验收矩阵；
 - [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)：本地工具来源、固定提交和 SHA-256；
 - [`docs/BUILD_BOOTSTRAP.md`](docs/BUILD_BOOTSTRAP.md)：EvolutionX `bka` 初始化、固定清单、补丁和首编译门禁；
+- [`docs/EVOLUTIONX_DSU_BRINGUP.md`](docs/EVOLUTIONX_DSU_BRINGUP.md)：EvolutionX 直接路线、upper3 多分区 DSU 结构、SPL/AVB 处理与后续真机验收边界；
 - [`docs/OFFICIAL_3_0_304_REPORT.md`](docs/OFFICIAL_3_0_304_REPORT.md)：官方 fastboot、super、firmware、kernel 与 AVB 实测报告；
 - [`patches/README.md`](patches/README.md)：当前可回移补丁栈及目标提交。
 
