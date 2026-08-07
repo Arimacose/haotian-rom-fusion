@@ -18,11 +18,12 @@ This repository manages source, reproducible metadata, comparison logic, patches
 - Verify every downloaded archive before extraction and every selected baseline before comparison.
 - Preserve the official HyperOS 3.0.304 artifact as read-only input.
 
-## Fusion policy
+## Active product policy
 
-- Treat HyperOS 3.0.304 as the authoritative firmware and proprietary baseline.
-- Take the CS40L26 calibration loader and device-service structure from the analyzed LineageOS artifact.
-- Treat EvolutionX camera and display material as comparison input, then reconcile it with stock 3.0.304.
+- EvolutionX `bka` is the sole Android ROM/platform base.
+- Treat HyperOS 3.0.304 as the authoritative firmware, vendor/odm and proprietary hardware baseline.
+- Retain LineageOS only as read-only comparison evidence; do not use its images or make it the product base.
+- Start runtime bring-up with a non-flashing EvolutionX `system` + `system_ext` + `product` DSU profile over the installed 3.0.304 hardware stack.
 - Keep feature enablement separate from production hardening.
 - Production output requires `user`, SELinux enforcing, coherent identity, production keys, and a complete AVB chain.
 

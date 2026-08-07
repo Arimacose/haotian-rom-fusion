@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "profile": "evolutionx-0603-upper3-host304",
+  "purpose": "Boot EvolutionX system, system_ext and product over the installed HyperOS 3.0.304 vendor, odm, kernel, dlkm and firmware stack for first-pass hardware validation.",
+  "package_name": "EvolutionX-16.0-20260603-haotian-upper3-host304-mpDSU.zip",
+  "source_root": "D:/Codex/haotian-evox-0603-audit/work/partitions",
+  "source_ota": {
+    "name": "EvolutionX-16.0-20260603-haotian-11.7-Unofficial.zip",
+    "size": 5715602972,
+    "sha256": "7a3a739607251c7cafe5aee2c2e4590ffbb7c6366fb7fae01124a41ce0bb8894"
+  },
+  "host_baseline": "HyperOS OS3.0.304.0.WOBCNXM; runtime kernel remains the device-installed 6.6.143 build",
+  "host_security_patch": "2026-06-01",
+  "zip_timestamp": [2026, 6, 3, 7, 17, 22],
+  "zip_compresslevel": 6,
+  "partitions": [
+    {
+      "name": "system",
+      "source": "system.img",
+      "expected_size": 913694720,
+      "expected_sha256": "9f6f1ecaa9c54d7bb29a4571af2ee230a2fa4109d34592ea4b0900dcefc05eae",
+      "security_patch_property": "com.android.build.system.security_patch"
+    },
+    {
+      "name": "system_ext",
+      "source": "system_ext.img",
+      "expected_size": 1006436352,
+      "expected_sha256": "9847de31b8a45851e1c47f3061fb3484a45242ec28e155a3da1e7d162fe1534b",
+      "security_patch_property": "com.android.build.system_ext.security_patch"
+    },
+    {
+      "name": "product",
+      "source": "product.img",
+      "expected_size": 3302948864,
+      "expected_sha256": "a1c6f52e1938a061a18cdd5f991165510efcbae6a137a3156f23049901c54c1a",
+      "security_patch_property": "com.android.build.product.security_patch"
+    }
+  ],
+  "omitted_partitions": {
+    "vendor,odm": "Use the installed and already verified HyperOS 3.0.304 hardware implementation for the first framework-to-HAL compatibility test.",
+    "vendor_dlkm,system_dlkm": "Keep the modules paired with the currently installed 6.6.143 kernel; DSU does not replace that kernel.",
+    "boot,init_boot,vendor_boot,dtbo,recovery": "Boot-chain images are outside this non-flashing DSU upper-partition profile.",
+    "vbmeta,vbmeta_system": "Each DSU image carries a standalone debug hashtree footer; importing the OTA vbmeta chain would couple the package to omitted partitions.",
+    "firmware": "The installed HyperOS 3.0.304 firmware remains authoritative and is not written by DSU."
+  }
+}
