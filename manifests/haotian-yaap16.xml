@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- YAAP 16 haotian manifest baseline. -->
+  <!--
+    YAAP 16 platform override: keep the upstream AOSP-first manifest, replace
+    only the YAAP product repository with the managed fork, then add the
+    haotian device/common/prebuilt-kernel projects. Proprietary vendor trees
+    remain staged from the verified local extraction until their LFS repos are
+    published; omitting them here is intentional for the manifest-only gate.
+  -->
+  <remove-project name="vendor_yaap" />
+
+  <project
+      path="vendor/yaap"
+      name="Arimacose/vendor_yaap"
+      remote="github"
+      revision="haotian-16" />
+
+  <project
+      path="device/xiaomi/haotian"
+      name="Arimacose/device_xiaomi_haotian"
+      remote="github"
+      revision="yaap-16" />
+  <project
+      path="device/xiaomi/sm8750-common"
+      name="Arimacose/device_xiaomi_sm8750-common"
+      remote="github"
+      revision="yaap-16" />
+  <project
+      path="device/xiaomi/haotian-kernel"
+      name="Arimacose/device_xiaomi_haotian-kernel"
+      remote="github"
+      revision="yaap-16" />
 </manifest>
