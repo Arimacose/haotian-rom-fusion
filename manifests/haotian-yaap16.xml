@@ -54,9 +54,20 @@
       path="device/qcom/sepolicy_vndr/sm8750"
       name="LineageOS/android_device_qcom_sepolicy_vndr"
       remote="github"
-      revision="lineage-23.2-caf-sm8750">
+      revision="lineage-23.2-caf-sm8750" />
+
+  <!--
+    Pickup guards belong to the existing YAAP hardware_qcom-caf_common
+    project. Extend it for SM8750 in the same shape as YAAP's SM8650 entry;
+    the sepolicy_vndr project does not contain these pickup files.
+  -->
+  <extend-project
+      name="hardware_qcom-caf_common"
+      path="hardware/qcom-caf/common">
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8750/audio/Android.mk" />
     <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp" />
-  </project>
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8750/Android.mk" />
+  </extend-project>
   <project
       path="hardware/qcom-caf/sm8750/audio/agm"
       name="LineageOS/android_vendor_qcom_opensource_agm"
@@ -110,6 +121,12 @@
       revision="lineage-23.2" />
 
   <project
+      path="packages/apps/EuiccPolicy"
+      name="LineageOS/android_packages_apps_EuiccPolicy"
+      remote="github"
+      revision="lineage-23.2" />
+
+  <project
       path="vendor/qcom/opensource/commonsys/audio"
       name="LineageOS/android_vendor_qcom_opensource_audio"
       remote="github"
@@ -117,6 +134,12 @@
   <project
       path="vendor/qcom/opensource/commonsys-intf/audio"
       name="LineageOS/android_vendor_qcom_opensource_audio-commonsys-intf"
+      remote="github"
+      revision="lineage-23.2" />
+
+  <project
+      path="vendor/qcom/opensource/libvmmem"
+      name="LineageOS/android_vendor_qcom_opensource_libvmmem"
       remote="github"
       revision="lineage-23.2" />
 </manifest>
