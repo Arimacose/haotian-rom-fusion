@@ -1,3 +1,359 @@
 {
-  "status": "pending"
+  "schema_version": "1.0",
+  "generated_at": "2026-08-12T23:17:41+08:00",
+  "scope": {
+    "phase": "first Soong/Kati/packaging graph",
+    "source": "/home/arima/android/yaap16",
+    "distro": "Ubuntu-ROMBuild",
+    "device": "haotian",
+    "device_access": "not performed",
+    "image_compile": "not started",
+    "invocation": "source build/envsetup.sh && lunch yaap_haotian-bp4a-userdebug && m -j16 nothing"
+  },
+  "fixed_profile": {
+    "TARGET_BUILD_GAPPS": true,
+    "lunch_variant": "yaap_haotian-bp4a-userdebug",
+    "release_config": "bp4a",
+    "target_product": "yaap_haotian",
+    "target_build_variant": "userdebug",
+    "platform_version": "16",
+    "build_id": "BP4A.251205.006",
+    "jobs": 16
+  },
+  "result": {
+    "status": "pass",
+    "first_pass_attempt": 11,
+    "committed_state_verification_attempt": 12,
+    "exit_code": 0,
+    "elapsed_seconds": 415,
+    "end": "2026-08-12T23:17:41+08:00",
+    "success_markers": [
+      "Successfully read the makefiles.",
+      "#### build completed successfully (06:41 (mm:ss)) ####",
+      "result=passed"
+    ]
+  },
+  "boundaries": {
+    "out_directory_bytes": 9939209013,
+    "out_directory_human": "9.4 GiB reported by du -sh",
+    "product_img_zip_bin_count": 0,
+    "rom_or_ota_artifact_created": false,
+    "adb_fastboot_device_action_performed": false
+  },
+  "graph_artifacts": [
+    {
+      "path": "/home/arima/android/yaap16/out/soong/build.yaap_haotian.ninja",
+      "bytes": 366139168,
+      "sha256": "e9e75775fbf15c0c434d161b5bd9f8bb0b6aa7e1886d4b1bb5cd4164ea094eea"
+    },
+    {
+      "path": "/home/arima/android/yaap16/out/build-yaap_haotian.ninja",
+      "bytes": 1183828043,
+      "sha256": "7f8f416bfab75d284c43d6e0141bc2f28658b766551d2b9b1667456bf268998d"
+    },
+    {
+      "path": "/home/arima/android/yaap16/out/build-yaap_haotian-package.ninja",
+      "bytes": 57818,
+      "sha256": "68a391f870674ac0358bda957f4b1cff71e072ec2f372df13b0e82fe0bf0f388"
+    },
+    {
+      "path": "/home/arima/android/yaap16/out/soong/soong.yaap_haotian.variables",
+      "bytes": 849735,
+      "sha256": "54d15e766d31990c21a3a07ee00d1e54d45f84afdb584007b0cca6f6eab62503"
+    },
+    {
+      "path": "/home/arima/android/yaap16/out/soong/Android-yaap_haotian.mk",
+      "bytes": 447925750,
+      "sha256": "97cf1a05c9532034096063bb26d2a19bb0e955ec9a3ac44a3efdd69ea122c5ba"
+    },
+    {
+      "path": "/home/arima/android/yaap16/out/soong/installs-yaap_haotian.mk",
+      "bytes": 114986798,
+      "sha256": "9cf7aecca90c593d11667a328de6963f12a6ca2e8f3046cd6a3e2a362e531ac1"
+    }
+  ],
+  "manifest": {
+    "local": {
+      "path": "D:\\Codex\\haotian-rom-fusion\\manifests\\haotian-yaap16.xml",
+      "bytes": 5164,
+      "sha256": "385c7c3e7fd6da16caf99d972db8773425ad73594bfd2a99188415ed07d30497"
+    },
+    "resolved": {
+      "path": "D:\\Codex\\haotian-rom-fusion\\manifests\\resolved\\yaap16-haotian-20260812.xml",
+      "bytes": 266608,
+      "sha256": "c1264cbe2cae0bf6c83cf181efbe7ac8e8674a50b21c2e0cd13a7eb33158a78b"
+    },
+    "project_entries": 1150,
+    "unique_effective_paths": 1150,
+    "effective_path_rule": "project.path, falling back to project.name when path is omitted"
+  },
+  "source_revisions": {
+    "device/xiaomi/haotian": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+    "device/xiaomi/sm8750-common": "dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a",
+    "hardware/lineage/interfaces": "ca560522cee3977861002372d1408cd7bb690198",
+    "hardware/qcom-caf/common": "488707fd3df37a6d8f1bd6bdb69087523a0e5f92",
+    "packages/apps/EuiccPolicy": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
+    "vendor/qcom/opensource/libvmmem": "a4a0b08614eb1de238dd1fbe4cef94213560d5f1"
+  },
+  "published_commits": [
+    {
+      "repository": "Arimacose/hardware_lineage_interfaces",
+      "revision": "ca560522cee3977861002372d1408cd7bb690198",
+      "subject": "interfaces: restore touch control AIDL"
+    },
+    {
+      "repository": "Arimacose/device_xiaomi_sm8750-common",
+      "revision": "8b35416",
+      "subject": "sm8750-common: align the YAAP product graph"
+    },
+    {
+      "repository": "Arimacose/device_xiaomi_sm8750-common",
+      "revision": "dbfb9fc",
+      "subject": "sm8750-common: add arm64 protobuf vendorcompat blobs"
+    }
+  ],
+  "stock_inputs": {
+    "baseline": "HyperOS 3.0.304.0.WOBCNXM",
+    "protobuf": [
+      {
+        "name": "libprotobuf-cpp-full-21.12.so",
+        "bytes": 2295512,
+        "sha256": "a11b1833ab6a4e5d954acaec3e9435a067501b65520a9769df338fc0137da4c9",
+        "stock_equals_staged": true
+      },
+      {
+        "name": "libprotobuf-cpp-lite-21.12.so",
+        "bytes": 591952,
+        "sha256": "5853fe986d2183b0c6a7ae4f8fc5090ab093bad079ac589bbe4295edad1f12c2",
+        "stock_equals_staged": true
+      }
+    ],
+    "development_avb_public_fingerprint": {
+      "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-local-development-avb-public-fingerprint.txt",
+      "bytes": 188,
+      "sha256": "9dbfc0bc195c2d1a7bad0261fbd43ed8eca060627eb46873b1d6f68513074846",
+      "public_der_sha256": "6675a91da7b5245391e2732edfde29360a753d60fb6ecc37e247593e94f38899",
+      "private_key_tracked_in_management_git": false,
+      "profile": "local-development-userdebug"
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "envsetup_failed",
+      "exit_code": 1,
+      "elapsed_seconds": null,
+      "end": null,
+      "finding": "wrapper used set -u while build/envsetup.sh expects unset shell variables",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt1.log",
+        "bytes": 335,
+        "sha256": "44561410a19bb9586e77c6cf83a921738894faeeb9609116817c3ff8f254ef2c"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt1.status"
+    },
+    {
+      "attempt": 2,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 34,
+      "end": "2026-08-12T22:27:14+08:00",
+      "finding": "SM8750 pickup link pointed into sepolicy_vndr instead of YAAP hardware_qcom-caf_common",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt2.log",
+        "bytes": 3438,
+        "sha256": "93275ce9f37377d2e065f4cf90420ca463b25e8dd31c820fdd74845857342e6e"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt2.status"
+    },
+    {
+      "attempt": 3,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 52,
+      "end": "2026-08-12T22:29:16+08:00",
+      "finding": "missing touch AIDL plus libvmmem headers/source and namespace visibility",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt3.log",
+        "bytes": 79758,
+        "sha256": "8438197c553a17ea335e1c8ec892ab8c8490526ef7e392969eb03f75a36e1778"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt3.status"
+    },
+    {
+      "attempt": 4,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 37,
+      "end": "2026-08-12T22:31:57+08:00",
+      "finding": "source display composer selected AIDL V2 while the preferred stock service selected V3",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt4.log",
+        "bytes": 30728,
+        "sha256": "f7670c1ba7079d9be631a6fe01853d46a519f0da174f091a86504f6e4ff25392"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt4.status"
+    },
+    {
+      "attempt": 5,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 39,
+      "end": "2026-08-12T22:35:01+08:00",
+      "finding": "local development AVB input vendor/haotian/security/avb.pem was absent",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt5.log",
+        "bytes": 4204,
+        "sha256": "f1d3e4c0b8ad614f33fe9a2901e7bc67e6b2443048975e1a48108a7cd3dceb59"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt5.status"
+    },
+    {
+      "attempt": 6,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 39,
+      "end": "2026-08-12T22:36:11+08:00",
+      "finding": "device matrix referenced a second Qualcomm AIDL matrix file absent from the YAAP common project",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt6.log",
+        "bytes": 4159,
+        "sha256": "642aa7dfd271ac3a203abb218487156d4b8f70ee840ed36fe330574e04fc2cb8"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt6.status"
+    },
+    {
+      "attempt": 7,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 58,
+      "end": "2026-08-12T22:38:19+08:00",
+      "finding": "arm64 libprotobuf-cpp-lite-21.12-vendorcompat provider was absent",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt7.log",
+        "bytes": 4144,
+        "sha256": "969a78bcbcabfa043f3d071d0a04282b1d0ceddab2e15b4fd2adb48d5c832083"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt7.status"
+    },
+    {
+      "attempt": 8,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 60,
+      "end": "2026-08-12T22:43:42+08:00",
+      "finding": "arm64 libprotobuf-cpp-full-21.12-vendorcompat provider was absent",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt8.log",
+        "bytes": 4151,
+        "sha256": "35fc461c51f87a8f95f1ffe7836e1d6f357f4ca8a2ef64b70208fef63f64548c"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt8.status"
+    },
+    {
+      "attempt": 9,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 262,
+      "end": "2026-08-12T22:49:46+08:00",
+      "finding": "XiaomiEuicc required the separate EuiccPolicy project, which was absent from the manifest",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt9.log",
+        "bytes": 10311,
+        "sha256": "f235f9fd16bdc4ac1d23268ed84610d6067d118b11a1bdd521f624ca86783631"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt9.status"
+    },
+    {
+      "attempt": 10,
+      "result": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 298,
+      "end": "2026-08-12T22:57:25+08:00",
+      "finding": "telephony-ext was injected as a boot jar by both YAAP qcom-common and the Xiaomi common device tree",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt10.log",
+        "bytes": 15728,
+        "sha256": "0508b014d8a68fcd8b54be29a4657d1de7bc29629668ef5968f9a65a00d14906"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt10.status"
+    },
+    {
+      "attempt": 11,
+      "result": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 357,
+      "end": "2026-08-12T23:06:54+08:00",
+      "finding": "passed after source fixes",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt11.log",
+        "bytes": 13813,
+        "sha256": "6b53663cfe50b1afd0b5a6e8635b02b54dd6a8bad9d6a001a728eb574871cf66"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt11.status"
+    },
+    {
+      "attempt": 12,
+      "result": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 415,
+      "end": "2026-08-12T23:17:41+08:00",
+      "finding": "passed again from the committed device-tree state",
+      "log": {
+        "path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt12.log",
+        "bytes": 13839,
+        "sha256": "77a59d23ac69a55c7288810928bda182bd3374be05e899aa94a3b130622471c3"
+      },
+      "status_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\yaap16-soong-graph-first-20260812-attempt12.status"
+    }
+  ],
+  "remaining_nonfatal_warnings": [
+    {
+      "target": "out/target/product/haotian/vendor/etc/vintf/manifest/bluetooth_audio.xml",
+      "type": "install rule override/old rule ignored"
+    },
+    {
+      "target": "out/target/product/haotian/vendor/etc/wifi/wpa_supplicant.conf",
+      "type": "install rule override/old rule ignored"
+    }
+  ],
+  "static_validation": {
+    "path": "D:\\Codex\\haotian-rom-fusion\\evidence\\yaap16-prebuild-validation.json",
+    "bytes": 26470,
+    "sha256": "de13200bbe16f66d104e1c3324c4cc5907c5c1ad673446f3ac38e054830c8a06"
+  },
+  "acceptance": [
+    {
+      "check": "TARGET_BUILD_GAPPS=true shown in final log",
+      "status": "pass"
+    },
+    {
+      "check": "TARGET_PRODUCT=yaap_haotian and TARGET_BUILD_VARIANT=userdebug",
+      "status": "pass"
+    },
+    {
+      "check": "Soong Android.bp analysis completed",
+      "status": "pass"
+    },
+    {
+      "check": "Kati Make and packaging graph completed",
+      "status": "pass"
+    },
+    {
+      "check": "final Ninja nothing target completed",
+      "status": "pass"
+    },
+    {
+      "check": "committed device-tree state reproduced the pass",
+      "status": "pass"
+    },
+    {
+      "check": "no product image/archive generated",
+      "status": "pass"
+    },
+    {
+      "check": "no device operation entered",
+      "status": "pass"
+    }
+  ]
 }

@@ -90,7 +90,7 @@ cd ~/android/yaap16
   --jobs-checkout=8
 ```
 
-Repo 从 `(0/1148)` 重新显示计数表示重新遍历项目，不等于重新下载全部对象。已存在的 Git object、pack 和 checkout 会复用；只有缺失或 revision 变化的内容进入网络 fetch。
+Repo 从 `(0/1150)` 重新显示计数表示重新遍历项目，不等于重新下载全部对象。已存在的 Git object、pack 和 checkout 会复用；只有缺失或 revision 变化的内容进入网络 fetch。
 
 同步后锁定 resolved manifest：
 
@@ -103,9 +103,9 @@ cd ~/android/yaap16
 预期：
 
 ```text
-projects:       1148
-unique paths:   1148
-SHA-256:        88a1d09b88295fd1dffb2cd3d65006a2abc29fb2368f36c538b297af2068d2ca
+projects:       1150
+unique paths:   1150
+SHA-256:        c1264cbe2cae0bf6c83cf181efbe7ac8e8674a50b21c2e0cd13a7eb33158a78b
 ```
 
 ## 4. proprietary vendor 树落位
@@ -199,19 +199,21 @@ wsl -d Ubuntu-ROMBuild -- bash -lc "python3 `
   /mnt/d/Codex/haotian-rom-fusion/scripts/Validate-YaapPrebuild.py `
   --source /home/arima/android/yaap16 `
   --resolved-manifest /mnt/d/Codex/haotian-rom-fusion/manifests/resolved/yaap16-haotian-20260812.xml `
-  --output /mnt/d/Codex/haotian-rom-fusion/evidence/yaap16-prebuild-validation.json"
+  --output /mnt/d/Codex/haotian-rom-fusion/evidence/yaap16-prebuild-validation.json `
+  --gapps-profile gapps"
 ```
 
 预期：
 
 ```json
-{"result":"pass","checks":102,"passed":100,"failed":0,"pending":2,"compile_started":false}
+{"result":"pass","checks":111,"passed":110,"failed":0,"pending":1,"compile_started":true}
 ```
 
-两项 pending：
+当前一项 pending：
 
-1. `vendor/haotian/security/avb.pem` 的发布密钥策略；
-2. `TARGET_BUILD_GAPPS=true` 或 YAAP 默认 MicroG/vanilla 路线。
+1. `execution.compile_skipped`：`out` 已因首次 graph 产生，因此纯 prebuild 阶段断言不再适用。
+
+GApps 已通过 `--gapps-profile gapps` 记录；本地开发 AVB 输入已存在，生产密钥策略仍在 release-hardening gate。
 
 ## 8. GApps profile 固定方式
 
@@ -241,11 +243,21 @@ unset TARGET_BUILD_GAPPS
 
 这项选择会改变 product package 和 overlay 集合，因此首次生成 Soong graph 前固定。
 
-## 9. Build gate：下一阶段入口
+## 9. Build gate：首次 graph 已完成
 
-以下命令在本轮没有执行。它们是用户确认启动编译后使用的入口。
+首次 graph 已使用以下配置通过，并在提交态复验：
 
-YAAP 官方文档给出的通用形式为 `lunch yaap_device-user && m yaap`。haotian 的 Android 16 确定性 release-config 入口记录为：
+```bash
+cd ~/android/yaap16
+export TARGET_BUILD_GAPPS=true
+source build/envsetup.sh
+lunch yaap_haotian-bp4a-userdebug
+m -j16 nothing
+```
+
+完整证据见 `docs/YAAP16_SOONG_GRAPH_REPORT.md` 与 `evidence/yaap16-soong-graph.json`。
+
+下一阶段若启动完整产品编译，YAAP 官方文档给出的通用形式为 `lunch yaap_device-user && m yaap`。haotian 的 Android 16 确定性 release-config 入口记录为：
 
 ```bash
 cd ~/android/yaap16
@@ -281,9 +293,9 @@ target-files / OTA / image SHA-256
 |---|---|
 | manifest | `manifests/resolved/yaap16-haotian-20260812.xml` |
 | device | `534e15a4b4fc49672826e2c99d1fcad1d64e5802` |
-| common | `dfd356f8146b7343b079a88ea2d106ef8deb0027` |
+| common | `dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a` |
 | kernel | `802915cc6b269c3bf577327c4c165c3117852ff5` |
-| health interfaces | `28295cf95f2b055ebd2cf912f469f70f0558eb24` |
+| health interfaces | `ca560522cee3977861002372d1408cd7bb690198` |
 | health sepolicy | `4aa6646b41042e19d9238034ed202d9a6b1a5ed9` |
 | vendor trees | D 盘 staging，checksum delta 为 0 |
 | baseline evidence | `evidence/yaap16-source-baseline.json` |
