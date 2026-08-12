@@ -4,27 +4,27 @@
   "resolved_manifest": "/mnt/d/Codex/haotian-rom-fusion/manifests/resolved/yaap16-haotian-20260812.xml",
   "summary": {
     "result": "pass",
-    "checks": 102,
-    "passed": 100,
+    "checks": 111,
+    "passed": 110,
     "failed": 0,
-    "pending": 2,
-    "compile_started": false
+    "pending": 1,
+    "compile_started": true
   },
   "checks": [
     {
       "id": "manifest.project_count",
       "status": "pass",
       "severity": "error",
-      "actual": 1148,
-      "expected": 1148,
+      "actual": 1150,
+      "expected": 1150,
       "note": ""
     },
     {
       "id": "manifest.unique_paths",
       "status": "pass",
       "severity": "error",
-      "actual": 1148,
-      "expected": 1148,
+      "actual": 1150,
+      "expected": 1150,
       "note": ""
     },
     {
@@ -79,16 +79,16 @@
       "id": "manifest.revision.device/xiaomi/sm8750-common",
       "status": "pass",
       "severity": "error",
-      "actual": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
-      "expected": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+      "actual": "dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a",
+      "expected": "dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a",
       "note": ""
     },
     {
       "id": "git.head.device/xiaomi/sm8750-common",
       "status": "pass",
       "severity": "error",
-      "actual": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
-      "expected": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+      "actual": "dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a",
+      "expected": "dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a",
       "note": ""
     },
     {
@@ -127,16 +127,16 @@
       "id": "manifest.revision.hardware/lineage/interfaces",
       "status": "pass",
       "severity": "error",
-      "actual": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
-      "expected": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+      "actual": "ca560522cee3977861002372d1408cd7bb690198",
+      "expected": "ca560522cee3977861002372d1408cd7bb690198",
       "note": ""
     },
     {
       "id": "git.head.hardware/lineage/interfaces",
       "status": "pass",
       "severity": "error",
-      "actual": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
-      "expected": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+      "actual": "ca560522cee3977861002372d1408cd7bb690198",
+      "expected": "ca560522cee3977861002372d1408cd7bb690198",
       "note": ""
     },
     {
@@ -412,6 +412,30 @@
       "note": ""
     },
     {
+      "id": "manifest.revision.hardware/qcom-caf/common",
+      "status": "pass",
+      "severity": "error",
+      "actual": "488707fd3df37a6d8f1bd6bdb69087523a0e5f92",
+      "expected": "488707fd3df37a6d8f1bd6bdb69087523a0e5f92",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/common",
+      "status": "pass",
+      "severity": "error",
+      "actual": "488707fd3df37a6d8f1bd6bdb69087523a0e5f92",
+      "expected": "488707fd3df37a6d8f1bd6bdb69087523a0e5f92",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/common",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
       "id": "manifest.revision.hardware/xiaomi",
       "status": "pass",
       "severity": "error",
@@ -429,6 +453,30 @@
     },
     {
       "id": "git.clean.hardware/xiaomi",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.packages/apps/EuiccPolicy",
+      "status": "pass",
+      "severity": "error",
+      "actual": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
+      "expected": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
+      "note": ""
+    },
+    {
+      "id": "git.head.packages/apps/EuiccPolicy",
+      "status": "pass",
+      "severity": "error",
+      "actual": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
+      "expected": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
+      "note": ""
+    },
+    {
+      "id": "git.clean.packages/apps/EuiccPolicy",
       "status": "pass",
       "severity": "error",
       "actual": "clean",
@@ -477,6 +525,30 @@
     },
     {
       "id": "git.clean.vendor/qcom/opensource/commonsys-intf/audio",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.vendor/qcom/opensource/libvmmem",
+      "status": "pass",
+      "severity": "error",
+      "actual": "a4a0b08614eb1de238dd1fbe4cef94213560d5f1",
+      "expected": "a4a0b08614eb1de238dd1fbe4cef94213560d5f1",
+      "note": ""
+    },
+    {
+      "id": "git.head.vendor/qcom/opensource/libvmmem",
+      "status": "pass",
+      "severity": "error",
+      "actual": "a4a0b08614eb1de238dd1fbe4cef94213560d5f1",
+      "expected": "a4a0b08614eb1de238dd1fbe4cef94213560d5f1",
+      "note": ""
+    },
+    {
+      "id": "git.clean.vendor/qcom/opensource/libvmmem",
       "status": "pass",
       "severity": "error",
       "actual": "clean",
@@ -687,16 +759,16 @@
       "id": "vendor.files.sm8750-common",
       "status": "pass",
       "severity": "error",
-      "actual": 1780,
-      "expected": 1780,
+      "actual": 1782,
+      "expected": 1782,
       "note": ""
     },
     {
       "id": "vendor.bytes.sm8750-common",
       "status": "pass",
       "severity": "error",
-      "actual": 782226259,
-      "expected": 782226259,
+      "actual": 785115017,
+      "expected": 785115017,
       "note": ""
     },
     {
@@ -843,25 +915,25 @@
     },
     {
       "id": "release.avb_private_key",
-      "status": "pending",
+      "status": "pass",
       "severity": "pending",
-      "actual": "absent",
+      "actual": "present",
       "expected": "present before first build",
       "note": "Keep the private key local and outside the management repository."
     },
     {
       "id": "product.gapps_profile",
-      "status": "pending",
-      "severity": "pending",
-      "actual": "YAAP default MicroG/vanilla path",
-      "expected": "choose before first build",
-      "note": "This is a product decision rather than a source-closure failure."
+      "status": "pass",
+      "severity": "error",
+      "actual": "GApps (TARGET_BUILD_GAPPS=true runtime profile)",
+      "expected": "GApps",
+      "note": "Explicit runtime selection takes precedence over the product default."
     },
     {
       "id": "execution.compile_skipped",
-      "status": "pass",
-      "severity": "info",
-      "actual": "out absent",
+      "status": "pending",
+      "severity": "pending",
+      "actual": "out present",
       "expected": "no compile output in this phase",
       "note": ""
     }

@@ -13,18 +13,17 @@
   <project name="Arimacose/device_lineage_sepolicy" path="device/lineage/sepolicy" remote="github" revision="4aa6646b41042e19d9238034ed202d9a6b1a5ed9" upstream="haotian-16" dest-branch="haotian-16" groups="local::haotian-yaap16"/>
   <project name="Arimacose/device_xiaomi_haotian" path="device/xiaomi/haotian" remote="github" revision="534e15a4b4fc49672826e2c99d1fcad1d64e5802" upstream="yaap-16" dest-branch="yaap-16" groups="local::haotian-yaap16"/>
   <project name="Arimacose/device_xiaomi_haotian-kernel" path="device/xiaomi/haotian-kernel" remote="github" revision="802915cc6b269c3bf577327c4c165c3117852ff5" upstream="yaap-16" dest-branch="yaap-16" groups="local::haotian-yaap16"/>
-  <project name="Arimacose/device_xiaomi_sm8750-common" path="device/xiaomi/sm8750-common" remote="github" revision="dfd356f8146b7343b079a88ea2d106ef8deb0027" upstream="yaap-16" dest-branch="yaap-16" groups="local::haotian-yaap16"/>
-  <project name="Arimacose/hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="28295cf95f2b055ebd2cf912f469f70f0558eb24" upstream="haotian-16" dest-branch="haotian-16" groups="local::haotian-yaap16"/>
+  <project name="Arimacose/device_xiaomi_sm8750-common" path="device/xiaomi/sm8750-common" remote="github" revision="dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a" upstream="yaap-16" dest-branch="yaap-16" groups="local::haotian-yaap16"/>
+  <project name="Arimacose/hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="ca560522cee3977861002372d1408cd7bb690198" upstream="haotian-16" dest-branch="haotian-16" groups="local::haotian-yaap16"/>
   <project name="Arimacose/vendor_yaap" path="vendor/yaap" remote="github" revision="32d6a6d1016b98d6435c5ce674ae7c236dc5acb7" upstream="haotian-16" dest-branch="haotian-16" groups="local::haotian-yaap16"/>
   <project name="CalyxOS/platform_packages_apps_Panic" path="packages/apps/Panic" remote="github" revision="5b5781825a7bb6fb7836a51b5fb626987e1c5b8b" upstream="android14" dest-branch="android14"/>
   <project name="CalyxOS/platform_packages_apps_Ripple" path="packages/apps/Ripple" remote="github" revision="7301fe364158d13004b9fe641e5d47cdb55a0988" upstream="android15-qpr2" dest-branch="android15-qpr2"/>
   <project name="GrapheneOS/platform_external_vanadium" path="external/vanadium" remote="gitlab" revision="670dd99e7ba5b79be895d4144209ea0bea0ec773" upstream="16-qpr2" dest-branch="16-qpr2" clone-depth="1"/>
-  <project name="LineageOS/android_device_qcom_sepolicy_vndr" path="device/qcom/sepolicy_vndr/sm8750" remote="github" revision="b5c02660d4e410403385bbdd33185ae3261c7ec8" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16">
-    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp"/>
-  </project>
+  <project name="LineageOS/android_device_qcom_sepolicy_vndr" path="device/qcom/sepolicy_vndr/sm8750" remote="github" revision="b5c02660d4e410403385bbdd33185ae3261c7ec8" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_hardware_qcom_audio-ar" path="hardware/qcom-caf/sm8750/audio/primary-hal" remote="github" revision="443dec4613a7e5dbc997eb2d7b087f0f07ae5258" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_hardware_qcom_display" path="hardware/qcom-caf/sm8750/display/hal" remote="github" revision="4b74f47925c54e95c805275832a65830af0431b6" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" revision="892a1cded9c7bf89adf4700af5dfca099ec54782" upstream="lineage-23.2" dest-branch="lineage-23.2" groups="local::haotian-yaap16"/>
+  <project name="LineageOS/android_packages_apps_EuiccPolicy" path="packages/apps/EuiccPolicy" remote="github" revision="7232f94f1a908272d4b72bf13277a54c889f9f2c" upstream="lineage-23.2" dest-branch="lineage-23.2" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_vendor_qcom_opensource_agm" path="hardware/qcom-caf/sm8750/audio/agm" remote="github" revision="853c0f6afd242b506636c9af47cb4ed64a4056f0" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_vendor_qcom_opensource_arpal-lx" path="hardware/qcom-caf/sm8750/audio/pal" remote="github" revision="39f7cccd8bbd3e51b71431e574fb38651be23cae" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_vendor_qcom_opensource_audio" path="vendor/qcom/opensource/commonsys/audio" remote="github" revision="af06e9427170c7cf089a2f8306dec026d20aba0c" upstream="lineage-23.2" dest-branch="lineage-23.2" groups="local::haotian-yaap16"/>
@@ -34,6 +33,7 @@
   <project name="LineageOS/android_vendor_qcom_opensource_dataipa" path="hardware/qcom-caf/sm8750/dataipa" remote="github" revision="c6206833bd59478caaa0a69e9d71f1bbfa866a96" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_vendor_qcom_opensource_display-core" path="hardware/qcom-caf/sm8750/display/core" remote="github" revision="20cf597e21bdd31af4e3a55660e991e22f69bf8b" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
   <project name="LineageOS/android_vendor_qcom_opensource_display-intf" path="hardware/qcom-caf/sm8750/display/intf" remote="github" revision="19b5c055b40bc3d7af4309662eea98c7e7a72cee" upstream="lineage-23.2-caf-sm8750" dest-branch="lineage-23.2-caf-sm8750" groups="local::haotian-yaap16"/>
+  <project name="LineageOS/android_vendor_qcom_opensource_libvmmem" path="vendor/qcom/opensource/libvmmem" remote="github" revision="a4a0b08614eb1de238dd1fbe4cef94213560d5f1" upstream="lineage-23.2" dest-branch="lineage-23.2" groups="local::haotian-yaap16"/>
   <project name="android_device_qcom_sepolicy" path="device/qcom/sepolicy" remote="lineage" revision="9fc52af4fdb277b5db3b17f702b040d1a7696c2d" upstream="refs/heads/lineage-22.2" dest-branch="refs/heads/lineage-22.2" groups="qcom,qssi"/>
   <project name="android_device_qcom_sepolicy" path="device/qcom/sepolicy-legacy-um" remote="lineage" revision="7f5546d796c96dc78b3fa8aba41a3ccf83658d44" upstream="lineage-22.2-legacy-um" dest-branch="lineage-22.2-legacy-um" groups="qcom,sdm660"/>
   <project name="android_device_qcom_sepolicy_vndr" path="device/qcom/sepolicy_vndr/sm8450" remote="lineage" revision="f8d3dac4f638f29da66491816c09943bdf030f39" upstream="lineage-22.2-caf-sm8450" dest-branch="lineage-22.2-caf-sm8450" groups="qcom,waipio-vendor"/>
@@ -211,6 +211,9 @@
     <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8650/audio/Android.mk"/>
     <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8650/Android.bp"/>
     <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8650/Android.mk"/>
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8750/audio/Android.mk"/>
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp"/>
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8750/Android.mk"/>
   </project>
   <project name="hardware_qcom-caf_sm8150_audio" path="hardware/qcom-caf/sm8150/audio" remote="yaap" revision="51a62a15528b05a5542dbe030417a0d8d7520e80" upstream="refs/heads/sixteen" dest-branch="refs/heads/sixteen"/>
   <project name="hardware_qcom-caf_sm8150_display" path="hardware/qcom-caf/sm8150/display" remote="yaap" revision="7dfe11876a3511c87820d5e01af140ab950ebc70" upstream="refs/heads/sixteen" dest-branch="refs/heads/sixteen"/>

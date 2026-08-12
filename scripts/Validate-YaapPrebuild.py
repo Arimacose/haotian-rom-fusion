@@ -22,9 +22,9 @@ from typing import Any
 EXPECTED_PROJECTS = {
     "vendor/yaap": "32d6a6d1016b98d6435c5ce674ae7c236dc5acb7",
     "device/xiaomi/haotian": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
-    "device/xiaomi/sm8750-common": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+    "device/xiaomi/sm8750-common": "dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a",
     "device/xiaomi/haotian-kernel": "802915cc6b269c3bf577327c4c165c3117852ff5",
-    "hardware/lineage/interfaces": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+    "hardware/lineage/interfaces": "ca560522cee3977861002372d1408cd7bb690198",
     "device/lineage/sepolicy": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9",
     "device/qcom/sepolicy_vndr/sm8750": "b5c02660d4e410403385bbdd33185ae3261c7ec8",
     "hardware/qcom-caf/sm8750/audio/agm": "853c0f6afd242b506636c9af47cb4ed64a4056f0",
@@ -36,14 +36,17 @@ EXPECTED_PROJECTS = {
     "hardware/qcom-caf/sm8750/display/core": "20cf597e21bdd31af4e3a55660e991e22f69bf8b",
     "hardware/qcom-caf/sm8750/display/hal": "4b74f47925c54e95c805275832a65830af0431b6",
     "hardware/qcom-caf/sm8750/display/intf": "19b5c055b40bc3d7af4309662eea98c7e7a72cee",
+    "hardware/qcom-caf/common": "488707fd3df37a6d8f1bd6bdb69087523a0e5f92",
     "hardware/xiaomi": "892a1cded9c7bf89adf4700af5dfca099ec54782",
+    "packages/apps/EuiccPolicy": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
     "vendor/qcom/opensource/commonsys/audio": "af06e9427170c7cf089a2f8306dec026d20aba0c",
     "vendor/qcom/opensource/commonsys-intf/audio": "7d983f8254cb84c0460e2460bd4fca1cc10a0899",
+    "vendor/qcom/opensource/libvmmem": "a4a0b08614eb1de238dd1fbe4cef94213560d5f1",
 }
 
 EXPECTED_VENDOR_TREES = {
     "haotian": {"files": 3046, "bytes": 5_465_316_231},
-    "sm8750-common": {"files": 1780, "bytes": 782_226_259},
+    "sm8750-common": {"files": 1782, "bytes": 785_115_017},
 }
 
 EXPECTED_SOUNDTRIGGER = (
@@ -85,6 +88,11 @@ def main() -> int:
     parser.add_argument("--source", required=True, type=Path)
     parser.add_argument("--resolved-manifest", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument(
+        "--gapps-profile",
+        choices=("gapps", "default"),
+        help="Record an explicit runtime profile selected outside the product makefile.",
+    )
     args = parser.parse_args()
 
     source = args.source.resolve()
@@ -114,7 +122,7 @@ def main() -> int:
     projects = manifest_root.findall("project")
     by_path = {(item.get("path") or item.get("name")): item for item in projects}
     paths = list(by_path)
-    check("manifest.project_count", len(projects) == 1148, len(projects), 1148)
+    check("manifest.project_count", len(projects) == 1150, len(projects), 1150)
     check("manifest.unique_paths", len(paths) == len(projects), len(paths), len(projects))
 
     for path, expected_revision in EXPECTED_PROJECTS.items():
@@ -308,14 +316,24 @@ def main() -> int:
         severity="pending",
         note="Keep the private key local and outside the management repository.",
     )
-    gapps_enabled = "TARGET_BUILD_GAPPS := true" in product_mk
+    gapps_enabled = (
+        args.gapps_profile == "gapps" or "TARGET_BUILD_GAPPS := true" in product_mk
+    )
+    gapps_explicit = args.gapps_profile is not None
+    selected_profile = (
+        "GApps" if args.gapps_profile == "gapps" else "YAAP default MicroG/vanilla path"
+    )
     check(
         "product.gapps_profile",
-        gapps_enabled,
-        "GApps" if gapps_enabled else "YAAP default MicroG/vanilla path",
-        "choose before first build",
-        severity="pending",
-        note="This is a product decision rather than a source-closure failure.",
+        (gapps_enabled == (args.gapps_profile == "gapps")) if gapps_explicit else False,
+        (
+            "GApps (TARGET_BUILD_GAPPS=true runtime profile)"
+            if gapps_enabled
+            else "YAAP default MicroG/vanilla path"
+        ),
+        selected_profile if gapps_explicit else "choose before first build",
+        severity="error" if gapps_explicit else "pending",
+        note="Explicit runtime selection takes precedence over the product default.",
     )
     out_dir = source / "out"
     check(
