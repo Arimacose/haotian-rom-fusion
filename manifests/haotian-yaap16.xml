@@ -2,11 +2,14 @@
 <manifest>
   <!--
     YAAP 16 platform override: keep the upstream AOSP-first manifest, replace
-    only the YAAP product repository with the managed fork, then add the
-    haotian device/common/prebuilt-kernel projects. Proprietary vendor trees
-    remain staged from the verified local extraction until their LFS repos are
-    published; omitting them here is intentional for the manifest-only gate.
+    the YAAP product repository and point Qualcomm common at managed forks,
+    then add the haotian device/common/prebuilt-kernel projects. Proprietary
+    vendor trees remain staged from the verified local extraction until their
+    LFS repos are published; omitting them here is intentional for the
+    manifest-only gate.
   -->
+  <remote name="arimacose" fetch="https://github.com/Arimacose/" />
+
   <remove-project name="vendor_yaap" />
   <remove-project name="hardware_lineage_interfaces" />
   <remove-project name="device_lineage_sepolicy" />
@@ -57,13 +60,15 @@
       revision="lineage-23.2-caf-sm8750" />
 
   <!--
-    Pickup guards belong to the existing YAAP hardware_qcom-caf_common
-    project. Extend it for SM8750 in the same shape as YAAP's SM8650 entry;
-    the sepolicy_vndr project does not contain these pickup files.
+    The managed Qualcomm common fork classifies sun as the SM8750 UM 6.6
+    family. Keep the three SM8750 pickup links on that project; the
+    sepolicy_vndr project does not contain these pickup files.
   -->
   <extend-project
       name="hardware_qcom-caf_common"
-      path="hardware/qcom-caf/common">
+      path="hardware/qcom-caf/common"
+      remote="arimacose"
+      revision="haotian-16">
     <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8750/audio/Android.mk" />
     <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp" />
     <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8750/Android.mk" />
