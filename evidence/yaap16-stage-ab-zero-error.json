@@ -1,4 +1,1082 @@
 {
   "schema": 1,
-  "status": "baseline-placeholder"
+  "result": "passed",
+  "acceptance_profile": {
+    "target_build_gapps": true,
+    "variant": "yaap_haotian-bp4a-userdebug",
+    "jobs": 16,
+    "stage_a_true_error_limit": 0,
+    "stage_b_true_error_limit": 0,
+    "device_operations": false
+  },
+  "stage_a": {
+    "result": "passed",
+    "diagnostic_count": 0,
+    "namespace_count": 17,
+    "namespace_unique_count": 17,
+    "vendor_var_results": {
+      "ANDROID.target_board_platform": "sun",
+      "rmnetctl.old_rmnet_data": "false",
+      "qtidisplay.composer_version": "v3_3",
+      "qtidisplay.drmpp": "true",
+      "qtidisplay.gralloc4": "true",
+      "qtidisplay.smmu_proxy": "true",
+      "qtidisplay.ubwcp_headers": "true",
+      "qtidisplay.gralloc_handle_has_custom_content_md_reserved_size": "true",
+      "qtidisplay.gralloc_handle_has_reserved_size": "true",
+      "qtidisplay.gralloc_handle_has_ubwcp_format": "true"
+    },
+    "report_sha256": "f7445208b4fb6c72a728ea2928bf9762aa86fd09810d37b577ab1090bf0011f7"
+  },
+  "provider_resolution": {
+    "result": "passed",
+    "resolved_count": 6,
+    "required_count": 6,
+    "report_sha256": "8c36cba043d8d12553738cb5c9316b8dd133f5a6ce2cc1eacb209f39566cf4db"
+  },
+  "modern_rmnet": {
+    "result": "passed",
+    "old_rmnet_define_in_log": false,
+    "obsolete_header_in_log": false,
+    "artifact": {
+      "path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/lib64/librmnetctl.so",
+      "exists": true,
+      "size": 54072,
+      "sha256": "2ff72aca18b1387981681b80faf393be0bc25a23aef83dd009e9cacf1715ea65",
+      "file": "/home/arima/android/yaap16/out/target/product/haotian/vendor/lib64/librmnetctl.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[md5/uuid]=8f8fd23e031c77ec45ddbf88666cbc54, stripped"
+    },
+    "report_sha256": "883cca5ffa4197916a87c04205d46d6f72c230f4f7ff0d206dc421e4c4a33a32"
+  },
+  "matrix": {
+    "sha256": "77e298083738232f144081771391c498101438fcd8c55e038eae183b594847ad",
+    "counts": {
+      "selected_unique_modules": 1983,
+      "by_domain": {
+        "audio_bluetooth": 115,
+        "biometrics_sensors": 48,
+        "camera_media": 358,
+        "connectivity_radio": 316,
+        "display_graphics": 108,
+        "platform_device_core": 836,
+        "power_thermal_health": 54,
+        "security_nfc_drm": 82,
+        "usb_storage_boot": 66
+      },
+      "by_resolution": {
+        "caf_qti_source": 42,
+        "platform_glue": 121,
+        "stock_prebuilt": 1792,
+        "xiaomi_device_source": 28
+      },
+      "by_group": {
+        "01-device-core": 836,
+        "02-power-health-boot": 120,
+        "03-biometric-sensors": 48,
+        "04-audio-bluetooth": 115,
+        "05-display-graphics": 108,
+        "06-camera-media": 358,
+        "07-connectivity-radio": 316,
+        "08-security-nfc-misc": 82
+      },
+      "missing_module_info": 0,
+      "explicit_final_missing_module_info": 0,
+      "explicit_not_in_final_product": 2
+    },
+    "group_union_count": 1983,
+    "group_overlap_pairs": [],
+    "aggregate_count": 1983,
+    "input_integrity": {
+      "/home/arima/android/yaap16/out/target/product/haotian/module-info.json": {
+        "recorded_sha256": "498a2f4d7afe7da09687db329487cadc2f29191b671845d7465fd0d772d1fff3",
+        "actual_sha256": "498a2f4d7afe7da09687db329487cadc2f29191b671845d7465fd0d772d1fff3"
+      },
+      "/mnt/d/Codex/haotian-rom-fusion-build/logs/yaap16-stage-a-um66-vars-attempt5.txt": {
+        "recorded_sha256": "2f66a5d517ca8170574aa9b7391321e07c2daf84c077e0a0c35bfb577ebb3c46",
+        "actual_sha256": "2f66a5d517ca8170574aa9b7391321e07c2daf84c077e0a0c35bfb577ebb3c46"
+      },
+      "/home/arima/android/yaap16/device/xiaomi/sm8750-common/common.mk": {
+        "recorded_sha256": "d1c766916acfd19ca2e017ce3d3071dbc7936f1b8831725cf79a686e1f7162ef",
+        "actual_sha256": "d1c766916acfd19ca2e017ce3d3071dbc7936f1b8831725cf79a686e1f7162ef"
+      },
+      "/home/arima/android/yaap16/device/xiaomi/haotian/device.mk": {
+        "recorded_sha256": "aad0f140a7bdfb241efa96805249f8a17cd272e0abb45a5da538ca6cf306ef30",
+        "actual_sha256": "aad0f140a7bdfb241efa96805249f8a17cd272e0abb45a5da538ca6cf306ef30"
+      }
+    },
+    "explicit_not_in_final_product_explanation": {
+      "update_engine_client": "PRODUCT_PACKAGES_DEBUG entry, outside the final PRODUCT_PACKAGES dump but built in the matrix",
+      "vendor.lineage.powershare-service.default": "guarded for miro/piano and correctly inactive for haotian"
+    }
+  },
+  "stage_b_groups": {
+    "01-device-core": {
+      "group": "01-device-core",
+      "attempt": 2,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "526",
+        "start": "2026-08-13T02:08:29+08:00",
+        "end": "2026-08-13T02:17:15+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "01-device-core",
+        "attempt": "2",
+        "target_count": "836",
+        "target_sha256": "01bb8bdead35eb0852b7fd66118d1d55584b39ba4271b3ea47c97b54f8d15a35",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/01-device-core.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-01-device-core-attempt2.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-01-device-core-attempt2.log"
+      },
+      "target_count": 836,
+      "target_unique_count": 836,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 347,
+      "warnings_by_category": {
+        "deprecated_api": 25,
+        "other_upstream_warning": 322
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-01-device-core-attempt2.status": "3d026d85b8cf2c287de88aab14864c4dcd40eb4fefdf9c95379f82e640db1958",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-01-device-core-attempt2.log": "452a7fef336ec3cab6d6d5c9ca1db71320aaddea2491b8c7d722eca6f6582999",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-01-device-core-attempt2.targets.txt": "01bb8bdead35eb0852b7fd66118d1d55584b39ba4271b3ea47c97b54f8d15a35"
+      }
+    },
+    "02-power-health-boot": {
+      "group": "02-power-health-boot",
+      "attempt": 1,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "1593",
+        "start": "2026-08-13T02:17:33+08:00",
+        "end": "2026-08-13T02:44:06+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "02-power-health-boot",
+        "attempt": "1",
+        "target_count": "120",
+        "target_sha256": "23a46a1e3abeedcb3bfdb14bab4f51736af6b26ff7239b0f1a76a31bb8183ee1",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/02-power-health-boot.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-02-power-health-boot-attempt1.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-02-power-health-boot-attempt1.log"
+      },
+      "target_count": 120,
+      "target_unique_count": 120,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 450,
+      "warnings_by_category": {
+        "deprecated_api": 110,
+        "other_upstream_warning": 340
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-02-power-health-boot-attempt1.status": "7f186b2f49f08394c6dc381b67cd2f0bd98364f001022c8e0385f504a49e2e26",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-02-power-health-boot-attempt1.log": "17bd77670194840bdcaeeafe72577a5c9b20d78256c6a8f3bf4e1b018d291f96",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-02-power-health-boot-attempt1.targets.txt": "23a46a1e3abeedcb3bfdb14bab4f51736af6b26ff7239b0f1a76a31bb8183ee1"
+      }
+    },
+    "03-biometric-sensors": {
+      "group": "03-biometric-sensors",
+      "attempt": 1,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "396",
+        "start": "2026-08-13T02:44:24+08:00",
+        "end": "2026-08-13T02:51:00+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "03-biometric-sensors",
+        "attempt": "1",
+        "target_count": "48",
+        "target_sha256": "1a997d74d47d875afb09d8c50cbf99182e50635ed4bba110ade4dda3b130900c",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/03-biometric-sensors.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-03-biometric-sensors-attempt1.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-03-biometric-sensors-attempt1.log"
+      },
+      "target_count": 48,
+      "target_unique_count": 48,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 12,
+      "warnings_by_category": {
+        "deprecated_api": 6,
+        "other_upstream_warning": 6
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-03-biometric-sensors-attempt1.status": "3e081941c6c6c3eaf4473957cba108a0670f8409e061447132c51cf6b9be3370",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-03-biometric-sensors-attempt1.log": "d175aa141177c59852c100e63ca365349bfbe474dc3b3b859c759aff04c80c3f",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-03-biometric-sensors-attempt1.targets.txt": "1a997d74d47d875afb09d8c50cbf99182e50635ed4bba110ade4dda3b130900c"
+      }
+    },
+    "04-audio-bluetooth": {
+      "group": "04-audio-bluetooth",
+      "attempt": 1,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "805",
+        "start": "2026-08-13T02:51:13+08:00",
+        "end": "2026-08-13T03:04:38+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "04-audio-bluetooth",
+        "attempt": "1",
+        "target_count": "115",
+        "target_sha256": "058d6e67dbea10d1e6ae654c93949659b6a4090b368435b889ad1cae5da684cc",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/04-audio-bluetooth.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-04-audio-bluetooth-attempt1.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-04-audio-bluetooth-attempt1.log"
+      },
+      "target_count": 115,
+      "target_unique_count": 115,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 70,
+      "warnings_by_category": {
+        "deprecated_api": 36,
+        "other_upstream_warning": 34
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-04-audio-bluetooth-attempt1.status": "6033474b7b7be094ab3f4f6b887046e22533c54e32e154db784afdc0406a71b0",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-04-audio-bluetooth-attempt1.log": "4e3184df07d02ef6a37179e6b5f07c753af54312e8352e284a6bc1b4a11594a6",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-04-audio-bluetooth-attempt1.targets.txt": "058d6e67dbea10d1e6ae654c93949659b6a4090b368435b889ad1cae5da684cc"
+      }
+    },
+    "05-display-graphics": {
+      "group": "05-display-graphics",
+      "attempt": 1,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "599",
+        "start": "2026-08-13T03:04:52+08:00",
+        "end": "2026-08-13T03:14:51+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "05-display-graphics",
+        "attempt": "1",
+        "target_count": "108",
+        "target_sha256": "e2818dbf9540c149a6243b16253a99c20cda2bc7f4bb6b8ad77340e9e7d74086",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/05-display-graphics.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-05-display-graphics-attempt1.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-05-display-graphics-attempt1.log"
+      },
+      "target_count": 108,
+      "target_unique_count": 108,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 4,
+      "warnings_by_category": {
+        "other_upstream_warning": 4
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-05-display-graphics-attempt1.status": "e19cf5d899e1460ad94abee57df977ad3917808e705992d3663c1b8f348fc367",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-05-display-graphics-attempt1.log": "11a5e24132fe31aafd162b0ac9cf8699e56457edbbe4aa362d3554cb23dcd89c",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-05-display-graphics-attempt1.targets.txt": "e2818dbf9540c149a6243b16253a99c20cda2bc7f4bb6b8ad77340e9e7d74086"
+      }
+    },
+    "06-camera-media": {
+      "group": "06-camera-media",
+      "attempt": 1,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "606",
+        "start": "2026-08-13T03:15:04+08:00",
+        "end": "2026-08-13T03:25:10+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "06-camera-media",
+        "attempt": "1",
+        "target_count": "358",
+        "target_sha256": "c0fa55bb93ec15063139369445ce041d6c4d4c33dbe571ee656e6da6bf41fc3c",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/06-camera-media.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-06-camera-media-attempt1.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-06-camera-media-attempt1.log"
+      },
+      "target_count": 358,
+      "target_unique_count": 358,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 6121,
+      "warnings_by_category": {
+        "deprecated_api": 41,
+        "other_upstream_warning": 10,
+        "unused_assembler_or_compiler_argument": 6070
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-06-camera-media-attempt1.status": "987f935bfd0b22cc24508d712a38c799695438099780bbb244be73285c459f81",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-06-camera-media-attempt1.log": "a318b0d0b483ee2bdd007c2b6040ab39c5414c3203c3cbbb4ed90867850f8ded",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-06-camera-media-attempt1.targets.txt": "c0fa55bb93ec15063139369445ce041d6c4d4c33dbe571ee656e6da6bf41fc3c"
+      }
+    },
+    "07-connectivity-radio": {
+      "group": "07-connectivity-radio",
+      "attempt": 1,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "533",
+        "start": "2026-08-13T03:25:23+08:00",
+        "end": "2026-08-13T03:34:16+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "07-connectivity-radio",
+        "attempt": "1",
+        "target_count": "316",
+        "target_sha256": "08c05e9f85c129466b7b0369bbeda69e8cc6005067be8e43d537fc2d912f543c",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/07-connectivity-radio.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-07-connectivity-radio-attempt1.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-07-connectivity-radio-attempt1.log"
+      },
+      "target_count": 316,
+      "target_unique_count": 316,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 21,
+      "warnings_by_category": {
+        "deprecated_api": 8,
+        "other_upstream_warning": 13
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-07-connectivity-radio-attempt1.status": "9b46d5080d425a01495f1c67d81b958910562f4e5fee4fbca0d34c8b254f52dc",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-07-connectivity-radio-attempt1.log": "db59b8b357b2f045612373e9fdb00a751a3c4a4b1b852313b7265321e6b15149",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-07-connectivity-radio-attempt1.targets.txt": "08c05e9f85c129466b7b0369bbeda69e8cc6005067be8e43d537fc2d912f543c"
+      }
+    },
+    "08-security-nfc-misc": {
+      "group": "08-security-nfc-misc",
+      "attempt": 1,
+      "status": {
+        "result": "passed",
+        "exit_code": "0",
+        "elapsed_seconds": "428",
+        "start": "2026-08-13T03:34:29+08:00",
+        "end": "2026-08-13T03:41:37+08:00",
+        "target_build_gapps": "true",
+        "variant": "yaap_haotian-bp4a-userdebug",
+        "jobs": "16",
+        "group": "08-security-nfc-misc",
+        "attempt": "1",
+        "target_count": "82",
+        "target_sha256": "0d86c806d1b083d97ad4849d0392707c42dec582691b676e49a62cd9b74d2565",
+        "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/08-security-nfc-misc.targets.txt",
+        "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-08-security-nfc-misc-attempt1.targets.txt",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-08-security-nfc-misc-attempt1.log"
+      },
+      "target_count": 82,
+      "target_unique_count": 82,
+      "true_diagnostic_count": 0,
+      "true_diagnostics": [],
+      "warning_count": 1,
+      "warnings_by_category": {
+        "deprecated_api": 1
+      },
+      "no_work_to_do": false,
+      "artifacts": {
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-08-security-nfc-misc-attempt1.status": "989e144b81d1215f3f1d63c33930232f91099a6691d50f13acb411ae4345d885",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-08-security-nfc-misc-attempt1.log": "14ee086de3bc76eddbd2143286089ae761dc3da46daa5e7d490483726333e415",
+        "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-08-security-nfc-misc-attempt1.targets.txt": "0d86c806d1b083d97ad4849d0392707c42dec582691b676e49a62cd9b74d2565"
+      }
+    }
+  },
+  "stage_b_total_elapsed_seconds": 5486,
+  "stage_b_warning_totals_by_category": {
+    "deprecated_api": 227,
+    "other_upstream_warning": 729,
+    "unused_assembler_or_compiler_argument": 6070
+  },
+  "aggregate_revalidation": {
+    "group": "99-aggregate",
+    "attempt": 1,
+    "status": {
+      "result": "passed",
+      "exit_code": "0",
+      "elapsed_seconds": "278",
+      "start": "2026-08-13T03:41:58+08:00",
+      "end": "2026-08-13T03:46:36+08:00",
+      "target_build_gapps": "true",
+      "variant": "yaap_haotian-bp4a-userdebug",
+      "jobs": "16",
+      "group": "99-aggregate",
+      "attempt": "1",
+      "target_count": "1983",
+      "target_sha256": "494b154765ab9ac0f009e232212a0093a03563b3945f8ac21ba00ba8f01c7784",
+      "target_file": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/99-aggregate.targets.txt",
+      "target_snapshot": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-99-aggregate-attempt1.targets.txt",
+      "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-99-aggregate-attempt1.log"
+    },
+    "target_count": 1983,
+    "target_unique_count": 1983,
+    "true_diagnostic_count": 0,
+    "true_diagnostics": [],
+    "warning_count": 0,
+    "warnings_by_category": {},
+    "no_work_to_do": true,
+    "artifacts": {
+      "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-99-aggregate-attempt1.status": "155e66fdb34ea47d3969b0910c45841a18fa992cb99f4243415caa2f187edfd7",
+      "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-99-aggregate-attempt1.log": "544ec53d3d205ae334dadabf337c17c8f92d0914560e2c1d5041a3fd1f8043f0",
+      "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-builds/yaap16-stage-b-99-aggregate-attempt1.targets.txt": "494b154765ab9ac0f009e232212a0093a03563b3945f8ac21ba00ba8f01c7784"
+    }
+  },
+  "installed_output_coverage": {
+    "declared_installed_outputs": 2141,
+    "missing_declared_outputs": [],
+    "modules_without_installed_field": [
+      "com.android.future.usb.accessory",
+      "com.android.media.remotedisplay",
+      "com.android.media.remotedisplay.xml",
+      "com.android.mediadrm.signer",
+      "framework-graphics",
+      "product_vm-system_mountpoint",
+      "vendor_bt_firmware_mountpoint",
+      "vendor_dsp_mountpoint",
+      "vendor_firmware_mnt_mountpoint",
+      "vendor_modem_firmware_mountpoint",
+      "vendor_vm-system_mountpoint"
+    ],
+    "symlink_outputs": 57,
+    "dangling_staging_symlinks": 55,
+    "lexists_semantics": "Dangling staging symlinks count as generated outputs; their mount targets appear only in an assembled/running device filesystem."
+  },
+  "critical_hardware_modules": {
+    "android.hardware.biometrics.fingerprint-service.xiaomi.sm8750": {
+      "in_matrix": true,
+      "provider_paths": [
+        "device/xiaomi/sm8750-common/fingerprint"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.biometrics.fingerprint-service.xiaomi.sm8750",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.biometrics.fingerprint-service.xiaomi.sm8750",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.biometrics.fingerprint-service.xiaomi.sm8750.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.biometrics.fingerprint-service.xiaomi.sm8750.rc",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint-service.xiaomi.sm8750.xml",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint-service.xiaomi.sm8750.xml",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.vibrator-service.xiaomi-sm8750": {
+      "in_matrix": true,
+      "provider_paths": [
+        "device/xiaomi/haotian/vibrator"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.vibrator-service.xiaomi-sm8750",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.vibrator-service.xiaomi-sm8750",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.vibrator-service.xiaomi-sm8750.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.vibrator-service.xiaomi-sm8750.rc",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.vibrator-service.xiaomi-sm8750.xml",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.vibrator-service.xiaomi-sm8750.xml",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.sensors-service.xiaomi-sm8750-multihal": {
+      "in_matrix": true,
+      "provider_paths": [
+        "device/xiaomi/sm8750-common/sensors/multihal"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.sensors-service.xiaomi-sm8750-multihal",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.sensors-service.xiaomi-sm8750-multihal",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.sensors-service.xiaomi-sm8750-multihal.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.sensors-service.xiaomi-sm8750-multihal.rc",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "audiohalservice.qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/audiohalservice.qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/audiohalservice.qti",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.bluetooth@aidl-service-qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "vendor.qti.hardware.display.composer-service": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/vendor.qti.hardware.display.composer-service",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/vendor.qti.hardware.display.composer-service",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "vendor.qti.camera.provider-service_64": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/haotian"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/odm/bin/hw/vendor.qti.camera.provider-service_64",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/odm/bin/hw/vendor.qti.camera.provider-service_64",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.media.c2-mi-service": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.media.c2-mi-service",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.media.c2-mi-service",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.wifi-service": {
+      "in_matrix": true,
+      "provider_paths": [
+        "hardware/interfaces/wifi/aidl/default"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.wifi-service",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.wifi-service",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.wifi-service.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.wifi-service.rc",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "ipacm": {
+      "in_matrix": true,
+      "provider_paths": [
+        "hardware/qcom-caf/sm8750/data-ipa-cfg-mgr/ipacm"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/ipacm",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/ipacm",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/ipacm.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/ipacm.rc",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/vintf/manifest/vendor.qti.hardware.tetheroffload.service.xml",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/vintf/manifest/vendor.qti.hardware.tetheroffload.service.xml",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "qcrilNrd": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/qcrilNrd",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/qcrilNrd",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.gnss-aidl-service-qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/odm/bin/hw/android.hardware.gnss-aidl-service-qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/odm/bin/hw/android.hardware.gnss-aidl-service-qti",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.security.keymint-service-qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.security.keymint-service-qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.security.keymint-service-qti",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.gatekeeper-service-qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.gatekeeper-service-qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.gatekeeper-service-qti",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.nfc-service-st": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/odm/bin/hw/android.hardware.nfc-service-st",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/odm/bin/hw/android.hardware.nfc-service-st",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.secure_element-service.qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/xiaomi/sm8750-common"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.secure_element-service.qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.secure_element-service.qti",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.boot-service.qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "hardware/qcom-caf/bootctrl/aidl"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.boot-service.qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.boot-service.qti",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.boot-service.qti.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.boot-service.qti.rc",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/vintf/manifest/boot-service.qti.xml",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/vintf/manifest/boot-service.qti.xml",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.thermal-service.qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "hardware/qcom-caf/thermal"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.thermal-service.qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.thermal-service.qti",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.thermal-service.qti.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.thermal-service.qti.rc",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.thermal-service.qti.xml",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.thermal-service.qti.xml",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.health-service.qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/qcom/opensource/healthd-ext/aidl"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.health-service.qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.health-service.qti",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.health-service.qti.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.health-service.qti.rc",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.health-service.qti.xml",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/vintf/manifest/android.hardware.health-service.qti.xml",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    "android.hardware.power-service-qti": {
+      "in_matrix": true,
+      "provider_paths": [
+        "vendor/qcom/opensource/power"
+      ],
+      "installed_outputs": [
+        {
+          "path": "out/target/product/haotian/vendor/bin/hw/android.hardware.power-service-qti",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/bin/hw/android.hardware.power-service-qti",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/init/android.hardware.power-service-qti.rc",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/init/android.hardware.power-service-qti.rc",
+          "lexists": true,
+          "is_symlink": false
+        },
+        {
+          "path": "out/target/product/haotian/vendor/etc/vintf/manifest/power.xml",
+          "resolved_path": "/home/arima/android/yaap16/out/target/product/haotian/vendor/etc/vintf/manifest/power.xml",
+          "lexists": true,
+          "is_symlink": false
+        }
+      ]
+    }
+  },
+  "source_repositories": {
+    "/home/arima/android/yaap16/hardware/qcom-caf/common": {
+      "head": "0ff3569410bc824df84dfe5e81bfdaf4b776a7f8",
+      "branch": "haotian-16",
+      "status": "",
+      "diff_check": 0
+    },
+    "/home/arima/android/yaap16/device/xiaomi/sm8750-common": {
+      "head": "6ad7ca1d69c6433064846d34692c05169ee8b186",
+      "branch": "yaap-16",
+      "status": "",
+      "diff_check": 0
+    },
+    "/home/arima/android/yaap16/device/xiaomi/haotian": {
+      "head": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+      "branch": "yaap-16",
+      "status": "",
+      "diff_check": 0
+    }
+  },
+  "evidence": {
+    "/mnt/d/Codex/haotian-rom-fusion-build/logs/yaap16-stage-a-final-audit-attempt5-20260813.json": "f7445208b4fb6c72a728ea2928bf9762aa86fd09810d37b577ab1090bf0011f7",
+    "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-provider-resolution-after-um66-20260813.json": "8c36cba043d8d12553738cb5c9316b8dd133f5a6ce2cc1eacb209f39566cf4db",
+    "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-librmnetctl-after-um66-audit-20260813.json": "883cca5ffa4197916a87c04205d46d6f72c230f4f7ff0d206dc421e4c4a33a32",
+    "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-b-matrix/yaap16-stage-b-hardware-matrix.json": "77e298083738232f144081771391c498101438fcd8c55e038eae183b594847ad",
+    "/home/arima/android/yaap16/out/target/product/haotian/module-info.json": "498a2f4d7afe7da09687db329487cadc2f29191b671845d7465fd0d772d1fff3"
+  },
+  "failures": [],
+  "delivery": {
+    "generated_at": "2026-08-12T20:07:03.506980+00:00",
+    "remote_sha_verification": "Verified with GitHub API immediately before packaging.",
+    "authoritative_audit": {
+      "path": "/mnt/d/Codex/haotian-rom-fusion-build/logs/yaap16-stage-ab-zero-error-final-20260813.json",
+      "sha256": "f1269ecab209f5352d3adb10a086c648aae435cd6bcebb6c29c918b9cddf9854"
+    },
+    "prebuild_validation": {
+      "path": "/mnt/d/Codex/haotian-rom-fusion-build/logs/yaap16-prebuild-validation-after-stage-ab-20260813.json",
+      "sha256": "d9729feea877bbb3e991b43841bc3819f86e860d9f489c3036981b9059ff102a",
+      "summary": {
+        "result": "pass",
+        "checks": 111,
+        "passed": 111,
+        "failed": 0,
+        "pending": 0,
+        "compile_started": true,
+        "expected_output_state": "present"
+      }
+    },
+    "vendor_tree_baseline_transition": {
+      "path": "/mnt/d/Codex/haotian-rom-fusion-build/logs/sm8750-common-vendor-tree-delta-20260813.json",
+      "sha256": "702e47924de666133ad1734aa4b00096a12c2c07234c459701e0548729a80f68",
+      "reason": "47b3def removes the stock wpa_supplicant.conf after merging its device-only setting into the overlay and resolves CAF install collisions.",
+      "before": {
+        "root": "/mnt/d/Codex/haotian-rom-fusion-build/source/vendor/xiaomi/sm8750-common",
+        "files": 1782,
+        "bytes": 785115017
+      },
+      "after": {
+        "root": "/home/arima/android/yaap16/vendor/xiaomi/sm8750-common",
+        "files": 1781,
+        "bytes": 785114883
+      },
+      "net_files": -1,
+      "net_bytes": -134,
+      "left_only": {
+        "proprietary/vendor/bin/init.qti.display_boot.sh": {
+          "bytes": 11918,
+          "sha256": "7d436859466c682d8aba0e9191c72ff9e24b0c8b2fc990fbded10ad0ab4d0a9d"
+        },
+        "proprietary/vendor/etc/init/audiohalservice_qti.rc": {
+          "bytes": 1818,
+          "sha256": "935e50a06f76b46ebc21e17b52fff791bbb65b91966a04f9e21a01d27410668c"
+        },
+        "proprietary/vendor/etc/init/init.qti.display_boot.rc": {
+          "bytes": 1741,
+          "sha256": "21de1b2cbdb30bfb976d53f2e7c2fb165ba105731a8a7152068f0a608490cefa"
+        },
+        "proprietary/vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc": {
+          "bytes": 384,
+          "sha256": "d76a137e1ce11887c51e7a313335d930b85d06a4d4bb316c76e8f864e4853f2a"
+        },
+        "proprietary/vendor/etc/init/vendor.qti.hardware.display.composer-service.rc": {
+          "bytes": 1352,
+          "sha256": "700fae73be755a659fe2b60320e4415c371284064ae7da6167dec5897dace05e"
+        },
+        "proprietary/vendor/etc/init/vendor.qti.hardware.display.demura-service.rc": {
+          "bytes": 255,
+          "sha256": "7d5e9541a479d156a85772ef419e775271507ab0e082e53da47a6813fb618954"
+        },
+        "proprietary/vendor/etc/vintf/manifest/bluetooth_audio.xml": {
+          "bytes": 348,
+          "sha256": "af5befd5d9afa99ec23a51874f1b89082c8a318281478e567fc72f47248cdacd"
+        },
+        "proprietary/vendor/etc/vintf/manifest/mapper.qti.xml": {
+          "bytes": 223,
+          "sha256": "988fd371bca5833d274627843cdd0c7f63af7f9207132b38df1e0152da22483c"
+        },
+        "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml": {
+          "bytes": 324,
+          "sha256": "9195710bbcb28ca7576e154d7efbd02237f4895ad4721195942ddc3ba77c860b"
+        },
+        "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service3_v3.xml": {
+          "bytes": 1091,
+          "sha256": "0f61d90834b0d3a6a76747e1b35bd48bac23dc7f3bad19cfd04ba18f4999aa16"
+        },
+        "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.display.demura-service.xml": {
+          "bytes": 303,
+          "sha256": "42b4e1e6a2a5c7a60cfc4ef7fac563a33c17b6f6f60c84a6215185f584a96978"
+        },
+        "proprietary/vendor/etc/wifi/wpa_supplicant.conf": {
+          "bytes": 223,
+          "sha256": "38ae8d2412ac6835eb00161ebc00ed7ade85d8c070001a012d8130baca366853"
+        }
+      },
+      "right_only": {
+        "proprietary/vendor/bin/init.qti.display_boot_xiaomi.sh": {
+          "bytes": 11918,
+          "sha256": "7d436859466c682d8aba0e9191c72ff9e24b0c8b2fc990fbded10ad0ab4d0a9d"
+        },
+        "proprietary/vendor/etc/init/audiohalservice_qti_xiaomi.rc": {
+          "bytes": 1818,
+          "sha256": "935e50a06f76b46ebc21e17b52fff791bbb65b91966a04f9e21a01d27410668c"
+        },
+        "proprietary/vendor/etc/init/init.qti.display_boot_xiaomi.rc": {
+          "bytes": 1748,
+          "sha256": "32858d3f7ab2779531850bf3096dfc9c83ad5fca1d40fa729c356b9a6ede8ce9"
+        },
+        "proprietary/vendor/etc/init/vendor.qti.hardware.display.allocator-service_xiaomi.rc": {
+          "bytes": 384,
+          "sha256": "d76a137e1ce11887c51e7a313335d930b85d06a4d4bb316c76e8f864e4853f2a"
+        },
+        "proprietary/vendor/etc/init/vendor.qti.hardware.display.composer-service_xiaomi.rc": {
+          "bytes": 1352,
+          "sha256": "700fae73be755a659fe2b60320e4415c371284064ae7da6167dec5897dace05e"
+        },
+        "proprietary/vendor/etc/init/vendor.qti.hardware.display.demura-service_xiaomi.rc": {
+          "bytes": 255,
+          "sha256": "7d5e9541a479d156a85772ef419e775271507ab0e082e53da47a6813fb618954"
+        },
+        "proprietary/vendor/etc/vintf/manifest/bluetooth_audio_qti.xml": {
+          "bytes": 348,
+          "sha256": "af5befd5d9afa99ec23a51874f1b89082c8a318281478e567fc72f47248cdacd"
+        },
+        "proprietary/vendor/etc/vintf/manifest/mapper.qti_xiaomi.xml": {
+          "bytes": 223,
+          "sha256": "988fd371bca5833d274627843cdd0c7f63af7f9207132b38df1e0152da22483c"
+        },
+        "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service_xiaomi.xml": {
+          "bytes": 324,
+          "sha256": "9195710bbcb28ca7576e154d7efbd02237f4895ad4721195942ddc3ba77c860b"
+        },
+        "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service3_v3_xiaomi.xml": {
+          "bytes": 1091,
+          "sha256": "0f61d90834b0d3a6a76747e1b35bd48bac23dc7f3bad19cfd04ba18f4999aa16"
+        },
+        "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.display.demura-service_xiaomi.xml": {
+          "bytes": 303,
+          "sha256": "42b4e1e6a2a5c7a60cfc4ef7fac563a33c17b6f6f60c84a6215185f584a96978"
+        }
+      },
+      "changed": {
+        "Android.bp": {
+          "left": {
+            "bytes": 763448,
+            "sha256": "b26a440e18d4513272a7334fa88eefb808016890124d3bd5542a2ba4ae11cb43"
+          },
+          "right": {
+            "bytes": 763533,
+            "sha256": "21181663de74d051b611bcb884145c1b591cb612a5526fbab19a78dfa66e4a2c"
+          }
+        },
+        "proprietary/vendor/etc/wifi/wpa_supplicant_overlay.conf": {
+          "left": {
+            "bytes": 203,
+            "sha256": "cc7f31ca31417a4fe57a36f1b177b4de32c6ec70ce5780c1bd10a0be26d22029"
+          },
+          "right": {
+            "bytes": 228,
+            "sha256": "0769568716aa975fbc599795c67e5cce06356344ceed47a0bbaa976633fc7162"
+          }
+        },
+        "sm8750-common-vendor.mk": {
+          "left": {
+            "bytes": 127644,
+            "sha256": "c0abc524dcbf85f9fbf67db4f2f0418d1a1cdd5f4000b56766f9219e7799ac94"
+          },
+          "right": {
+            "bytes": 127616,
+            "sha256": "09456aa311309f532635e25f6fa4ee2ac86c4ac18677358ea10cbb061f7361b4"
+          }
+        }
+      }
+    },
+    "manifest": {
+      "local_path": "/mnt/d/Codex/haotian-rom-fusion/manifests/haotian-yaap16.xml",
+      "local_sha256": "e9d8ad1fb1ea3abd56c92d2b31e3f6a30ea982b06cee00c640d2ffe9d5f747b5",
+      "resolved_path": "/mnt/d/Codex/haotian-rom-fusion-build/logs/yaap16-resolved-manifest-after-um66-20260813.xml",
+      "resolved_sha256": "5808c75f70a8fdaee603654d4104ea4643d2837fc9679c472ba0fcfcf69abc35",
+      "resolved_project_count": 1150,
+      "duplicate_project_path_count": 0,
+      "qcom_common": {
+        "name": "hardware_qcom-caf_common",
+        "path": "hardware/qcom-caf/common",
+        "remote": "arimacose",
+        "revision": "0ff3569410bc824df84dfe5e81bfdaf4b776a7f8",
+        "upstream": "haotian-16",
+        "sm8750_linkfiles": [
+          {
+            "src": "os_pickup_qssi.bp",
+            "dest": "hardware/qcom-caf/sm8750/Android.bp"
+          },
+          {
+            "src": "os_pickup.mk",
+            "dest": "hardware/qcom-caf/sm8750/Android.mk"
+          },
+          {
+            "src": "os_pickup_audio-ar.mk",
+            "dest": "hardware/qcom-caf/sm8750/audio/Android.mk"
+          }
+        ]
+      }
+    },
+    "source_commits": {
+      "hardware_qcom-caf_common": {
+        "repository": "https://github.com/Arimacose/hardware_qcom-caf_common",
+        "branch": "haotian-16",
+        "sha": "0ff3569410bc824df84dfe5e81bfdaf4b776a7f8",
+        "commit": "https://github.com/Arimacose/hardware_qcom-caf_common/commit/0ff3569410bc824df84dfe5e81bfdaf4b776a7f8"
+      },
+      "device_xiaomi_sm8750-common": {
+        "repository": "https://github.com/Arimacose/device_xiaomi_sm8750-common",
+        "branch": "yaap-16",
+        "sha": "6ad7ca1d69c6433064846d34692c05169ee8b186",
+        "commit": "https://github.com/Arimacose/device_xiaomi_sm8750-common/commit/6ad7ca1d69c6433064846d34692c05169ee8b186"
+      },
+      "management_manifest_commit": "2eb9a4e"
+    },
+    "scope_boundary": {
+      "stage_a_graph_and_configuration": "verified",
+      "stage_b_hardware_module_matrix": "verified",
+      "full_rom_image_build": "not part of Stage A/B",
+      "device_runtime_validation": "not performed by instruction",
+      "device_operations_performed": false
+    }
+  }
 }

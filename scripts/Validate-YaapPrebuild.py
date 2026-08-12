@@ -3,7 +3,8 @@
 
 This script deliberately avoids envsetup, lunch, Soong, Ninja, image creation,
 and device access. It validates only files, Git revisions, manifest structure,
-selected module declarations, proprietary-tree coverage, and kernel inputs.
+selected module declarations, proprietary-tree coverage, kernel inputs, and the
+expected presence or absence of an already-created output tree.
 """
 
 from __future__ import annotations
@@ -22,7 +23,7 @@ from typing import Any
 EXPECTED_PROJECTS = {
     "vendor/yaap": "32d6a6d1016b98d6435c5ce674ae7c236dc5acb7",
     "device/xiaomi/haotian": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
-    "device/xiaomi/sm8750-common": "dbfb9fc599f7e2ff7e3c5add6b9c8f38185db90a",
+    "device/xiaomi/sm8750-common": "6ad7ca1d69c6433064846d34692c05169ee8b186",
     "device/xiaomi/haotian-kernel": "802915cc6b269c3bf577327c4c165c3117852ff5",
     "hardware/lineage/interfaces": "ca560522cee3977861002372d1408cd7bb690198",
     "device/lineage/sepolicy": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9",
@@ -36,7 +37,7 @@ EXPECTED_PROJECTS = {
     "hardware/qcom-caf/sm8750/display/core": "20cf597e21bdd31af4e3a55660e991e22f69bf8b",
     "hardware/qcom-caf/sm8750/display/hal": "4b74f47925c54e95c805275832a65830af0431b6",
     "hardware/qcom-caf/sm8750/display/intf": "19b5c055b40bc3d7af4309662eea98c7e7a72cee",
-    "hardware/qcom-caf/common": "488707fd3df37a6d8f1bd6bdb69087523a0e5f92",
+    "hardware/qcom-caf/common": "0ff3569410bc824df84dfe5e81bfdaf4b776a7f8",
     "hardware/xiaomi": "892a1cded9c7bf89adf4700af5dfca099ec54782",
     "packages/apps/EuiccPolicy": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
     "vendor/qcom/opensource/commonsys/audio": "af06e9427170c7cf089a2f8306dec026d20aba0c",
@@ -46,7 +47,10 @@ EXPECTED_PROJECTS = {
 
 EXPECTED_VENDOR_TREES = {
     "haotian": {"files": 3046, "bytes": 5_465_316_231},
-    "sm8750-common": {"files": 1782, "bytes": 785_115_017},
+    # 47b3def removes the stock 223-byte wpa_supplicant.conf after merging its
+    # device-only setting into the overlay.  Generator/fixup deltas add 89
+    # bytes elsewhere, so the intentional net change is -1 file and -134 B.
+    "sm8750-common": {"files": 1781, "bytes": 785_114_883},
 }
 
 EXPECTED_SOUNDTRIGGER = (
@@ -92,6 +96,15 @@ def main() -> int:
         "--gapps-profile",
         choices=("gapps", "default"),
         help="Record an explicit runtime profile selected outside the product makefile.",
+    )
+    parser.add_argument(
+        "--expected-output-state",
+        choices=("absent", "present"),
+        default="absent",
+        help=(
+            "Require out/ to be absent for a pure prebuild audit or present after "
+            "Stage A/B graph and module validation."
+        ),
     )
     args = parser.parse_args()
 
@@ -336,12 +349,14 @@ def main() -> int:
         note="Explicit runtime selection takes precedence over the product default.",
     )
     out_dir = source / "out"
+    out_present = out_dir.is_dir()
+    expected_out_present = args.expected_output_state == "present"
     check(
-        "execution.compile_skipped",
-        not out_dir.exists(),
-        "out absent" if not out_dir.exists() else "out present",
-        "no compile output in this phase",
-        severity="pending" if out_dir.exists() else "info",
+        "execution.output_state",
+        out_present == expected_out_present,
+        "out present" if out_present else "out absent",
+        "out present after Stage A/B" if expected_out_present else "out absent before Stage A/B",
+        note="The validator inspects existing output state; it does not invoke a build.",
     )
 
     failures = [item for item in checks if item["status"] == "fail" and item["severity"] == "error"]
@@ -356,7 +371,8 @@ def main() -> int:
             "passed": sum(item["status"] == "pass" for item in checks),
             "failed": len(failures),
             "pending": len(pending),
-            "compile_started": out_dir.exists(),
+            "compile_started": out_present,
+            "expected_output_state": args.expected_output_state,
         },
         "checks": checks,
     }

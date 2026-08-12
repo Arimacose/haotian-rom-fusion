@@ -25,6 +25,7 @@ jobs:
           python - <<'PY'
           import xml.etree.ElementTree as ET
           ET.parse('manifests/haotian-bka.xml')
+          ET.parse('manifests/haotian-yaap16.xml')
           PY
           python scripts/Build-BaselineManifest.py \
             --config configs/baselines.json \
