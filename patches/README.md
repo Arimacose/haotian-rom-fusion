@@ -2,6 +2,12 @@
 
 Patches are generated against pinned public source commits and validated with `git apply --check` in CI.
 
+> YAAP 16 route note: these four files were produced against the earlier
+> Lineage/EvolutionX evidence bases. They remain hardware-behavior references.
+> Before any item enters the active `yaap-16` device/common forks, regenerate it
+> against the current pinned commit and run a fresh `git apply --check`; an old
+> patch filename by itself is not proof that the same change is still pending.
+
 ## 0001 - CS40L26 calibration loader
 
 Target:
