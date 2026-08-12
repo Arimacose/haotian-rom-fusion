@@ -40,7 +40,17 @@ done
 output_dir="$(dirname "${output}")"
 mkdir -p "${output_dir}"
 temporary="${output}.tmp.$$"
-trap 'rm -f "${temporary}"' EXIT
+staging="$(mktemp -d "${TMPDIR:-/tmp}/haotian-kernel-headers.XXXXXX")"
+trap 'rm -f "${temporary}"; rm -rf "${staging}"' EXIT
+
+# A checkout hosted on a Windows filesystem can expose every generated header
+# as executable, while the same commit on ext4 exposes regular headers as
+# 0644.  Normalize permissions before archiving so the output is identical
+# across both supported staging layouts.  Symlinks, if introduced upstream,
+# remain symlinks and are not chmodded.
+cp -a "${headers}/." "${staging}/"
+find "${staging}" -type d -exec chmod 0755 {} +
+find "${staging}" -type f -exec chmod 0644 {} +
 
 LC_ALL=C tar \
     --sort=name \
@@ -49,7 +59,7 @@ LC_ALL=C tar \
     --group=0 \
     --numeric-owner \
     --format=gnu \
-    -C "${headers}" \
+    -C "${staging}" \
     -cf - . | gzip -n -9 > "${temporary}"
 
 gzip -t "${temporary}"
@@ -58,6 +68,7 @@ grep -Fxq './linux/netfilter/xt_CONNMARK.h' <<<"${archive_entries}"
 grep -Fxq './linux/netfilter/xt_connmark.h' <<<"${archive_entries}"
 
 mv -f "${temporary}" "${output}"
+rm -rf "${staging}"
 trap - EXIT
 
 bytes="$(stat -c '%s' "${output}")"

@@ -1,3 +1,869 @@
 {
-  "schema_version": "0.0-placeholder"
+  "schema_version": "1.0",
+  "source": "/home/arima/android/yaap16",
+  "resolved_manifest": "/mnt/d/Codex/haotian-rom-fusion/manifests/resolved/yaap16-haotian-20260812.xml",
+  "summary": {
+    "result": "pass",
+    "checks": 102,
+    "passed": 100,
+    "failed": 0,
+    "pending": 2,
+    "compile_started": false
+  },
+  "checks": [
+    {
+      "id": "manifest.project_count",
+      "status": "pass",
+      "severity": "error",
+      "actual": 1148,
+      "expected": 1148,
+      "note": ""
+    },
+    {
+      "id": "manifest.unique_paths",
+      "status": "pass",
+      "severity": "error",
+      "actual": 1148,
+      "expected": 1148,
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.vendor/yaap",
+      "status": "pass",
+      "severity": "error",
+      "actual": "32d6a6d1016b98d6435c5ce674ae7c236dc5acb7",
+      "expected": "32d6a6d1016b98d6435c5ce674ae7c236dc5acb7",
+      "note": ""
+    },
+    {
+      "id": "git.head.vendor/yaap",
+      "status": "pass",
+      "severity": "error",
+      "actual": "32d6a6d1016b98d6435c5ce674ae7c236dc5acb7",
+      "expected": "32d6a6d1016b98d6435c5ce674ae7c236dc5acb7",
+      "note": ""
+    },
+    {
+      "id": "git.clean.vendor/yaap",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.device/xiaomi/haotian",
+      "status": "pass",
+      "severity": "error",
+      "actual": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+      "expected": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+      "note": ""
+    },
+    {
+      "id": "git.head.device/xiaomi/haotian",
+      "status": "pass",
+      "severity": "error",
+      "actual": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+      "expected": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+      "note": ""
+    },
+    {
+      "id": "git.clean.device/xiaomi/haotian",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.device/xiaomi/sm8750-common",
+      "status": "pass",
+      "severity": "error",
+      "actual": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+      "expected": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+      "note": ""
+    },
+    {
+      "id": "git.head.device/xiaomi/sm8750-common",
+      "status": "pass",
+      "severity": "error",
+      "actual": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+      "expected": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+      "note": ""
+    },
+    {
+      "id": "git.clean.device/xiaomi/sm8750-common",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.device/xiaomi/haotian-kernel",
+      "status": "pass",
+      "severity": "error",
+      "actual": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "expected": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "note": ""
+    },
+    {
+      "id": "git.head.device/xiaomi/haotian-kernel",
+      "status": "pass",
+      "severity": "error",
+      "actual": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "expected": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "note": ""
+    },
+    {
+      "id": "git.clean.device/xiaomi/haotian-kernel",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/lineage/interfaces",
+      "status": "pass",
+      "severity": "error",
+      "actual": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+      "expected": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/lineage/interfaces",
+      "status": "pass",
+      "severity": "error",
+      "actual": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+      "expected": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/lineage/interfaces",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.device/lineage/sepolicy",
+      "status": "pass",
+      "severity": "error",
+      "actual": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9",
+      "expected": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9",
+      "note": ""
+    },
+    {
+      "id": "git.head.device/lineage/sepolicy",
+      "status": "pass",
+      "severity": "error",
+      "actual": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9",
+      "expected": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9",
+      "note": ""
+    },
+    {
+      "id": "git.clean.device/lineage/sepolicy",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.device/qcom/sepolicy_vndr/sm8750",
+      "status": "pass",
+      "severity": "error",
+      "actual": "b5c02660d4e410403385bbdd33185ae3261c7ec8",
+      "expected": "b5c02660d4e410403385bbdd33185ae3261c7ec8",
+      "note": ""
+    },
+    {
+      "id": "git.head.device/qcom/sepolicy_vndr/sm8750",
+      "status": "pass",
+      "severity": "error",
+      "actual": "b5c02660d4e410403385bbdd33185ae3261c7ec8",
+      "expected": "b5c02660d4e410403385bbdd33185ae3261c7ec8",
+      "note": ""
+    },
+    {
+      "id": "git.clean.device/qcom/sepolicy_vndr/sm8750",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/audio/agm",
+      "status": "pass",
+      "severity": "error",
+      "actual": "853c0f6afd242b506636c9af47cb4ed64a4056f0",
+      "expected": "853c0f6afd242b506636c9af47cb4ed64a4056f0",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/audio/agm",
+      "status": "pass",
+      "severity": "error",
+      "actual": "853c0f6afd242b506636c9af47cb4ed64a4056f0",
+      "expected": "853c0f6afd242b506636c9af47cb4ed64a4056f0",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/audio/agm",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/audio/graphservices",
+      "status": "pass",
+      "severity": "error",
+      "actual": "62591b81ddb14cb1ddecf2a8e7162f2082456793",
+      "expected": "62591b81ddb14cb1ddecf2a8e7162f2082456793",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/audio/graphservices",
+      "status": "pass",
+      "severity": "error",
+      "actual": "62591b81ddb14cb1ddecf2a8e7162f2082456793",
+      "expected": "62591b81ddb14cb1ddecf2a8e7162f2082456793",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/audio/graphservices",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/audio/pal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "39f7cccd8bbd3e51b71431e574fb38651be23cae",
+      "expected": "39f7cccd8bbd3e51b71431e574fb38651be23cae",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/audio/pal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "39f7cccd8bbd3e51b71431e574fb38651be23cae",
+      "expected": "39f7cccd8bbd3e51b71431e574fb38651be23cae",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/audio/pal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/audio/primary-hal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "443dec4613a7e5dbc997eb2d7b087f0f07ae5258",
+      "expected": "443dec4613a7e5dbc997eb2d7b087f0f07ae5258",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/audio/primary-hal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "443dec4613a7e5dbc997eb2d7b087f0f07ae5258",
+      "expected": "443dec4613a7e5dbc997eb2d7b087f0f07ae5258",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/audio/primary-hal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/data-ipa-cfg-mgr",
+      "status": "pass",
+      "severity": "error",
+      "actual": "5c754092b8e85dd72904b9a5c62a687bae9ce627",
+      "expected": "5c754092b8e85dd72904b9a5c62a687bae9ce627",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/data-ipa-cfg-mgr",
+      "status": "pass",
+      "severity": "error",
+      "actual": "5c754092b8e85dd72904b9a5c62a687bae9ce627",
+      "expected": "5c754092b8e85dd72904b9a5c62a687bae9ce627",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/data-ipa-cfg-mgr",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/dataipa",
+      "status": "pass",
+      "severity": "error",
+      "actual": "c6206833bd59478caaa0a69e9d71f1bbfa866a96",
+      "expected": "c6206833bd59478caaa0a69e9d71f1bbfa866a96",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/dataipa",
+      "status": "pass",
+      "severity": "error",
+      "actual": "c6206833bd59478caaa0a69e9d71f1bbfa866a96",
+      "expected": "c6206833bd59478caaa0a69e9d71f1bbfa866a96",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/dataipa",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/display/core",
+      "status": "pass",
+      "severity": "error",
+      "actual": "20cf597e21bdd31af4e3a55660e991e22f69bf8b",
+      "expected": "20cf597e21bdd31af4e3a55660e991e22f69bf8b",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/display/core",
+      "status": "pass",
+      "severity": "error",
+      "actual": "20cf597e21bdd31af4e3a55660e991e22f69bf8b",
+      "expected": "20cf597e21bdd31af4e3a55660e991e22f69bf8b",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/display/core",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/display/hal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "4b74f47925c54e95c805275832a65830af0431b6",
+      "expected": "4b74f47925c54e95c805275832a65830af0431b6",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/display/hal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "4b74f47925c54e95c805275832a65830af0431b6",
+      "expected": "4b74f47925c54e95c805275832a65830af0431b6",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/display/hal",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/qcom-caf/sm8750/display/intf",
+      "status": "pass",
+      "severity": "error",
+      "actual": "19b5c055b40bc3d7af4309662eea98c7e7a72cee",
+      "expected": "19b5c055b40bc3d7af4309662eea98c7e7a72cee",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/qcom-caf/sm8750/display/intf",
+      "status": "pass",
+      "severity": "error",
+      "actual": "19b5c055b40bc3d7af4309662eea98c7e7a72cee",
+      "expected": "19b5c055b40bc3d7af4309662eea98c7e7a72cee",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/qcom-caf/sm8750/display/intf",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.hardware/xiaomi",
+      "status": "pass",
+      "severity": "error",
+      "actual": "892a1cded9c7bf89adf4700af5dfca099ec54782",
+      "expected": "892a1cded9c7bf89adf4700af5dfca099ec54782",
+      "note": ""
+    },
+    {
+      "id": "git.head.hardware/xiaomi",
+      "status": "pass",
+      "severity": "error",
+      "actual": "892a1cded9c7bf89adf4700af5dfca099ec54782",
+      "expected": "892a1cded9c7bf89adf4700af5dfca099ec54782",
+      "note": ""
+    },
+    {
+      "id": "git.clean.hardware/xiaomi",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.vendor/qcom/opensource/commonsys/audio",
+      "status": "pass",
+      "severity": "error",
+      "actual": "af06e9427170c7cf089a2f8306dec026d20aba0c",
+      "expected": "af06e9427170c7cf089a2f8306dec026d20aba0c",
+      "note": ""
+    },
+    {
+      "id": "git.head.vendor/qcom/opensource/commonsys/audio",
+      "status": "pass",
+      "severity": "error",
+      "actual": "af06e9427170c7cf089a2f8306dec026d20aba0c",
+      "expected": "af06e9427170c7cf089a2f8306dec026d20aba0c",
+      "note": ""
+    },
+    {
+      "id": "git.clean.vendor/qcom/opensource/commonsys/audio",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "manifest.revision.vendor/qcom/opensource/commonsys-intf/audio",
+      "status": "pass",
+      "severity": "error",
+      "actual": "7d983f8254cb84c0460e2460bd4fca1cc10a0899",
+      "expected": "7d983f8254cb84c0460e2460bd4fca1cc10a0899",
+      "note": ""
+    },
+    {
+      "id": "git.head.vendor/qcom/opensource/commonsys-intf/audio",
+      "status": "pass",
+      "severity": "error",
+      "actual": "7d983f8254cb84c0460e2460bd4fca1cc10a0899",
+      "expected": "7d983f8254cb84c0460e2460bd4fca1cc10a0899",
+      "note": ""
+    },
+    {
+      "id": "git.clean.vendor/qcom/opensource/commonsys-intf/audio",
+      "status": "pass",
+      "severity": "error",
+      "actual": "clean",
+      "expected": "clean",
+      "note": ""
+    },
+    {
+      "id": "product.makefile_registered",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "product.lunch_choices",
+      "status": "pass",
+      "severity": "error",
+      "actual": [
+        "yaap_haotian-eng",
+        "yaap_haotian-user",
+        "yaap_haotian-userdebug"
+      ],
+      "expected": [
+        "yaap_haotian-eng",
+        "yaap_haotian-user",
+        "yaap_haotian-userdebug"
+      ],
+      "note": ""
+    },
+    {
+      "id": "product.name",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "product.yaap_inheritance",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "product.lineage_base_removed",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "product.stock_identity",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "board.vendor_include",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "board.common_vendor_include",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "board.yaap_fingerprint_variable",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "product.android16_release",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "health.module_definition",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "health.product_reference",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "health.policy_files",
+      "status": "pass",
+      "severity": "error",
+      "actual": [
+        "device/lineage/sepolicy/common/public/attributes",
+        "device/lineage/sepolicy/common/dynamic/service.te",
+        "device/lineage/sepolicy/common/dynamic/service_contexts",
+        "device/lineage/sepolicy/common/dynamic/hal_lineage_health.te",
+        "device/lineage/sepolicy/common/vendor/file_contexts",
+        "device/lineage/sepolicy/common/vendor/hal_lineage_health_default.te",
+        "device/xiaomi/sm8750-common/sepolicy/vendor/hal_lineage_health_default.te"
+      ],
+      "expected": [
+        "device/lineage/sepolicy/common/public/attributes",
+        "device/lineage/sepolicy/common/dynamic/service.te",
+        "device/lineage/sepolicy/common/dynamic/service_contexts",
+        "device/lineage/sepolicy/common/dynamic/hal_lineage_health.te",
+        "device/lineage/sepolicy/common/vendor/file_contexts",
+        "device/lineage/sepolicy/common/vendor/hal_lineage_health_default.te",
+        "device/xiaomi/sm8750-common/sepolicy/vendor/hal_lineage_health_default.te"
+      ],
+      "note": ""
+    },
+    {
+      "id": "health.policy_token.hal_attribute_lineage(lineage_health)",
+      "status": "pass",
+      "severity": "error",
+      "actual": "hal_attribute_lineage(lineage_health)",
+      "expected": "hal_attribute_lineage(lineage_health)",
+      "note": ""
+    },
+    {
+      "id": "health.policy_token.hal_lineage_health_service",
+      "status": "pass",
+      "severity": "error",
+      "actual": "hal_lineage_health_service",
+      "expected": "hal_lineage_health_service",
+      "note": ""
+    },
+    {
+      "id": "health.policy_token.hal_lineage_health_default_exec",
+      "status": "pass",
+      "severity": "error",
+      "actual": "hal_lineage_health_default_exec",
+      "expected": "hal_lineage_health_default_exec",
+      "note": ""
+    },
+    {
+      "id": "health.policy_token.vendor.lineage.health.IChargingControl/default",
+      "status": "pass",
+      "severity": "error",
+      "actual": "vendor.lineage.health.IChargingControl/default",
+      "expected": "vendor.lineage.health.IChargingControl/default",
+      "note": ""
+    },
+    {
+      "id": "vendor.files.haotian",
+      "status": "pass",
+      "severity": "error",
+      "actual": 3046,
+      "expected": 3046,
+      "note": ""
+    },
+    {
+      "id": "vendor.bytes.haotian",
+      "status": "pass",
+      "severity": "error",
+      "actual": 5465316231,
+      "expected": 5465316231,
+      "note": ""
+    },
+    {
+      "id": "vendor.required.haotian.Android.bp",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "vendor.required.haotian.Android.mk",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "vendor.required.haotian.BoardConfigVendor.mk",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "vendor.files.sm8750-common",
+      "status": "pass",
+      "severity": "error",
+      "actual": 1780,
+      "expected": 1780,
+      "note": ""
+    },
+    {
+      "id": "vendor.bytes.sm8750-common",
+      "status": "pass",
+      "severity": "error",
+      "actual": 782226259,
+      "expected": 782226259,
+      "note": ""
+    },
+    {
+      "id": "vendor.required.sm8750-common.Android.bp",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "vendor.required.sm8750-common.Android.mk",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "vendor.required.sm8750-common.BoardConfigVendor.mk",
+      "status": "pass",
+      "severity": "error",
+      "actual": true,
+      "expected": true,
+      "note": ""
+    },
+    {
+      "id": "audio.source_module.libaudiohalvendorextn",
+      "status": "pass",
+      "severity": "error",
+      "actual": "libaudiohalvendorextn",
+      "expected": "libaudiohalvendorextn",
+      "note": ""
+    },
+    {
+      "id": "audio.source_module.qtiaudiohalvendorextn",
+      "status": "pass",
+      "severity": "error",
+      "actual": "qtiaudiohalvendorextn",
+      "expected": "qtiaudiohalvendorextn",
+      "note": ""
+    },
+    {
+      "id": "audio.soundtrigger.proprietary_entry",
+      "status": "pass",
+      "severity": "error",
+      "actual": "present",
+      "expected": "present",
+      "note": ""
+    },
+    {
+      "id": "audio.soundtrigger.module",
+      "status": "pass",
+      "severity": "error",
+      "actual": "present",
+      "expected": "present",
+      "note": ""
+    },
+    {
+      "id": "audio.soundtrigger.product_package",
+      "status": "pass",
+      "severity": "error",
+      "actual": "present",
+      "expected": "present",
+      "note": ""
+    },
+    {
+      "id": "audio.soundtrigger.sha256",
+      "status": "pass",
+      "severity": "error",
+      "actual": "387afadf222ca499c924c17ba9966bd1750ee1cad2a1f4f543d328c7098ef553",
+      "expected": "387afadf222ca499c924c17ba9966bd1750ee1cad2a1f4f543d328c7098ef553",
+      "note": ""
+    },
+    {
+      "id": "kernel.sha256.kernel",
+      "status": "pass",
+      "severity": "error",
+      "actual": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "expected": "99485b0132e3aa28f4e965119591c8149fe3c20e7e0fd10d753ef014a582472e",
+      "note": ""
+    },
+    {
+      "id": "kernel.sha256.dtbo.img",
+      "status": "pass",
+      "severity": "error",
+      "actual": "602f91eb634ad49d70c59d45a071358f37e02ded68db563efb9b25b4d7dfa804",
+      "expected": "602f91eb634ad49d70c59d45a071358f37e02ded68db563efb9b25b4d7dfa804",
+      "note": ""
+    },
+    {
+      "id": "kernel.sha256.prebuilt_kernel_headers.tar.gz",
+      "status": "pass",
+      "severity": "error",
+      "actual": "5466a76ca2c4b0dca9a6f02b60daccf772b01d876b4d952730dd38442b97f46f",
+      "expected": "5466a76ca2c4b0dca9a6f02b60daccf772b01d876b4d952730dd38442b97f46f",
+      "note": ""
+    },
+    {
+      "id": "kernel.headers.entries",
+      "status": "pass",
+      "severity": "error",
+      "actual": 1099,
+      "expected": 1099,
+      "note": ""
+    },
+    {
+      "id": "kernel.headers.case_pair",
+      "status": "pass",
+      "severity": "error",
+      "actual": [
+        "./linux/netfilter/xt_CONNMARK.h",
+        "./linux/netfilter/xt_connmark.h"
+      ],
+      "expected": [
+        "./linux/netfilter/xt_CONNMARK.h",
+        "./linux/netfilter/xt_connmark.h"
+      ],
+      "note": ""
+    },
+    {
+      "id": "kernel.headers.file_modes",
+      "status": "pass",
+      "severity": "error",
+      "actual": [
+        420
+      ],
+      "expected": [
+        420
+      ],
+      "note": ""
+    },
+    {
+      "id": "kernel.headers.directory_modes",
+      "status": "pass",
+      "severity": "error",
+      "actual": [
+        493
+      ],
+      "expected": [
+        493
+      ],
+      "note": ""
+    },
+    {
+      "id": "release.avb_private_key",
+      "status": "pending",
+      "severity": "pending",
+      "actual": "absent",
+      "expected": "present before first build",
+      "note": "Keep the private key local and outside the management repository."
+    },
+    {
+      "id": "product.gapps_profile",
+      "status": "pending",
+      "severity": "pending",
+      "actual": "YAAP default MicroG/vanilla path",
+      "expected": "choose before first build",
+      "note": "This is a product decision rather than a source-closure failure."
+    },
+    {
+      "id": "execution.compile_skipped",
+      "status": "pass",
+      "severity": "info",
+      "actual": "out absent",
+      "expected": "no compile output in this phase",
+      "note": ""
+    }
+  ]
 }

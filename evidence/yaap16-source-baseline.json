@@ -1,3 +1,167 @@
 {
-  "schema_version": "0.0-placeholder"
+  "schema_version": "1.1",
+  "captured_at": "2026-08-12T18:29:01.017243+08:00",
+  "distribution": "Ubuntu-ROMBuild",
+  "source_root": "/home/arima/android/yaap16",
+  "platform": {
+    "manifest_branch": "sixteen",
+    "aosp_tag": "android-16.0.0_r4",
+    "manifest_head": "12d705030024c49ebdb074b421e2176cd4020c2a"
+  },
+  "resolved_manifest": {
+    "path": "/mnt/d/Codex/haotian-rom-fusion/manifests/resolved/yaap16-haotian-20260812.xml",
+    "sha256": "88a1d09b88295fd1dffb2cd3d65006a2abc29fb2368f36c538b297af2068d2ca",
+    "projects": 1148,
+    "unique_paths": 1148
+  },
+  "workspace": {
+    "bytes": 201557383874,
+    "disk_total_bytes": 1081101176832,
+    "disk_used_bytes": 208562016256,
+    "disk_free_bytes": 817546805248
+  },
+  "host": {
+    "logical_cpus": 28,
+    "memory_bytes": 25195905024,
+    "swap_bytes": 34359738368,
+    "kernel": "6.18.33.1-microsoft-standard-WSL2"
+  },
+  "projects": {
+    "manifest": {
+      "head": "12d705030024c49ebdb074b421e2176cd4020c2a",
+      "status": "clean"
+    },
+    "vendor/yaap": {
+      "head": "32d6a6d1016b98d6435c5ce674ae7c236dc5acb7",
+      "status": "clean"
+    },
+    "device/xiaomi/haotian": {
+      "head": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+      "status": "clean"
+    },
+    "device/xiaomi/sm8750-common": {
+      "head": "dfd356f8146b7343b079a88ea2d106ef8deb0027",
+      "status": "clean"
+    },
+    "device/xiaomi/haotian-kernel": {
+      "head": "802915cc6b269c3bf577327c4c165c3117852ff5",
+      "status": "clean"
+    },
+    "hardware/lineage/interfaces": {
+      "head": "28295cf95f2b055ebd2cf912f469f70f0558eb24",
+      "status": "clean"
+    },
+    "device/lineage/sepolicy": {
+      "head": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9",
+      "status": "clean"
+    },
+    "device/qcom/sepolicy_vndr/sm8750": {
+      "head": "b5c02660d4e410403385bbdd33185ae3261c7ec8",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/audio/agm": {
+      "head": "853c0f6afd242b506636c9af47cb4ed64a4056f0",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/audio/graphservices": {
+      "head": "62591b81ddb14cb1ddecf2a8e7162f2082456793",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/audio/pal": {
+      "head": "39f7cccd8bbd3e51b71431e574fb38651be23cae",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/audio/primary-hal": {
+      "head": "443dec4613a7e5dbc997eb2d7b087f0f07ae5258",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/data-ipa-cfg-mgr": {
+      "head": "5c754092b8e85dd72904b9a5c62a687bae9ce627",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/dataipa": {
+      "head": "c6206833bd59478caaa0a69e9d71f1bbfa866a96",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/display/core": {
+      "head": "20cf597e21bdd31af4e3a55660e991e22f69bf8b",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/display/hal": {
+      "head": "4b74f47925c54e95c805275832a65830af0431b6",
+      "status": "clean"
+    },
+    "hardware/qcom-caf/sm8750/display/intf": {
+      "head": "19b5c055b40bc3d7af4309662eea98c7e7a72cee",
+      "status": "clean"
+    },
+    "hardware/xiaomi": {
+      "head": "892a1cded9c7bf89adf4700af5dfca099ec54782",
+      "status": "clean"
+    },
+    "vendor/qcom/opensource/commonsys/audio": {
+      "head": "af06e9427170c7cf089a2f8306dec026d20aba0c",
+      "status": "clean"
+    },
+    "vendor/qcom/opensource/commonsys-intf/audio": {
+      "head": "7d983f8254cb84c0460e2460bd4fca1cc10a0899",
+      "status": "clean"
+    }
+  },
+  "repo_status": {
+    "returncode": 0,
+    "result": "clean",
+    "working_trees_audited": 1148,
+    "audit_method": "repo forall -j8 + git status --porcelain=v1",
+    "local_branch_output": "project device/xiaomi/haotian/                  branch yaap-16\nproject device/xiaomi/sm8750-common/            branch yaap-16",
+    "note": "repo status listed two clean local device-tree branches; the all-project porcelain audit returned no dirty paths.",
+    "audited_at": "2026-08-12T18:29:27.260796+08:00"
+  },
+  "git_lfs": {
+    "external/rust/android-crates-io": {
+      "returncode": 0,
+      "result": "pass",
+      "output": "Git LFS fsck OK"
+    },
+    "vendor/google/gms": {
+      "returncode": 0,
+      "result": "pass",
+      "output": "Git LFS fsck OK"
+    },
+    "vendor/microg": {
+      "returncode": 0,
+      "result": "pass",
+      "output": "Git LFS fsck OK"
+    }
+  },
+  "vendor_staging": {
+    "haotian": {
+      "files": 3046,
+      "bytes": 5465316231
+    },
+    "sm8750-common": {
+      "files": 1780,
+      "bytes": 782226259
+    },
+    "content_comparison": {
+      "method": "rsync -rHnci --delete (checksum dry-run; timestamps excluded)",
+      "authoritative_source": "/mnt/d/Codex/haotian-rom-fusion-build/source/vendor/xiaomi",
+      "haotian_delta_lines": 0,
+      "sm8750-common_delta_lines": 0,
+      "verified_at": "2026-08-12T18:32:56.781615+08:00"
+    },
+    "soundtrigger": {
+      "path": "sm8750-common/proprietary/vendor/lib64/hw/libsoundtriggerhal.qti.so",
+      "bytes": 242232,
+      "sha256": "387afadf222ca499c924c17ba9966bd1750ee1cad2a1f4f543d328c7098ef553",
+      "source": "HyperOS OS3.0.304.0.WOBCNXM vendor dump"
+    }
+  },
+  "compile": {
+    "started": false,
+    "policy": "intentionally skipped in this phase"
+  },
+  "device_access": {
+    "performed": false
+  }
 }

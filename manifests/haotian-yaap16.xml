@@ -8,6 +8,8 @@
     published; omitting them here is intentional for the manifest-only gate.
   -->
   <remove-project name="vendor_yaap" />
+  <remove-project name="hardware_lineage_interfaces" />
+  <remove-project name="device_lineage_sepolicy" />
 
   <project
       path="vendor/yaap"
@@ -30,4 +32,91 @@
       name="Arimacose/device_xiaomi_haotian-kernel"
       remote="github"
       revision="yaap-16" />
+
+  <!--
+    YAAP sixteen intentionally omits the Lineage charging-control AIDL and
+    policy while the haotian common tree packages that service. These forks
+    retain only the compatibility surface required by the device tree.
+  -->
+  <project
+      path="hardware/lineage/interfaces"
+      name="Arimacose/hardware_lineage_interfaces"
+      remote="github"
+      revision="haotian-16" />
+  <project
+      path="device/lineage/sepolicy"
+      name="Arimacose/device_lineage_sepolicy"
+      remote="github"
+      revision="haotian-16" />
+
+  <!-- Qualcomm SM8750/Sun source closure required by sm8750-common. -->
+  <project
+      path="device/qcom/sepolicy_vndr/sm8750"
+      name="LineageOS/android_device_qcom_sepolicy_vndr"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750">
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp" />
+  </project>
+  <project
+      path="hardware/qcom-caf/sm8750/audio/agm"
+      name="LineageOS/android_vendor_qcom_opensource_agm"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/audio/graphservices"
+      name="LineageOS/android_vendor_qcom_opensource_audioreach-graphservices"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/audio/pal"
+      name="LineageOS/android_vendor_qcom_opensource_arpal-lx"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/audio/primary-hal"
+      name="LineageOS/android_hardware_qcom_audio-ar"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/data-ipa-cfg-mgr"
+      name="LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/dataipa"
+      name="LineageOS/android_vendor_qcom_opensource_dataipa"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/display/core"
+      name="LineageOS/android_vendor_qcom_opensource_display-core"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/display/hal"
+      name="LineageOS/android_hardware_qcom_display"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+  <project
+      path="hardware/qcom-caf/sm8750/display/intf"
+      name="LineageOS/android_vendor_qcom_opensource_display-intf"
+      remote="github"
+      revision="lineage-23.2-caf-sm8750" />
+
+  <project
+      path="hardware/xiaomi"
+      name="LineageOS/android_hardware_xiaomi"
+      remote="github"
+      revision="lineage-23.2" />
+
+  <project
+      path="vendor/qcom/opensource/commonsys/audio"
+      name="LineageOS/android_vendor_qcom_opensource_audio"
+      remote="github"
+      revision="lineage-23.2" />
+  <project
+      path="vendor/qcom/opensource/commonsys-intf/audio"
+      name="LineageOS/android_vendor_qcom_opensource_audio-commonsys-intf"
+      remote="github"
+      revision="lineage-23.2" />
 </manifest>
