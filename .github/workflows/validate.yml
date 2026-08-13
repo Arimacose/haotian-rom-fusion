@@ -24,8 +24,16 @@ jobs:
           bash -n scripts/*.sh
           python - <<'PY'
           import xml.etree.ElementTree as ET
-          ET.parse('manifests/haotian-bka.xml')
-          ET.parse('manifests/haotian-yaap16.xml')
+          from pathlib import Path
+          for document in Path('manifests').rglob('*.xml'):
+              ET.parse(document)
+          dsu = __import__('json').loads(Path('configs/yaap16-dsu-upper5.json').read_text())
+          assert dsu['schema'] == 1
+          assert [item['name'] for item in dsu['partitions']] == [
+              'system', 'system_ext', 'product', 'vendor', 'odm'
+          ]
+          assert all(item['expected_size'] > 0 for item in dsu['partitions'])
+          assert all(len(item['expected_sha256']) == 64 for item in dsu['partitions'])
           PY
           python scripts/Build-BaselineManifest.py \
             --config configs/baselines.json \

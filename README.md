@@ -9,7 +9,7 @@
 - **硬件基线**：HyperOS `OS3.0.304.0.WOBCNXM`；
 - **源码根目录**：`/home/arima/android/yaap16`（WSL `Ubuntu-ROMBuild`）；
 - **管理分支**：`agent/yaap16-platform-bringup`；
-- **当前边界**：源码闭环、静态预检与首次 Soong/Kati/packaging graph 已完成；模块全量编译、镜像和真机阶段尚未启动。
+- **当前边界**：第一版完整 A/B 开发 OTA 与 upper5 多分区 DSU 已完成构建和离线审计；真机安装与运行验证尚未启动。
 
 EvolutionX、LineageOS 与 DerpFest 的历史拆包和对比仍作为适配证据保留。其中的硬件实现可以按模块审查后迁移；它们不再作为当前 ROM 的产品平台基座。
 
@@ -28,6 +28,11 @@ EvolutionX、LineageOS 与 DerpFest 的历史拆包和对比仍作为适配证�
 - [x] 固定 `TARGET_BUILD_GAPPS=true` 与 `yaap_haotian-bp4a-userdebug`；
 - [x] `m -j16 nothing` 首次 graph 通过，并在设备树提交态复验通过；
 - [x] 确认 graph 阶段没有生成 `.img/.zip/.bin` 产品文件。
+- [x] 固定同一构建图执行 `m -j16 bacon target-files-package`，生成完整 A/B OTA 与 target-files；
+- [x] 核心完整性门禁 14/14 通过：VINTF、AVB、SELinux、文件系统、动态分区、签名和跨产物一致性均有独立日志；
+- [x] Payload/APEX 门禁 6/6 通过，45 个 payload 分区重放一致，38 个 APEX/CAPEX 通过双重验证；
+- [x] 生成 `system + system_ext + product + vendor + odm` upper5 DSU，并通过独立重新解压、哈希、ext4、AVB 和 root digest 审计；
+- [x] Stage C 全程保持真机零写入，运行验证状态固定为 `not_started`。
 
 ## 当前 profile 与发布决策
 
@@ -65,6 +70,9 @@ wsl -d Ubuntu-ROMBuild -- bash -lc "python3 `
 
 ## 文档入口
 
+- [`docs/YAAP16_STAGE_C_FIRST_ROM_REPORT.md`](docs/YAAP16_STAGE_C_FIRST_ROM_REPORT.md)：第一版完整 OTA、45 分区 payload、14/14 核心审计、6/6 Payload/APEX 审计、upper5 DSU、风险与真机前门禁；
+- [`evidence/yaap16-stage-c-first-rom.json`](evidence/yaap16-stage-c-first-rom.json)：Stage C 产物、哈希、提交、门禁、日志及运行边界的机器可读证据；
+- [`manifests/resolved/yaap16-haotian-stage-c-20260813.xml`](manifests/resolved/yaap16-haotian-stage-c-20260813.xml)：生成 Stage C 产物时固定的完整 resolved manifest；
 - [`docs/YAAP16_PREBUILD_AUDIT.md`](docs/YAAP16_PREBUILD_AUDIT.md)：本阶段完整审计、提交、模块闭环、验证结果与风险边界；
 - [`docs/YAAP16_BUILD_BOOTSTRAP.md`](docs/YAAP16_BUILD_BOOTSTRAP.md)：可复现同步、vendor staging、kernel headers、预检及下一阶段 build gate；
 - [`docs/YAAP16_SOONG_GRAPH_REPORT.md`](docs/YAAP16_SOONG_GRAPH_REPORT.md)：首次固定 GApps/userdebug graph 的迭代、修正、哈希与边界；
@@ -80,6 +88,15 @@ wsl -d Ubuntu-ROMBuild -- bash -lc "python3 `
 ## 关键哈希
 
 ```text
+Stage C full A/B OTA:
+ebc06db809ea760069375e93e4f30f564fadec8f5c0fa7740da2ad42512b3902
+
+Stage C upper5 DSU:
+d8a9f0417cef780ea63878c9d9505e3819690e44859cecc40e237f682cec0b04
+
+Stage C resolved manifest:
+8cc70a712a5b1bc1cc3239c973d19b4cceef1888d1dc21487fba81b2cbbaa3d0
+
 resolved manifest:
 c1264cbe2cae0bf6c83cf181efbe7ac8e8674a50b21c2e0cd13a7eb33158a78b
 

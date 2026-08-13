@@ -1,3 +1,661 @@
 {
-  "status": "pending"
+  "schema": 1,
+  "result": "passed",
+  "stage": "YAAP 16 haotian Stage C first full ROM and upper5 DSU",
+  "device_operations": false,
+  "runtime_validation": "not_started",
+  "production_release_ready": false,
+  "build": {
+    "source_root": "/home/arima/android/yaap16",
+    "wsl_distribution": "Ubuntu-ROMBuild",
+    "target_build_gapps": true,
+    "variant": "yaap_haotian-bp4a-userdebug",
+    "jobs": 16,
+    "targets": [
+      "bacon",
+      "target-files-package"
+    ],
+    "build_epoch": 1786625277,
+    "build_number": "haotian.stagec.20260813.1",
+    "build_username": "android-build",
+    "build_hostname": "haotian-builder",
+    "status": {
+      "result": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 1493,
+      "start": "2026-08-13T21:24:48+08:00",
+      "end": "2026-08-13T21:49:41+08:00",
+      "target_build_gapps": true,
+      "variant": "yaap_haotian-bp4a-userdebug",
+      "jobs": 16,
+      "targets": "bacon,target-files-package",
+      "build_epoch": 1786625277,
+      "build_number": "haotian.stagec.20260813.1",
+      "out_bytes_before": 156715346818,
+      "out_bytes_after": 156715573158,
+      "filesystem_free_bytes_before": 658976874496,
+      "filesystem_free_bytes_after": 658976174080,
+      "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-c-builds/yaap16-stage-c-frozen-release-attempt1.log"
+    },
+    "identity": {
+      "android_sdk": 36,
+      "build_type": "userdebug",
+      "build_tags": "test-keys",
+      "build_flavor": "yaap_haotian-userdebug",
+      "yaap_device": "haotian",
+      "advertised_fingerprint": "Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.304.0.WOBCNXM:user/release-keys",
+      "system_security_patch": "2026-05-05",
+      "vendor_security_patch": "2026-02-01",
+      "kernel_in_complete_ota": "6.6.77",
+      "device_installed_kernel_before_test": "third-party 6.6.143"
+    }
+  },
+  "source_revisions": {
+    "device/xiaomi/haotian": "534e15a4b4fc49672826e2c99d1fcad1d64e5802",
+    "device/xiaomi/sm8750-common": "45f6a6be34b9d4f51b624c79243c6fc49a547bc6",
+    "hardware/qcom-caf/common": "8385f582e3c12a69d9d2783e42c75052ce37a3e0",
+    "hardware/qcom-caf/thermal": "d516438050624590cff3163c88885725030a382c",
+    "vendor/yaap": "97076c263cea2d4c89b4e108c8da8c5b299ca30d",
+    "hardware/lineage/interfaces": "ca560522cee3977861002372d1408cd7bb690198",
+    "device/lineage/sepolicy": "4aa6646b41042e19d9238034ed202d9a6b1a5ed9"
+  },
+  "source_push_verification": {
+    "device/xiaomi/sm8750-common": "45f6a6be34b9d4f51b624c79243c6fc49a547bc6",
+    "hardware/qcom-caf/common": "8385f582e3c12a69d9d2783e42c75052ce37a3e0",
+    "hardware/qcom-caf/thermal": "d516438050624590cff3163c88885725030a382c",
+    "vendor/yaap": "97076c263cea2d4c89b4e108c8da8c5b299ca30d"
+  },
+  "resolved_manifest": {
+    "path": "D:\\Codex\\haotian-rom-fusion\\manifests\\resolved\\yaap16-haotian-stage-c-20260813.xml",
+    "sha256": "8cc70a712a5b1bc1cc3239c973d19b4cceef1888d1dc21487fba81b2cbbaa3d0"
+  },
+  "artifacts": {
+    "ota": {
+      "windows_path": "D:\\Codex\\haotian-rom-fusion-build\\release\\yaap16-stagec-20260813\\YAAP-16-HOMEMADE-haotian-20260813.zip",
+      "wsl_path": "/home/arima/android/yaap16/out/target/product/haotian/YAAP-16-HOMEMADE-haotian-20260813.zip",
+      "size": 4836470722,
+      "sha256": "ebc06db809ea760069375e93e4f30f564fadec8f5c0fa7740da2ad42512b3902",
+      "type": "full A/B OTA",
+      "payload_size": 4836462377,
+      "payload_sha256": "9c1997555814a34f57ea7686b8f5ce8acfe237d4c5b2fd06c37ac6b512dff701",
+      "payload_version": 2,
+      "payload_manifest_length": 298830,
+      "payload_partition_count": 45,
+      "payload_partitions": [
+        "abl",
+        "aop",
+        "aop_config",
+        "bluetooth",
+        "boot",
+        "cpucp",
+        "cpucp_dtb",
+        "devcfg",
+        "dsp",
+        "dtbo",
+        "featenabler",
+        "hyp",
+        "idmanager",
+        "imagefv",
+        "init_boot",
+        "keymaster",
+        "modem",
+        "modemfirmware",
+        "multiimgqti",
+        "odm",
+        "pdp",
+        "pdp_cdb",
+        "product",
+        "pvmfw",
+        "qupfw",
+        "recovery",
+        "shrm",
+        "soccp_dcd",
+        "soccp_debug",
+        "spuservice",
+        "system",
+        "system_dlkm",
+        "system_ext",
+        "tz",
+        "uefi",
+        "uefisecapp",
+        "vbmeta",
+        "vbmeta_system",
+        "vendor",
+        "vendor_boot",
+        "vendor_dlkm",
+        "vm-bootsys",
+        "xbl",
+        "xbl_config",
+        "xbl_ramdump"
+      ]
+    },
+    "target_files": {
+      "path": "/home/arima/android/yaap16/out/target/product/haotian/obj/PACKAGING/target_files_intermediates/yaap_haotian-target-files.zip",
+      "size": 21037181176,
+      "sha256": "343e701ac85c76e581354fb63966335549c2d53bcd92f92305a6e5b5b6c6a537"
+    },
+    "cross_artifact_coherence": {
+      "build_epoch": "1786625277",
+      "build_incremental": "haotian.stagec.20260813.1",
+      "ota_metadata_matches_disk": true,
+      "target_files_build_prop_matches_directory": true,
+      "matched_images": [
+        {
+          "image": "boot.img",
+          "bytes": 100663296,
+          "sha256": "b3220ca98f754b62c525b1e4cdf57d9bec6eefddff429702b7fe22feb3c39989"
+        },
+        {
+          "image": "dtbo.img",
+          "bytes": 25165824,
+          "sha256": "ed106cc3730332d3168b11d242ddb9e6b8123d04735c6b0444edffb5eb1d675f"
+        },
+        {
+          "image": "init_boot.img",
+          "bytes": 8388608,
+          "sha256": "8fcb319efd56fc6bec6f742714e254f31933c0dc3f13b2ba048e42d3f6e8bee0"
+        },
+        {
+          "image": "odm.img",
+          "bytes": 5036703744,
+          "sha256": "6a4af705833404e1b9f3d3897d1d7a3d7f7ec3567c283f3eb6d8806ebd988edb"
+        },
+        {
+          "image": "product.img",
+          "bytes": 2227720192,
+          "sha256": "63a261cc9b54b870240268cc48e7b567a78f5d4d13fac000f150ddd2230bde99"
+        },
+        {
+          "image": "recovery.img",
+          "bytes": 104857600,
+          "sha256": "913379673f366979ade80bd46cd5b22112bf6e4983de3dac6f71706ae92a8969"
+        },
+        {
+          "image": "super_empty.img",
+          "bytes": 5288,
+          "sha256": "b449f67325886890ca032813ce6fdc7f40b9175bc03274c2077687ce8e3930ea"
+        },
+        {
+          "image": "system.img",
+          "bytes": 1137766400,
+          "sha256": "221c2e73ab55bbe3c2562acf487a44cb7dc42bcb25c2765ecdef8074b577e059"
+        },
+        {
+          "image": "system_dlkm.img",
+          "bytes": 13127680,
+          "sha256": "9ead3e251160f715dfcce66c414eb6645206b837ba02c390ce1c864bcb446fd7"
+        },
+        {
+          "image": "system_ext.img",
+          "bytes": 552861696,
+          "sha256": "c8af6c30fe76ec81092a9e1e2f5aa7fbd668e1de8eda2a7246322854937e049f"
+        },
+        {
+          "image": "unsparse_super_empty.img",
+          "bytes": 5288,
+          "sha256": "b449f67325886890ca032813ce6fdc7f40b9175bc03274c2077687ce8e3930ea"
+        },
+        {
+          "image": "vbmeta.img",
+          "bytes": 8192,
+          "sha256": "106a2ee0043f0d8b1fa70c9fa36a557bd4c2443126457366508d3c7cc0fe3aec"
+        },
+        {
+          "image": "vbmeta_system.img",
+          "bytes": 4096,
+          "sha256": "d7d0126a836fd8080c9709647492231bd34357074b129725ce3f55c13c5751ae"
+        },
+        {
+          "image": "vendor.img",
+          "bytes": 880070656,
+          "sha256": "e10f923ca170e43486cf03ad94eea5b70123a79b9d651b9dc1b92091c5f49ed2"
+        },
+        {
+          "image": "vendor_boot.img",
+          "bytes": 100663296,
+          "sha256": "a02c8167ddee3717c607b7d5e7a38ba4df44293727f5d9be492b2534b5e11f55"
+        },
+        {
+          "image": "vendor_dlkm.img",
+          "bytes": 180912128,
+          "sha256": "c295f3001de3511a58c553fcc216aae3bf4a19fea55efb60f989ecb40c57aea2"
+        }
+      ]
+    },
+    "dsu": {
+      "path": "D:\\Codex\\haotian-rom-fusion-build\\dsu\\yaap16-stagec-upper5-host304\\YAAP-16-20260813-haotian-upper5-host304-mpDSU.zip",
+      "size": 5206856553,
+      "sha256": "d8a9f0417cef780ea63878c9d9505e3819690e44859cecc40e237f682cec0b04",
+      "manifest_path": "D:\\Codex\\haotian-rom-fusion-build\\dsu\\yaap16-stagec-upper5-host304\\YAAP-16-20260813-haotian-upper5-host304-mpDSU.zip.manifest.json",
+      "audit_path": "D:\\Codex\\haotian-rom-fusion-build\\dsu\\yaap16-stagec-upper5-host304\\YAAP-16-20260813-haotian-upper5-host304-mpDSU.zip.audit.json",
+      "members": [
+        {
+          "name": "system.img",
+          "uncompressed_size": 1137766400,
+          "compressed_size": 469406507,
+          "crc32": "6a9752ce",
+          "sha256": "89ee2614e2440189f008ae63b202cadba49231c7aced5ac515c7ca41bedb64e9"
+        },
+        {
+          "name": "system_ext.img",
+          "uncompressed_size": 552861696,
+          "compressed_size": 221249554,
+          "crc32": "b2bd6f90",
+          "sha256": "74509805a1a43d6b33647a2180b2521b48db4c18cb86e334a2b3162857e97336"
+        },
+        {
+          "name": "product.img",
+          "uncompressed_size": 2227720192,
+          "compressed_size": 1013124300,
+          "crc32": "440e20ba",
+          "sha256": "39280a4de33712a8886d47a90feb4bc905d40fc2946676b57d91df7bad711cb0"
+        },
+        {
+          "name": "vendor.img",
+          "uncompressed_size": 880070656,
+          "compressed_size": 479390840,
+          "crc32": "59574d66",
+          "sha256": "550f9b27090bdab49a3e27dc9cce692dced32a13f84378c1cc27d624253d8cda"
+        },
+        {
+          "name": "odm.img",
+          "uncompressed_size": 5036703744,
+          "compressed_size": 3023684622,
+          "crc32": "f56f264a",
+          "sha256": "2c6ecbee9c86ea4ff69834b35ea65459c3568eb7416840924e195ca93196f270"
+        }
+      ],
+      "build_status": {
+        "result": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 1884,
+        "start": "2026-08-13T23:02:12+08:00",
+        "end": "2026-08-13T23:33:36+08:00",
+        "profile": "yaap16-stagec-upper5-host304",
+        "partitions": "system,system_ext,product,vendor,odm",
+        "free_bytes_before": 1029005967360,
+        "free_bytes_after": 1023799066624,
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-c-dsu/yaap16-upper5-attempt1.log"
+      },
+      "audit_status": {
+        "result": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 146,
+        "start": "2026-08-13T23:36:22+08:00",
+        "end": "2026-08-13T23:38:48+08:00",
+        "log": "/mnt/d/Codex/haotian-rom-fusion-build/logs/stage-c-dsu/yaap16-upper5-independent-audit.log",
+        "output": "/mnt/d/Codex/haotian-rom-fusion-build/dsu/yaap16-stagec-upper5-host304/YAAP-16-20260813-haotian-upper5-host304-mpDSU.zip.audit.json"
+      },
+      "independent_audit": {
+        "zip_crc_and_stream_hashes": "passed",
+        "raw_ext4": "passed",
+        "e2fsck_read_only": "passed",
+        "avb_hashtrees": "passed",
+        "avb_manifest_equivalence": "passed",
+        "source_image_hashes": "passed",
+        "source_root_digests_unchanged": "passed"
+      }
+    }
+  },
+  "checks": {
+    "core": {
+      "result": "passed",
+      "count": 14,
+      "failed": 0,
+      "rows": [
+        {
+          "name": "inputs",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:49:09+08:00",
+          "end": "2026-08-13T23:49:09+08:00"
+        },
+        {
+          "name": "hashes",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:49:09+08:00",
+          "end": "2026-08-13T23:51:28+08:00"
+        },
+        {
+          "name": "ota_structure",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:51:28+08:00",
+          "end": "2026-08-13T23:51:31+08:00"
+        },
+        {
+          "name": "artifact_coherence",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:51:31+08:00",
+          "end": "2026-08-13T23:52:29+08:00"
+        },
+        {
+          "name": "ota_whole_file_and_payload_signature",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:52:29+08:00",
+          "end": "2026-08-13T23:53:55+08:00"
+        },
+        {
+          "name": "target_files_zip_crc",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:53:55+08:00",
+          "end": "2026-08-13T23:55:38+08:00"
+        },
+        {
+          "name": "apk_signature_inventory",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:55:38+08:00",
+          "end": "2026-08-13T23:57:14+08:00"
+        },
+        {
+          "name": "vintf",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:57:14+08:00",
+          "end": "2026-08-13T23:57:32+08:00"
+        },
+        {
+          "name": "validate_target_files",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:57:32+08:00",
+          "end": "2026-08-13T23:58:35+08:00"
+        },
+        {
+          "name": "avb",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:58:35+08:00",
+          "end": "2026-08-13T23:59:37+08:00"
+        },
+        {
+          "name": "filesystems",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:59:37+08:00",
+          "end": "2026-08-13T23:59:37+08:00"
+        },
+        {
+          "name": "dynamic_partitions",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:59:37+08:00",
+          "end": "2026-08-13T23:59:37+08:00"
+        },
+        {
+          "name": "selinux",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:59:37+08:00",
+          "end": "2026-08-13T23:59:37+08:00"
+        },
+        {
+          "name": "build_identity",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:59:37+08:00",
+          "end": "2026-08-13T23:59:37+08:00"
+        }
+      ]
+    },
+    "payload_and_apex": {
+      "result": "passed",
+      "count": 6,
+      "failed": 0,
+      "rows": [
+        {
+          "name": "payload_extract",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:49:09+08:00",
+          "end": "2026-08-13T23:49:37+08:00"
+        },
+        {
+          "name": "payload_properties",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:49:37+08:00",
+          "end": "2026-08-13T23:49:41+08:00"
+        },
+        {
+          "name": "payload_signature_verify",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:49:41+08:00",
+          "end": "2026-08-13T23:54:31+08:00"
+        },
+        {
+          "name": "payload_static_check",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:54:31+08:00",
+          "end": "2026-08-13T23:55:01+08:00"
+        },
+        {
+          "name": "payload_info",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:55:01+08:00",
+          "end": "2026-08-13T23:55:01+08:00"
+        },
+        {
+          "name": "apex",
+          "result": "passed",
+          "exit_code": 0,
+          "start": "2026-08-13T23:55:01+08:00",
+          "end": "2026-08-13T23:55:37+08:00"
+        }
+      ],
+      "payload_replayed_partition_count": 45,
+      "apex_count": 38,
+      "apex_failed": 0
+    },
+    "vintf": "COMPATIBLE",
+    "apk_apex_signature_inventory": {
+      "result": "passed",
+      "entries": 274,
+      "apk": 262,
+      "uncompressed_apex": 12
+    },
+    "avb": {
+      "result": "passed",
+      "root_algorithm": "SHA256_RSA4096",
+      "root_digest": "7f42f56fced973e6c57d04f37341bda058b5796d2c53694573539ec60e2c260a",
+      "chains": {
+        "boot": 3,
+        "recovery": 1,
+        "vbmeta_system": 2
+      },
+      "private_key_sha256": "23a5dc1bf38853f49f0021c2af4f094095ddd8f91b869a586555f81443fdc2c0",
+      "public_key_blob_sha256": "97b0363f96aa989355db6f13e81d0c067d3afb8fe4ccdd8f3ed8c6ffe1f7b9fc"
+    },
+    "selinux": {
+      "result": "passed_with_exact_userdebug_allowlist",
+      "neverallow": "passed",
+      "mapping_digests": "matched",
+      "permissive_domains": [
+        "su",
+        "qti-testscripts",
+        "backuptool",
+        "vendor_pdt_app",
+        "vendor-qti-testscripts",
+        "aoncameraservice_app",
+        "vendor_hal_debugutils_default",
+        "vendor_cta_app",
+        "vendor_logkit_app"
+      ],
+      "production_requirement": "user build must contain zero permissive domains"
+    },
+    "dynamic_partitions": {
+      "result": "passed",
+      "super_partition_size": 11811160064,
+      "group_size": 11809841488,
+      "partition_total": 10029162496,
+      "group_free_if_fully_allocated": 1780678992,
+      "virtual_ab": true,
+      "compression": "lz4",
+      "cow_version": 3
+    }
+  },
+  "signing_and_integrity_risk": {
+    "ota_key": "AOSP testkey",
+    "ota_certificate_sha256": "a4384ba815b9499a5ce349b4e33c1755278873fe2eac150a068823f526e6dbde",
+    "avb_key": "local development key",
+    "whole_file_signature_digest_mode": "SHA-1 because of the development certificate",
+    "bootloader": "unlocked",
+    "environment_risk_for_banking_finance_and_anticheat": "high",
+    "play_integrity_or_hardware_attestation": "not_tested"
+  },
+  "non_blocking_warnings": {
+    "duplicate_identical_properties": [
+      "SYSTEM: ro.yaap.device",
+      "VENDOR: dalvik.vm.dex2oat64.enabled",
+      "ODM: debug.config.video.hevchdr10.encode.support",
+      "ODM: ro.vendor.display.dobly_dpu.enable",
+      "ODM: ro.vendor.display.primary_idle_refresh_rate"
+    ],
+    "target_files_validator_result": "passed"
+  },
+  "dsu_scope": {
+    "included": [
+      "system",
+      "system_ext",
+      "product",
+      "vendor",
+      "odm"
+    ],
+    "omitted": {
+      "system_dlkm,vendor_dlkm": "The installed third-party 6.6.143 kernel remains active during DSU. Loading module partitions built for the ROM prebuilt 6.6.77 kernel would create an avoidable kernel-module/KMI mismatch.",
+      "boot,init_boot,vendor_boot,dtbo,recovery": "DSU does not replace the boot chain; these images remain outside this non-flashing upper-partition profile.",
+      "vbmeta,vbmeta_system": "Each selected DSU image receives an independently verified Algorithm NONE hashtree footer. Reusing the complete OTA vbmeta chain would couple the package to omitted boot and dlkm partitions.",
+      "firmware": "The installed HyperOS OS3.0.304.0.WOBCNXM firmware remains authoritative and is not written by DSU."
+    },
+    "host_baseline": "HyperOS OS3.0.304.0.WOBCNXM",
+    "host_security_patch": "2026-06-01",
+    "runtime_kernel": "third-party 6.6.143",
+    "source_system_spl": "2026-05-05",
+    "staged_system_spl_descriptor": "2026-06-01",
+    "spl_override_scope": "AVB property descriptor only; ext4 root digests unchanged"
+  },
+  "runtime_unknowns": [
+    "boot and SetupWizard",
+    "Goodix fingerprint enrollment and unlock",
+    "vibration",
+    "HyperOS camera and 60 fps recording",
+    "HDR and brightness",
+    "edge touch rejection",
+    "cellular, VoLTE, VoWiFi and dual SIM",
+    "Wi-Fi, Bluetooth, GNSS and NFC",
+    "audio routing",
+    "USB and charging",
+    "thermal and suspend",
+    "banking and game integrity"
+  ],
+  "logs": {
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-builds\\yaap16-stage-c-frozen-release-attempt1.status": {
+      "size": 521,
+      "sha256": "287a61bc179496c301bb9d81b3109abf80e179bbf32e932015aa367ebcc50f9e"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-builds\\yaap16-stage-c-frozen-release-attempt1.log": {
+      "size": 598084,
+      "sha256": "9c73691fbe2cf820dbf333703cea41ae6c3fc0735c85042f60290cc4c9110ca2"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-builds\\stage-c-source-push-verified-2.log": {
+      "size": 2274,
+      "sha256": "6091a0784b217a7239675f9fee794879d4e1f5be1c8b9a2aca99ee030a7ab0a7"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\core-final.status": {
+      "size": 16,
+      "sha256": "2a367ab618d41225a241b69064a25ab7b7407d56bdba6918f588a43f6bd5e7f2"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\core-summary.tsv": {
+      "size": 1069,
+      "sha256": "2591b3af4c763c3abc277a78bf46ada1c23f5cc135c98cb6ce9777b28d625775"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\payload-apex-final.status": {
+      "size": 16,
+      "sha256": "2a367ab618d41225a241b69064a25ab7b7407d56bdba6918f588a43f6bd5e7f2"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\payload-apex-summary.tsv": {
+      "size": 465,
+      "sha256": "231bd9a61f071d0a738727df7c232c53e632bf3dc0eb340a346cce03ff6bf492"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\artifact-sha256.txt": {
+      "size": 3673,
+      "sha256": "930c744dfbaefe62b8168ddef63e3dd569e085034abf75959cf2ef93349afdd7"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\artifact_coherence.log": {
+      "size": 2764,
+      "sha256": "e31ae958989bf6778d05e6754aa0cc8f0aeda831eb3b2f306950071645df4e98"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\ota_whole_file_and_payload_signature.log": {
+      "size": 706,
+      "sha256": "3d66814b99d488edeaeeedd9e0cfb0fb13021198e215a61ae083eb1b478c7212"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\apk_signature_inventory.log": {
+      "size": 164152,
+      "sha256": "040d2c05a0e9078e7d81b3562ddfd197faa38792fc8b7332526f1df14351fadd"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\vintf.log": {
+      "size": 48154,
+      "sha256": "b163f25c81e8692997cbf272b31d49e348950ad28bf00c2e313267ac05a4c14e"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\validate_target_files.log": {
+      "size": 7588,
+      "sha256": "6c9af3de8741da3ecf29be7f54861d54d859aba16a19f39f613c315b6439f1d4"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\avb.log": {
+      "size": 7220,
+      "sha256": "cbaed3d91a64d4dbf10efe5ae7dfba607be64786de2bc771990ccc666feb86c0"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\filesystems.log": {
+      "size": 4509,
+      "sha256": "03b09fad1f6e99b6822544a4cc68c6d0a29c00cf0264280532f1bd95c002e94c"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\dynamic_partitions.log": {
+      "size": 3966,
+      "sha256": "76d9268666424d26d02d0c786cd2905df3d27538a117af06da62c8e9eeb9ee4f"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\selinux.log": {
+      "size": 1203,
+      "sha256": "1a9870b0250e0645ef4ae1b01eeb54094b340483ed2639310d152bb82ec87fc6"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\payload_signature_verify.log": {
+      "size": 202290,
+      "sha256": "c7f1be0379678d7091fe397376867e39c240cffcbd5b6751e497003222983a09"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\payload_static_check.log": {
+      "size": 379,
+      "sha256": "84782c25101f152a7f79aed079e83a6d7cb52cda633ac491c0a2507fa5b409ff"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\payload_info.log": {
+      "size": 4595,
+      "sha256": "37fec170ffc62e21b26c1d6ed85f1cfe8e084420d3debf87333780f1185dfcbc"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-integrity\\apex.log": {
+      "size": 42761,
+      "sha256": "7acf28c116a41d081268952766ef44d728909d2fcc8b70752f97d1289e8b72f7"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-dsu\\yaap16-upper5-attempt1.status": {
+      "size": 343,
+      "sha256": "1e8b2cfed10f1417871a8670af6e73f9bea8f59538bb50dde0555812991aea47"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-dsu\\yaap16-upper5-attempt1.log": {
+      "size": 2009,
+      "sha256": "e12e205e9e3eac10d96af5f781ea96a52b50d6ed87a84072fd044e95a75067e3"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-dsu\\yaap16-upper5-independent-audit.status": {
+      "size": 342,
+      "sha256": "8db5b0b8f96fd2322e603be006d7e678d0d1505bdfdd670022bcb17c1c6cba16"
+    },
+    "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-c-dsu\\yaap16-upper5-independent-audit.log": {
+      "size": 556,
+      "sha256": "401d6573d1fc5d4cc57d06d2ccf8e3466a129f536ae4da0d5fee4028926c2d81"
+    }
+  }
 }

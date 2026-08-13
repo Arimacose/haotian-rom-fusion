@@ -106,14 +106,18 @@ def rebuild_footer(
     avbtool: Path,
     image: Path,
     source_info: dict[str, Any],
-    spl_property: str,
-    host_spl: str,
+    spl_property: str | None,
+    target_spl: str | None,
 ) -> dict[str, Any]:
     properties = dict(source_info["properties"])
-    if spl_property not in properties:
-        raise ValueError(f"{image.name} is missing {spl_property}")
-    source_spl = properties[spl_property]
-    properties[spl_property] = host_spl
+    source_spl: str | None = None
+    if spl_property is not None:
+        if spl_property not in properties:
+            raise ValueError(f"{image.name} is missing {spl_property}")
+        if target_spl is None:
+            raise ValueError(f"{image.name}: target SPL is required with {spl_property}")
+        source_spl = properties[spl_property]
+        properties[spl_property] = target_spl
 
     run_checked(avb_command(avbtool, "erase_footer", "--image", str(image)))
 
@@ -147,12 +151,14 @@ def rebuild_footer(
         )
     if staged_info["image_size"] != source_info["image_size"]:
         raise ValueError(f"{image.name}: partition size changed")
-    if staged_info["properties"].get(spl_property) != host_spl:
+    if spl_property is not None and staged_info["properties"].get(spl_property) != target_spl:
         raise ValueError(f"{image.name}: staged SPL property was not updated")
 
     return {
+        "spl_override_applied": spl_property is not None and source_spl != target_spl,
+        "security_patch_property": spl_property,
         "source_security_patch": source_spl,
-        "staged_security_patch": host_spl,
+        "staged_security_patch": target_spl if spl_property is not None else None,
         "filesystem_root_digest_unchanged": True,
         "source_fec_size": source_info["fec_size"],
         "staged_fec_size": staged_info["fec_size"],
@@ -270,8 +276,8 @@ def main() -> int:
             args.avbtool,
             staged,
             source_avb,
-            spec["security_patch_property"],
-            config["host_security_patch"],
+            spec.get("security_patch_property"),
+            spec.get("target_security_patch", config.get("host_security_patch")),
         )
         staged_paths[name] = staged
         partition_results.append(

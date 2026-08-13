@@ -73,6 +73,11 @@
     <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp" />
     <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8750/Android.mk" />
   </extend-project>
+  <extend-project
+      name="hardware_qcom-caf_thermal"
+      path="hardware/qcom-caf/thermal"
+      remote="arimacose"
+      revision="haotian-16" />
   <project
       path="hardware/qcom-caf/sm8750/audio/agm"
       name="LineageOS/android_vendor_qcom_opensource_agm"
