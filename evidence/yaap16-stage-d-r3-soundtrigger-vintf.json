@@ -1,3 +1,351 @@
 {
-  "status": "draft"
+  "schema": 1,
+  "milestone": "yaap16-stage-d-r3-offline",
+  "result": "offline_passed_runtime_pending",
+  "generated_local": "2026-08-14T18:51:41.467626+08:00",
+  "execution_boundary": {
+    "user_requested_stop": "before any r3 real-device proxy enable, copy, install, enable, or reboot",
+    "boundary_reached": true,
+    "r3_real_device_writes_performed": false,
+    "goal_status": "active_paused_at_user_boundary"
+  },
+  "source": {
+    "device_tree_repo": "https://github.com/Arimacose/device_xiaomi_sm8750-common.git",
+    "branch": "agent/audio-vintf-soundtrigger-fix",
+    "commit": "d9f4811de4278182e61119f1daaab7cea2971a9b",
+    "parent_r2_commit": "5ec5c60",
+    "changes": [
+      "extract the stock soundtrigger.qti.xml as soundtrigger_haotian_stock.xml",
+      "attach it as a vintf_fragments entry to libsoundtriggerhal.qti"
+    ]
+  },
+  "root_cause_and_fix": {
+    "r2_runtime_failure": "audiohalservice.qti could load libsoundtriggerhal.qti.so but servicemanager rejected android.hardware.soundtrigger3.ISoundTriggerHw/default because it was absent from the device VINTF manifest",
+    "system_server_block": "StartAudioService",
+    "stock_manifest_sha256": "ee90b3c8d28da16e0527b4645b29a6bb6269efa93aff0abc880b9fd375351c06",
+    "installed_normalized_manifest_sha256": "938ee61487b12e7a4e73e36312e89da7ec1940fa52979b9aae5274831bdfc1e4",
+    "declaration": "android.hardware.soundtrigger3 / ISoundTriggerHw/default",
+    "soundtrigger_v1_library_sha256": "11a3ecb090a2eabe6c940a03b1bc01bef95b95e94aa3b0ec0f804879d07fb6c0"
+  },
+  "rom": {
+    "target_build_gapps": true,
+    "product": "yaap_haotian-bp4a-userdebug",
+    "incremental": "haotian.staged.20260814.3",
+    "build_epoch": 1786687200,
+    "full_build_elapsed_seconds": 527,
+    "ota": {
+      "path": "/home/arima/android/yaap16/out/target/product/haotian/YAAP-16-HOMEMADE-haotian-20260814.zip",
+      "size": 4836798323,
+      "sha256": "c2b19d7ea13cc3e538219521f025dc6b1044666fa36917ed134d7356e8684bb6"
+    },
+    "target_files": {
+      "path": "/home/arima/android/yaap16/out/target/product/haotian/obj/PACKAGING/target_files_intermediates/yaap_haotian-target_files.zip",
+      "size": 21038189277,
+      "sha256": "45e1ebb4a42db8a016b13003a97a769b9f7332f64848c445b5bfdd8457f8edb8"
+    }
+  },
+  "offline_audits": {
+    "core": {
+      "result": "passed",
+      "checks": 14,
+      "summary_sha256": "d0545c83f03fa54dbc11dc8f1dc037a4688f3a75c47f989ace97b712bf06aa45"
+    },
+    "payload_apex": {
+      "result": "passed",
+      "checks": 6,
+      "summary_sha256": "135ede5110e556e40d7ad8b57eaa46a702b34b767890f5ebfbd4cf52e9c56260"
+    },
+    "audio_vintf_end_to_end": {
+      "result": "passed",
+      "fragment_count": 4,
+      "log_sha256": "c3615ca0e33904285017152709e2b6c3e6a1e22d60357764d613e599947800d2",
+      "payload_vendor_hash": "957ad319153e7ce806829a07be1086049dcce3b02c371166ce788021e7d437a3"
+    },
+    "soundtrigger_dependency_and_vintf_closure": {
+      "result": "passed",
+      "log_sha256": "076e0c3855a344c89d5d67b8949fe03e5a58e1f505cd1acc347339d897c49936"
+    },
+    "packed_vendor_content": {
+      "result": "passed",
+      "log_sha256": "524c4a4c76badb1938e65da92ed015070c0e7e1eeba7083113f7e9f0eaff290c"
+    }
+  },
+  "dsu": {
+    "profile": "yaap16-staged-upper5-host304-soundtrigger-vintf-r3",
+    "path": "D:\\Codex\\haotian-rom-fusion-build\\dsu\\yaap16-staged-upper5-host304-soundtrigger-vintf-r3\\YAAP-16-20260814-haotian-upper5-host304-soundtrigger-vintf-r3-mpDSU.zip",
+    "size": 5206968898,
+    "sha256": "e801e1edbef68d5d0cfc7936ac5730a040b72bccb1a1d2b4d28a29411dc8b056",
+    "build_elapsed_seconds": 1648,
+    "member_order": [
+      "system.img",
+      "system_ext.img",
+      "product.img",
+      "vendor.img",
+      "odm.img"
+    ],
+    "checks": {
+      "zip_crc_and_stream_hashes": "passed",
+      "raw_ext4": "passed",
+      "e2fsck_read_only": "passed",
+      "avb_hashtrees": "passed",
+      "avb_manifest_equivalence": "passed",
+      "source_image_hashes": "passed",
+      "source_root_digests_unchanged": "passed"
+    },
+    "members": [
+      {
+        "name": "system.img",
+        "zip_timestamp": [
+          2026,
+          8,
+          14,
+          18,
+          0,
+          0
+        ],
+        "uncompressed_size": 1137987584,
+        "compressed_size": 469452701,
+        "crc32": "edcb3e1b",
+        "sha256": "e484e0b263dd4baaf4e1ee14a56d331038f53f8ee9b084e06a38f6ae8cbfb253",
+        "filesystem": "raw ext4",
+        "e2fsck_read_only": "passed",
+        "avb_verify": "passed",
+        "avb": {
+          "image_size": 1137987584,
+          "original_image_size": 1119944704,
+          "algorithm": "NONE",
+          "partition_name": "system",
+          "hash_algorithm": "sha1",
+          "salt": "bbde5efa62823fbb0e7ed7ee5952d9e5b569b13d40a463b9a1b18ae8d14cdaa2",
+          "root_digest": "0e16136d91d4503e2f125fa0a62187db00106cb1",
+          "tree_size": 8826880,
+          "fec_size": 0,
+          "properties": {
+            "com.android.build.system.os_version": "16",
+            "com.android.build.system.fingerprint": "Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.304.0.WOBCNXM:user/release-keys",
+            "com.android.build.system.security_patch": "2026-06-01"
+          }
+        },
+        "source_root_digest_unchanged": true,
+        "avb_verification_output": [
+          "Verifying image /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/system.img using embedded public key",
+          "vbmeta: Successfully verified footer and NONE vbmeta struct in /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/system.img",
+          "system: Successfully verified sha1 hashtree of /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/system.img for image of 1119944704 bytes"
+        ],
+        "filesystem_check_tail": [
+          "Pass 2: Checking directory structure",
+          "Pass 3: Checking directory connectivity",
+          "Pass 4: Checking reference counts",
+          "Pass 5: Checking group summary information",
+          "/: 2821/2880 files (0.7% non-contiguous), 272592/273424 blocks"
+        ]
+      },
+      {
+        "name": "system_ext.img",
+        "zip_timestamp": [
+          2026,
+          8,
+          14,
+          18,
+          0,
+          0
+        ],
+        "uncompressed_size": 552861696,
+        "compressed_size": 221249554,
+        "crc32": "3af0db2f",
+        "sha256": "f4887972ffe1d76a54b9e03361345bde218847893bf79add76efd0e5c0171185",
+        "filesystem": "raw ext4",
+        "e2fsck_read_only": "passed",
+        "avb_verify": "passed",
+        "avb": {
+          "image_size": 552861696,
+          "original_image_size": 544051200,
+          "algorithm": "NONE",
+          "partition_name": "system_ext",
+          "hash_algorithm": "sha1",
+          "salt": "bbde5efa62823fbb0e7ed7ee5952d9e5b569b13d40a463b9a1b18ae8d14cdaa2",
+          "root_digest": "1fafc2b74ec69b931d3df8a06dbb4499aa2f650d",
+          "tree_size": 4292608,
+          "fec_size": 0,
+          "properties": {
+            "com.android.build.system_ext.os_version": "16",
+            "com.android.build.system_ext.fingerprint": "Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.304.0.WOBCNXM:user/release-keys",
+            "com.android.build.system_ext.security_patch": "2026-06-01"
+          }
+        },
+        "source_root_digest_unchanged": true,
+        "avb_verification_output": [
+          "Verifying image /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/system_ext.img using embedded public key",
+          "vbmeta: Successfully verified footer and NONE vbmeta struct in /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/system_ext.img",
+          "system_ext: Successfully verified sha1 hashtree of /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/system_ext.img for image of 544051200 bytes"
+        ],
+        "filesystem_check_tail": [
+          "Pass 2: Checking directory structure",
+          "Pass 3: Checking directory connectivity",
+          "Pass 4: Checking reference counts",
+          "Pass 5: Checking group summary information",
+          "system_ext: 3474/3520 files (0.3% non-contiguous), 132417/132825 blocks"
+        ]
+      },
+      {
+        "name": "product.img",
+        "zip_timestamp": [
+          2026,
+          8,
+          14,
+          18,
+          0,
+          0
+        ],
+        "uncompressed_size": 2227720192,
+        "compressed_size": 1013123991,
+        "crc32": "b1bff449",
+        "sha256": "c65165eeea5670450957ebf4ed1ac13f394f6ebe334c43d3222adfcaaa40e3ad",
+        "filesystem": "raw ext4",
+        "e2fsck_read_only": "passed",
+        "avb_verify": "passed",
+        "avb": {
+          "image_size": 2227720192,
+          "original_image_size": 2192482304,
+          "algorithm": "NONE",
+          "partition_name": "product",
+          "hash_algorithm": "sha1",
+          "salt": "bbde5efa62823fbb0e7ed7ee5952d9e5b569b13d40a463b9a1b18ae8d14cdaa2",
+          "root_digest": "55cdb7f43c94c390b23542dac8484c58391e8113",
+          "tree_size": 17268736,
+          "fec_size": 0,
+          "properties": {
+            "com.android.build.product.os_version": "16",
+            "com.android.build.product.fingerprint": "Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.304.0.WOBCNXM:user/release-keys",
+            "com.android.build.product.security_patch": "2026-06-01"
+          }
+        },
+        "source_root_digest_unchanged": true,
+        "avb_verification_output": [
+          "Verifying image /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/product.img using embedded public key",
+          "vbmeta: Successfully verified footer and NONE vbmeta struct in /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/product.img",
+          "product: Successfully verified sha1 hashtree of /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/product.img for image of 2192482304 bytes"
+        ],
+        "filesystem_check_tail": [
+          "Pass 2: Checking directory structure",
+          "Pass 3: Checking directory connectivity",
+          "Pass 4: Checking reference counts",
+          "Pass 5: Checking group summary information",
+          "product: 792/816 files (2.1% non-contiguous), 533662/535274 blocks"
+        ]
+      },
+      {
+        "name": "vendor.img",
+        "zip_timestamp": [
+          2026,
+          8,
+          14,
+          18,
+          0,
+          0
+        ],
+        "uncompressed_size": 880304128,
+        "compressed_size": 479457101,
+        "crc32": "d3cdc526",
+        "sha256": "18f8a49842456ccfca926b236e6331ab68c94265afacd10523d824227e778766",
+        "filesystem": "raw ext4",
+        "e2fsck_read_only": "passed",
+        "avb_verify": "passed",
+        "avb": {
+          "image_size": 880304128,
+          "original_image_size": 866324480,
+          "algorithm": "NONE",
+          "partition_name": "vendor",
+          "hash_algorithm": "sha1",
+          "salt": "bbde5efa62823fbb0e7ed7ee5952d9e5b569b13d40a463b9a1b18ae8d14cdaa2",
+          "root_digest": "e2436834fae1ce29cabb55ed26ab367c0487e258",
+          "tree_size": 6828032,
+          "fec_size": 0,
+          "properties": {
+            "com.android.build.vendor.os_version": "16",
+            "com.android.build.vendor.fingerprint": "Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.304.0.WOBCNXM:user/release-keys",
+            "com.android.build.vendor.security_patch": "2026-02-01"
+          }
+        },
+        "source_root_digest_unchanged": true,
+        "avb_verification_output": [
+          "Verifying image /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/vendor.img using embedded public key",
+          "vbmeta: Successfully verified footer and NONE vbmeta struct in /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/vendor.img",
+          "vendor: Successfully verified sha1 hashtree of /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/vendor.img for image of 866324480 bytes"
+        ],
+        "filesystem_check_tail": [
+          "Pass 2: Checking directory structure",
+          "Pass 3: Checking directory connectivity",
+          "Pass 4: Checking reference counts",
+          "Pass 5: Checking group summary information",
+          "vendor: 2559/2576 files (2.1% non-contiguous), 210853/211505 blocks"
+        ]
+      },
+      {
+        "name": "odm.img",
+        "zip_timestamp": [
+          2026,
+          8,
+          14,
+          18,
+          0,
+          0
+        ],
+        "uncompressed_size": 5036703744,
+        "compressed_size": 3023684821,
+        "crc32": "d7cda444",
+        "sha256": "36697e59153d2d7259cb7394821c7d311689875dfa60a0086a4e5ac570f0d573",
+        "filesystem": "raw ext4",
+        "e2fsck_read_only": "passed",
+        "avb_verify": "passed",
+        "avb": {
+          "image_size": 5036703744,
+          "original_image_size": 4957143040,
+          "algorithm": "NONE",
+          "partition_name": "odm",
+          "hash_algorithm": "sha1",
+          "salt": "bbde5efa62823fbb0e7ed7ee5952d9e5b569b13d40a463b9a1b18ae8d14cdaa2",
+          "root_digest": "30038b8d75c1c01ea6364a4789d93f410fd244c3",
+          "tree_size": 39034880,
+          "fec_size": 0,
+          "properties": {
+            "com.android.build.odm.os_version": "16",
+            "com.android.build.odm.fingerprint": "Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.304.0.WOBCNXM:user/release-keys"
+          }
+        },
+        "source_root_digest_unchanged": true,
+        "avb_verification_output": [
+          "Verifying image /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/odm.img using embedded public key",
+          "vbmeta: Successfully verified footer and NONE vbmeta struct in /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/odm.img",
+          "odm: Successfully verified sha1 hashtree of /home/arima/android/yaap16/out/stage-d-r3-dsu-independent-audit/dsu-audit-ip4bqiap/odm.img for image of 4957143040 bytes"
+        ],
+        "filesystem_check_tail": [
+          "Pass 2: Checking directory structure",
+          "Pass 3: Checking directory connectivity",
+          "Pass 4: Checking reference counts",
+          "Pass 5: Checking group summary information",
+          "odm: 3438/3552 files (2.2% non-contiguous), 1206588/1210240 blocks"
+        ]
+      }
+    ],
+    "manifest_sha256": "7006d5ad70ba37a5ad5b1b595e6840f16d953fd08ad5bdcf9cfed87535fbf882",
+    "sidecar_sha256": "43d842ea98049dd20b4c25c0dd791c012197d24069866310ee8244c89b48f32f",
+    "audit_sha256": "8632ed6a21c5af540830327a96d257fda1bd57afabe6e26cf1614c2201c4f7a3",
+    "runtime_validation": "not_started_by_user_boundary"
+  },
+  "device_boundary_state": {
+    "last_confirmed_at": "2026-08-14T16:42:19+08:00",
+    "evidence": "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-d-dsu-runtime\\20260814-third-yaap-upper5-r2\\r2-exit-proxy-rollback.txt",
+    "host_incremental": "OS3.0.304.0.WOBCNXM",
+    "host_boot_completed": "1",
+    "ro_gsid_image_running": "0",
+    "phone_http_proxy": ":0",
+    "temporary_relay_listener_count": 0,
+    "note": "Last confirmed state from the completed r2 exit. No r3 device operation was issued after the new stop boundary."
+  },
+  "next_action_after_user_resume": "Reconfirm HyperOS/proxy/relay state, wipe the disabled r2 DSI, enable and verify the temporary WiFi proxy, transfer the exact r3 package by SHA-256, install, then enter with exactly one reboot and run the full runtime matrix.",
+  "report": {
+    "path": "D:\\Codex\\haotian-rom-fusion\\docs\\YAAP16_STAGE_D_R3_OFFLINE_REPORT.md",
+    "sha256": "489309edc310173da5fe57d6ce35a819db9dd6b2318cb8618acce312d24039e6"
+  }
 }

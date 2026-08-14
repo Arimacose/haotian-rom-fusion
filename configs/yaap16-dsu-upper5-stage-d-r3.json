@@ -1,3 +1,59 @@
 {
-  "status": "draft"
+  "schema": 1,
+  "profile": "yaap16-staged-upper5-host304-soundtrigger-vintf-r3",
+  "purpose": "Exercise the Stage D r3 YAAP 16 framework, product and haotian hardware implementation in a non-flashing upper5 DSU. This revision retains the complete SoundTrigger V1 AIDL ELF dependency closure and attaches the exact HyperOS 3.0.304 SoundTrigger3 device-manifest declaration to the selected Xiaomi audio HAL prebuilt, while keeping the installed kernel, kernel modules, boot chain and firmware authoritative.",
+  "package_name": "YAAP-16-20260814-haotian-upper5-host304-soundtrigger-vintf-r3-mpDSU.zip",
+  "source_root": "/home/arima/android/yaap16/out/target/product/haotian/obj/PACKAGING/target_files_intermediates/yaap_haotian-target_files/IMAGES",
+  "source_ota": {
+    "name": "YAAP-16-HOMEMADE-haotian-20260814.zip",
+    "size": 4836798323,
+    "sha256": "c2b19d7ea13cc3e538219521f025dc6b1044666fa36917ed134d7356e8684bb6",
+    "build_epoch": 1786687200,
+    "build_incremental": "haotian.staged.20260814.3"
+  },
+  "host_baseline": "HyperOS OS3.0.304.0.WOBCNXM; runtime kernel remains the device-installed third-party 6.6.143 build",
+  "host_security_patch": "2026-06-01",
+  "zip_timestamp": [2026, 8, 14, 18, 0, 0],
+  "zip_compresslevel": 6,
+  "partitions": [
+    {
+      "name": "system",
+      "source": "system.img",
+      "expected_size": 1137987584,
+      "expected_sha256": "0e34e3cc68c889d718e8e253ba82f5d23ab6e7c20d2fa50ec52279c3ad183a3d",
+      "security_patch_property": "com.android.build.system.security_patch"
+    },
+    {
+      "name": "system_ext",
+      "source": "system_ext.img",
+      "expected_size": 552861696,
+      "expected_sha256": "782df345350b3a58e3be471456ab1b924de6e55e70bcaf4a0d658f3fb8989dbd",
+      "security_patch_property": "com.android.build.system_ext.security_patch"
+    },
+    {
+      "name": "product",
+      "source": "product.img",
+      "expected_size": 2227720192,
+      "expected_sha256": "d034b0be2274be4b9c305dc10ec2d33127ed63de171fa532dc5bf17ba0a4b697",
+      "security_patch_property": "com.android.build.product.security_patch"
+    },
+    {
+      "name": "vendor",
+      "source": "vendor.img",
+      "expected_size": 880304128,
+      "expected_sha256": "957ad319153e7ce806829a07be1086049dcce3b02c371166ce788021e7d437a3"
+    },
+    {
+      "name": "odm",
+      "source": "odm.img",
+      "expected_size": 5036703744,
+      "expected_sha256": "04d2890c96adf3379fbcafb091909b4f2613529e3f17000c73207ef203afaf4d"
+    }
+  ],
+  "omitted_partitions": {
+    "system_dlkm,vendor_dlkm": "The installed third-party 6.6.143 kernel remains active during DSU. Loading module partitions built for the ROM prebuilt 6.6.77 kernel would create an avoidable kernel-module/KMI mismatch.",
+    "boot,init_boot,vendor_boot,dtbo,recovery": "DSU does not replace the boot chain; these images remain outside this non-flashing upper-partition profile.",
+    "vbmeta,vbmeta_system": "Each selected DSU image receives an independently verified Algorithm NONE hashtree footer. Reusing the complete OTA vbmeta chain would couple the package to omitted boot and dlkm partitions.",
+    "firmware": "The installed HyperOS OS3.0.304.0.WOBCNXM firmware remains authoritative and is not written by DSU."
+  }
 }
