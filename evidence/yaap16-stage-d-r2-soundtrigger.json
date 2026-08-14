@@ -1,4 +1,207 @@
 {
   "schema": 1,
-  "status": "pending"
+  "generated_at": "2026-08-14T16:17:19.948698+08:00",
+  "device": "haotian",
+  "host_baseline": {
+    "firmware": "OS3.0.304.0.WOBCNXM",
+    "security_patch": "2026-06-01",
+    "kernel": "6.6.143-Jianke",
+    "selinux": "Enforcing"
+  },
+  "source_fix": {
+    "repository": "https://github.com/Arimacose/device_xiaomi_sm8750-common",
+    "base_commit": "45f6a6b",
+    "commit": "5ec5c607cde8fc32f695a0c734e75b186738ff75",
+    "branch": "agent/audio-vintf-soundtrigger-fix",
+    "change": [
+      "restore unique stock Audio Core and Effect VINTF attachments after makefile regeneration",
+      "remove DISABLE_DEPS from libsoundtriggerhal.qti so Soong installs its real AIDL dependency closure"
+    ]
+  },
+  "r1_runtime_failure": {
+    "incremental": "haotian.staged.20260814.1",
+    "result": "boot_timeout",
+    "observation_seconds": 300,
+    "mounted_dsu_partitions": [
+      "system_gsi:/",
+      "system_ext_gsi:/system_ext",
+      "product_gsi:/product",
+      "vendor_gsi:/vendor",
+      "odm_gsi:/odm"
+    ],
+    "native_tombstones": 16,
+    "unique_crash_groups": 1,
+    "process": "/vendor/bin/hw/audiohalservice.qti",
+    "abort": "failed to register mandatory sthal interface",
+    "linker_error": "android.hardware.soundtrigger3-V1-ndk.so not found",
+    "source_cause": "libsoundtriggerhal.qti was marked DISABLE_DEPS",
+    "report_path": "D:\\Codex\\haotian-rom-fusion-build\\logs\\stage-d-dsu-runtime\\20260814-second-yaap-upper5\\boot-observation-01\\BOOT_FAILURE_ROOT_CAUSE.md",
+    "report_sha256": "4d44d715cf964b5ddf88bae1a5d9db7d0d0d9df9a48ed2bf75c3b606ac19fb14",
+    "logcat_sha256": "056f81c47938444714d284083244c9ca98d7a430731ad60eb789e0c34385809e"
+  },
+  "r2_build": {
+    "target_build_gapps": true,
+    "variant": "yaap_haotian-bp4a-userdebug",
+    "incremental": "haotian.staged.20260814.2",
+    "build_epoch": 1786683600,
+    "ota": {
+      "name": "YAAP-16-HOMEMADE-haotian-20260814.zip",
+      "size": 4836800960,
+      "sha256": "d32cd802e33569e62bea35043858676fc37fb7e6096059a52344fd2e1df97d6b"
+    },
+    "target_files": {
+      "size": 21038184431,
+      "sha256": "8f17b5de3013a67ed059b4c0683b078cd4cfcc125439eb630b5c77d9a16d3666"
+    },
+    "source_partitions": [
+      {
+        "name": "system",
+        "size": 1137987584,
+        "sha256": "98e01772a42c181239678492ff491b5329f07085b3ce5b34efbc0fc5bd067921",
+        "root_digest": "ac9bc7eaa3977f445d5647c7c5bcebc13d2063cf"
+      },
+      {
+        "name": "system_ext",
+        "size": 552861696,
+        "sha256": "0bd38ec983b5b317380d59c271489a319101851dc4498ff624522907572a4931",
+        "root_digest": "81262c9deae750e05afe52fdf00d528ccad3bfe9"
+      },
+      {
+        "name": "product",
+        "size": 2227720192,
+        "sha256": "b13c1e3877b7135386a2fcde02c69f6212087c61e64c90bf2ec0bff2364030c5",
+        "root_digest": "be4c2b0cab90e96958b6b31504133e369cf67403"
+      },
+      {
+        "name": "vendor",
+        "size": 880300032,
+        "sha256": "a665e4185e727ea9fd6066f1be887b894621b115fa78bf926b04b2ac536a2589",
+        "root_digest": "f5af46319568f348af415cef1986d7c0d27971b5"
+      },
+      {
+        "name": "odm",
+        "size": 5036703744,
+        "sha256": "e24bf8de4ad96eb4de9419dbbc46788dac9d6b1c81d4b6e9d12060a46faebc44",
+        "root_digest": "16b0e6baee1c2fe87ccdfdc83855aed3646808e1"
+      }
+    ],
+    "soundtrigger_dependency": {
+      "soname": "android.hardware.soundtrigger3-V1-ndk.so",
+      "sha256": "11a3ecb090a2eabe6c940a03b1bc01bef95b95e94aa3b0ec0f804879d07fb6c0",
+      "verified_layers": [
+        "Soong product output",
+        "target-files directory",
+        "target-files ZIP member",
+        "vendor.img direct extraction",
+        "OTA payload vendor replay by whole-image hash",
+        "final DSU packed vendor.img direct extraction"
+      ]
+    }
+  },
+  "offline_audits": {
+    "core": {
+      "passed": 14,
+      "failed": 0,
+      "summary_sha256": "883555fd7f0dd54b4f1fb8181ebe64cfc9c5534160d382ba6ae19996e169c5c8"
+    },
+    "payload_apex": {
+      "passed": 6,
+      "failed": 0,
+      "summary_sha256": "72ded9e1c6d3c04a45fb5af175e8c29f741f7b606a6e56aa27f591f53c6ebfb6"
+    },
+    "audio_vintf": {
+      "status": "passed",
+      "log_sha256": "dc43521780a459eb9585f2ab569b2c6e993d265b75619a3326c2bef414cedcb9"
+    },
+    "soundtrigger_closure": {
+      "status": "passed",
+      "log_sha256": "5ce4dc020c7c5ccc6985e6ba9f430ff0773a2118fd136d1e9624301f900f29ca"
+    },
+    "dsu_independent": {
+      "status": "passed",
+      "checks": {
+        "zip_crc_and_stream_hashes": "passed",
+        "raw_ext4": "passed",
+        "e2fsck_read_only": "passed",
+        "avb_hashtrees": "passed",
+        "avb_manifest_equivalence": "passed",
+        "source_image_hashes": "passed",
+        "source_root_digests_unchanged": "passed"
+      },
+      "audit_sha256": "07dcbc7e7bb2fab03d6e745fcb926fccf6c68b50f0d0da9033c7201620ad9d8b"
+    }
+  },
+  "dsu": {
+    "profile": "yaap16-staged-upper5-host304-soundtrigger-r2",
+    "path": "D:\\Codex\\haotian-rom-fusion-build\\dsu\\yaap16-staged-upper5-host304-soundtrigger-r2\\YAAP-16-20260814-haotian-upper5-host304-soundtrigger-r2-mpDSU.zip",
+    "size": 5206968165,
+    "sha256": "6c84ad0eb7f50874a5152a38461ec9832f98159446ce68d8e641308fc25f8ad2",
+    "sidecar_matches": true,
+    "member_order": [
+      "system.img",
+      "system_ext.img",
+      "product.img",
+      "vendor.img",
+      "odm.img"
+    ],
+    "members": [
+      {
+        "name": "system.img",
+        "uncompressed_size": 1137987584,
+        "compressed_size": 469452683,
+        "crc32": "457130e5",
+        "sha256": "bcca23dd73be6774d11d754f85572d1000068680bee8d3ecac6eee6130438428"
+      },
+      {
+        "name": "system_ext.img",
+        "uncompressed_size": 552861696,
+        "compressed_size": 221249585,
+        "crc32": "c3d9f08f",
+        "sha256": "0ba63d3feef677bffcf2cb02a4b1c6d3c1e17170f1f883e60d7037913f109b60"
+      },
+      {
+        "name": "product.img",
+        "uncompressed_size": 2227720192,
+        "compressed_size": 1013123865,
+        "crc32": "6ee6b046",
+        "sha256": "b7dff2c66d8f6c4a81f6de567f33287aea70411d26269b5a44f8ad43c090c637"
+      },
+      {
+        "name": "vendor.img",
+        "uncompressed_size": 880300032,
+        "compressed_size": 479456838,
+        "crc32": "a78dffb2",
+        "sha256": "b80d9f4632907991ef5d71635159e2407a19f0e49a3a37631d46deee7a2cf8ee"
+      },
+      {
+        "name": "odm.img",
+        "uncompressed_size": 5036703744,
+        "compressed_size": 3023684464,
+        "crc32": "aece4182",
+        "sha256": "51ac4ff73cf6663816538e6740b451cdc39f8914c0bc988a9325786f57471a2f"
+      }
+    ],
+    "manifest_sha256": "f365e01548727acd531085c6d998d9a5bc9e1852053a9255f1872010ac7a94e6",
+    "sidecar_sha256": "d01c6673f97d4432d128c67cc373b30bf9e9b8753eb914894ab6635e85fd5764"
+  },
+  "runtime_acceptance": {
+    "status": "pending",
+    "required": [
+      "all five DSU partitions mounted",
+      "sys.boot_completed=1",
+      "boot animation stopped",
+      "no recurring native crash loop",
+      "all DSU-testable core functions pass"
+    ]
+  },
+  "proxy_gate": {
+    "required_before_each_entry": true,
+    "required_after_each_exit": true,
+    "r1_exit_verified": {
+      "phone_http_proxy": ":0",
+      "relay_pid_44788_alive": false,
+      "relay_port_17897_listeners": 0,
+      "original_mihomo_port_7897_listeners": 1
+    }
+  }
 }
